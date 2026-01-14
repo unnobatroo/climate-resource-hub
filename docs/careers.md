@@ -43,4 +43,4 @@ Resources for transitioning into climate careers.
 
 ---
 
-[← Back to Home](index.html)
+[← Back to Home](index.md)

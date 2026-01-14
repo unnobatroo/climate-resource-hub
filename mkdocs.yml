@@ -1,6 +1,6 @@
-site_name: Pixel Climate Hub
+site_name: Pixel Resource Hub
 site_description: A community-driven map of the climate movement
-site_author: Climate Hub Contributors
+site_author: Resource Hub Contributors
 
 theme:
   name: material
@@ -50,7 +50,7 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/yourusername/resource-hub
+      link: https://github.com/unnobatroo/resource-hub
 
-repo_url: https://github.com/yourusername/resource-hub
-repo_name: Climate Hub
+repo_url: https://github.com/unnobatroo/resource-hub
+repo_name: Resource Hub

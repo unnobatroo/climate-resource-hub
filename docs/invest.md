@@ -33,4 +33,4 @@ Policy simulator showing climate policy impact.
 
 ---
 
-[← Back to Home](index.html)
+[← Back to Home](index.md)

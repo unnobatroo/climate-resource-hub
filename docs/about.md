@@ -39,4 +39,4 @@ This resource hub is a curated collection of climate science resources, tools, a
 
 ---
 
-[← Back to Home](index.html)
+[← Back to Home](index.md)

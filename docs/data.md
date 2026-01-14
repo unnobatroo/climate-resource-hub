@@ -70,4 +70,4 @@ Essential software and utilities for geoscience workflows.
 
 ---
 
-[← Back to Home](index.html)
+[← Back to Home](index.md)
