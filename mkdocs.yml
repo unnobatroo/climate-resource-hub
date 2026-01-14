@@ -1,0 +1,56 @@
+site_name: Pixel Climate Hub
+site_description: A community-driven map of the climate movement
+site_author: Climate Hub Contributors
+
+theme:
+  name: material
+  custom_dir: overrides
+  palette:
+    primary: green
+    accent: light green
+  font:
+    text: VT323
+    code: Roboto Mono
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
+    - navigation.top
+    - toc.integrate
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - Home: index.md
+  - Education & Learning: education.md
+  - Research & Science: research.md
+  - Data & Tech Tools: data.md
+  - Careers & Jobs: careers.md
+  - Finance & Investment: invest.md
+  - About: about.md
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - attr_list
+  - md_in_html
+  - toc:
+      permalink: true
+
+plugins:
+  - search
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/yourusername/resource-hub
+
+repo_url: https://github.com/yourusername/resource-hub
+repo_name: Climate Hub
