@@ -1,0 +1,156 @@
+:root {
+    --md-primary-fg-color: #22c55e;
+    --md-primary-fg-color--light: #86efac;
+    --md-primary-fg-color--dark: #166534;
+    --md-accent-fg-color: #86efac;
+}
+
+/* Import VT323 font */
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+/* Pixel-art style theme */
+body {
+    background-color: #f0fdf4 !important;
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4 {
+    font-family: 'VT323', monospace !important;
+    text-transform: uppercase;
+    color: #166534;
+    border-bottom: 2px dashed #000;
+    padding-bottom: 10px;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.md-typeset h1 {
+    font-size: 2.5em;
+}
+
+.md-typeset h2 {
+    font-size: 2em;
+}
+
+.md-typeset h3 {
+    font-size: 1.5em;
+}
+
+/* Pixel-style links */
+.md-typeset a {
+    color: #000;
+    text-decoration: none;
+    border: 2px solid #000;
+    padding: 2px 8px;
+    background: #e2e8f0;
+    box-shadow: 4px 4px 0px #000;
+    display: inline-block;
+    margin: 2px 0;
+    transition: all 0.1s;
+}
+
+.md-typeset a:hover {
+    background: #22c55e;
+    box-shadow: 2px 2px 0px #000;
+    transform: translate(2px, 2px);
+}
+
+/* Card styling */
+.md-typeset .grid {
+    grid-gap: 1rem;
+}
+
+.md-typeset .grid.cards>ol>li,
+.md-typeset .grid.cards>ul>li,
+.md-typeset .grid>.card {
+    border: 4px solid #000 !important;
+    box-shadow: 8px 8px 0px #166534 !important;
+    background: #fff;
+    padding: 1.5rem !important;
+    transition: all 0.2s;
+}
+
+.md-typeset .grid.cards>ol>li:hover,
+.md-typeset .grid.cards>ul>li:hover,
+.md-typeset .grid>.card:hover {
+    box-shadow: 4px 4px 0px #166534 !important;
+    transform: translate(4px, 4px);
+}
+
+/* Content container */
+.md-content {
+    font-family: 'VT323', monospace;
+    font-size: 1.3rem;
+    line-height: 1.6;
+}
+
+/* Navigation */
+.md-header {
+    background-color: #166534 !important;
+    border-bottom: 4px solid #000;
+}
+
+.md-tabs {
+    background-color: #22c55e !important;
+    border-bottom: 2px solid #000;
+}
+
+.md-tabs__link {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+
+/* Buttons */
+.md-button {
+    border: 2px solid #000 !important;
+    box-shadow: 4px 4px 0px #000 !important;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+}
+
+.md-button:hover {
+    box-shadow: 2px 2px 0px #000 !important;
+    transform: translate(2px, 2px);
+}
+
+/* Code blocks */
+.md-typeset code {
+    border: 2px solid #000;
+    background: #f1f5f9;
+    padding: 2px 6px;
+}
+
+.md-typeset pre {
+    border: 3px solid #000;
+    box-shadow: 6px 6px 0px #166534;
+}
+
+/* Lists */
+.md-typeset ul li,
+.md-typeset ol li {
+    margin-bottom: 0.5rem;
+}
+
+/* Emoji sizing */
+.md-typeset .lg {
+    font-size: 2em;
+}
+
+.md-typeset .middle {
+    vertical-align: middle;
+}
+
+/* Footer */
+.md-footer {
+    background-color: #166534 !important;
+    border-top: 4px solid #000;
+}
+
+/* Search */
+.md-search__input {
+    border: 2px solid #000;
+    border-radius: 0;
+}
