@@ -1,36 +1,27 @@
----
-layout: default
-title: Climate Finance & Investment
----
-
-# Climate Finance & Investment
+# 💰 Climate Finance & Investment
 
 Investment opportunities and climate funds.
 
-## Climate Funds
+<div class="section-divider">💵 🌍 📈 ♻️</div>
+
+## 💚 Climate Funds
 
 ### Green Climate Fund
-[Visit Site →](https://www.greenclimate.fund/)
-
-World's largest climate fund.
+World's largest climate fund supporting developing countries.  
+[Visit Site](https://www.greenclimate.fund/)
 
 ### Founders Pledge
-[Visit Site →](https://www.founderspledge.com/)
+Platform for entrepreneurs to direct capital to high-impact climate solutions.  
+[Visit Site](https://www.founderspledge.com/)
 
-Platform for entrepreneurs to direct capital to climate solutions.
+<div class="section-divider">🌱 📊 ⚡</div>
 
-## Climate Solutions
+## 🌱 Climate Solutions
 
 ### Project Drawdown
-[Visit Site →](https://drawdown.org/explorer)
-
-Comprehensive plan to reverse global warming.
+Comprehensive plan to reverse global warming with ranked solutions.  
+[Visit Site](https://drawdown.org/explorer)
 
 ### Energy Policy Solutions
-[Visit Site →](https://energypolicy.solutions/)
-
-Policy simulator showing climate policy impact.
-
----
-
-[← Back to Home](index.md)
+Policy simulator showing climate policy impact and pathways.  
+[Visit Site](https://energypolicy.solutions/)

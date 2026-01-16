@@ -1,73 +1,63 @@
----
-layout: default
-title: Data & Tools
----
-
-# Data, Tools & Tech
+# 💾 Data, Tools & Tech
 
 Open datasets, APIs, and tools for climate analysis.
 
-## Climate Datasets
+<div class="section-divider">📊 🛰️ 💻 🌐</div>
+
+## 🛰️ Climate Datasets
 
 ### Copernicus Climate Data Store
-[Visit Site →](https://cds.climate.copernicus.eu/)
-
-Free access to climate datasets from the EU.
+Free access to climate datasets from the European Union's Earth observation program.  
+[Visit Site](https://cds.climate.copernicus.eu/)
 
 ### ECMWF Datasets
-[Visit Site →](https://www.ecmwf.int/en/forecasts/datasets)
-
-Weather and climate datasets from ECMWF.
+Weather and climate datasets from the European Centre for Medium-Range Weather Forecasts.  
+[Visit Site](https://www.ecmwf.int/en/forecasts/datasets)
 
 ### Climate TRACE
-[Visit Site →](https://climatetrace.org/)
+Real-time emissions tracking using satellite data and AI.  
+[Visit Site](https://climatetrace.org/)
 
-Real-time emissions tracking using satellite data.
+<div class="section-divider">🔧 🐍 ⚡</div>
 
-## Open Source Tools
+## 🔧 Open Source Tools
 
 ### Open Sustainable Tech
-[Visit Site →](https://opensustain.tech/)
-
-Curated list of open source climate projects.
+Curated list of open source climate and sustainability projects.  
+[Visit Site](https://opensustain.tech/)
 
 ### Earthkit
-[Visit Site →](https://earthkit.readthedocs.io/)
-
-Python tools for climate data.
+Python tools for climate data analysis and visualization.  
+[Visit Site](https://earthkit.readthedocs.io/)
 
 ### Pangeo
-[Visit Site →](https://discourse.pangeo.io/)
+Community platform for big data geoscience research.  
+[Visit Site](https://discourse.pangeo.io/)
 
-Community for big data geoscience.
+<div class="section-divider">📓 🐍 📈</div>
 
-## Jupyter Notebooks & Tutorials
+## 📓 Jupyter Notebooks & Tutorials
 
 ### Ocean Python
-[Visit Site →](https://oceanpython.org/)
-
-Oceanography with Python.
+Oceanography with Python - tutorials and code examples.  
+[Visit Site](https://oceanpython.org/)
 
 ### Geo-Python Course
-[Visit Site →](https://geo-python-site.readthedocs.io/)
-
-Learn Python for geosciences.
+Learn Python for geosciences with hands-on exercises.  
+[Visit Site](https://geo-python-site.readthedocs.io/)
 
 ### IOOS CodeLab
-[Visit Site →](https://ioos.github.io/ioos_code_lab/content/intro.html)
+Ocean data science tutorials and Jupyter notebooks.  
+[Visit Site](https://ioos.github.io/ioos_code_lab/content/intro.html)
 
-Ocean data science tutorials.
+<div class="section-divider">⭐ 📚 🔖</div>
 
-## GitHub Curations
+## ⭐ GitHub Curations
 
 ### IPython for Geosciences
-[Explore List →](https://github.com/stars/unnobatroo/lists/ipython-library-for-geosci)
-A hand-picked collection of interactive Python libraries for Earth sciences.
+A hand-picked collection of interactive Python libraries for Earth sciences.  
+[Explore List](https://github.com/stars/unnobatroo/lists/ipython-library-for-geosci)
 
 ### Geosci Tools
-[Explore List →](https://github.com/stars/unnobatroo/lists/geosci-tools)
-Essential software and utilities for geoscience workflows.
-
----
-
-[← Back to Home](index.md)
+Essential software and utilities for geoscience workflows.  
+[Explore List](https://github.com/stars/unnobatroo/lists/geosci-tools)

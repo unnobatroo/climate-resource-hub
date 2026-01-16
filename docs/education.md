@@ -1,52 +1,47 @@
----
-layout: default
-title: Education & Learning
----
-
-# Education & Learning
+# 📚 Education & Learning
 
 Climate science education resources for all levels.
 
-## Getting Started
+<div class="section-divider">🎓 📖 🧪 🌡️</div>
+
+## 🌟 Getting Started
 
 ### Heatmap Climate 101
-[Visit Site →](https://heatmap.news/climate-101)
-
-Comprehensive introduction to climate science basics. Perfect starting point.
+Comprehensive introduction to climate science basics. Perfect starting point for beginners.  
+[Visit Site](https://heatmap.news/climate-101)
 
 ### NASA Climate Kids
-[Visit Site →](https://climatekids.nasa.gov/)
-
-Kid-friendly climate science from NASA. Great for young learners.
+Kid-friendly climate science from NASA. Great for young learners and families.  
+[Visit Site](https://climatekids.nasa.gov/)
 
 ### NASA Climate Change
-[Visit Site →](https://science.nasa.gov/climate-change/)
+Latest climate data and scientific evidence from NASA's research.  
+[Visit Site](https://science.nasa.gov/climate-change/)
 
-Latest climate data and scientific evidence from NASA.
+<div class="section-divider">💻 🎯 📊</div>
 
-## Online Courses
+## 🎯 Online Courses
 
 ### Terra.do - Software for Climate
-[Visit Site →](https://www.terra.do/climate-change-courses/software-for-climate/)
-
-Learn to build climate solutions with code.
+Learn to build climate solutions with code. Perfect for developers.  
+[Visit Site](https://www.terra.do/climate-change-courses/software-for-climate/)
 
 ### Khan Academy Environmental Science
-[Visit Site →](https://www.khanacademy.org/science/ap-college-environmental-science)
-
-Free AP-level environmental science course.
+Free AP-level environmental science course with videos and exercises.  
+[Visit Site](https://www.khanacademy.org/science/ap-college-environmental-science)
 
 ### ClimateScience
-[Visit Site →](https://climatescience.org/)
+Interactive climate education platform with engaging content.  
+[Visit Site](https://climatescience.org/)
 
-Interactive climate education platform.
+<div class="section-divider">🌍 🚀 🎓</div>
 
-## Training Programs
+## 🚀 Training Programs
 
 ### Global Youth Climate Training
-[Visit Site →](https://netzeroclimate.org/global-youth-training/)
+Comprehensive climate action training for young leaders.  
+[Visit Site](https://netzeroclimate.org/global-youth-training/)
 
-Comprehensive climate action training.
 
 ### AEYN Mentorship
 [Visit Site →](https://www.aeyn.org/mentorship-program)

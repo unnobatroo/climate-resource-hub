@@ -1,61 +1,80 @@
-# 🌿 Pixel Climate Hub
+<div class="hero" markdown>
 
-Welcome to a community-driven map of the climate movement.
+# Climate Resource Hub
 
-## 🗺️ Choose your Path
+Your community-driven map of climate science & solutions  
+Explore · Learn · Act · Connect
+
+</div>
+
+<div class="section-divider">🌱 🌊 🌍 ☀️ 🌬️</div>
+
+## Explore Resources
 
 <div class="grid cards" markdown>
 
--   :material-book-open-page-variant:{ .lg .middle } __Education & Learning__
+-   🎓 **Education & Learning**
 
     ---
 
-    Courses, training programs, and learning resources for climate science.
+    Dive into climate science courses, training programs, and interactive learning resources.
 
-    [:octicons-arrow-right-24: Get started](education.md)
+    [:octicons-arrow-right-24: Start Learning](education.md)
 
--   :material-flask:{ .lg .middle } __Research & Science__
-
-    ---
-
-    Research organizations, scientific reports, and climate data.
-
-    [:octicons-arrow-right-24: Explore research](research.md)
-
--   :material-database:{ .lg .middle } __Data & Tech Tools__
+-   🔬 **Research & Science**
 
     ---
 
-    Open datasets, APIs, and tools for climate analysis.
+    Access cutting-edge research, scientific reports, and climate data from leading institutions.
 
-    [:octicons-arrow-right-24: Browse tools](data.md)
+    [:octicons-arrow-right-24: Explore Research](research.md)
 
--   :material-briefcase:{ .lg .middle } __Careers & Jobs__
-
-    ---
-
-    Job boards and career resources in climate tech and science.
-
-    [:octicons-arrow-right-24: Find opportunities](careers.md)
-
--   :material-currency-usd:{ .lg .middle } __Finance & Investment__
+-   💾 **Data & Tech Tools**
 
     ---
 
-    Climate finance, funding, and investment resources.
+    Discover open datasets, APIs, Python libraries, and analytical tools for climate work.
 
-    [:octicons-arrow-right-24: Learn more](invest.md)
+    [:octicons-arrow-right-24: Browse Tools](data.md)
 
--   :material-help-circle:{ .lg .middle } __About this Project__
+-   💼 **Careers & Jobs**
 
     ---
 
-    Learn about the mission and how to contribute.
+    Find opportunities in climate tech, sustainability, and environmental science careers.
 
-    [:octicons-arrow-right-24: About](about.md)
+    [:octicons-arrow-right-24: Find Jobs](careers.md)
 
+-   💰 **Finance & Investment**
+
+    ---
+
+    Explore climate funds, green financing, and investment resources for climate solutions.
+
+    [:octicons-arrow-right-24: Learn More](invest.md)
+
+-   ❓ **About This Hub**
+
+    ---
+
+    Learn about our mission and how you can contribute to this community resource.
+
+    [:octicons-arrow-right-24: About Us](about.md)
+
+</div>
+
+<div class="section-divider">⚡ 🌿 🔋 ♻️ 🌏</div>
+
+<div class="info-box" markdown>
+**Community Powered** — This hub is maintained by climate enthusiasts, scientists, and activists. Want to add a resource? Open a PR on GitHub!
 </div>
 
 ---
 
-**Want to add something?** Open a Pull Request on GitHub!
+<div style="text-align: center; margin-top: 3rem; font-size: 1.3rem;" markdown>
+
+[🌐 GitHub](https://github.com/unnobatroo/resource-hub) · [📚 About](about.md) · [✨ Contribute](https://github.com/unnobatroo/resource-hub/blob/main/README.md)
+
+</div>
+
+

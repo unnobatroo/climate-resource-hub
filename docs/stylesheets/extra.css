@@ -1,156 +1,449 @@
+/* Import retro pixel fonts */
+@import url('https://fonts.googleapis.com/css2?family=VT323&family=Press+Start+2P&family=Roboto+Mono:wght@400;500&display=swap');
+
 :root {
-    --md-primary-fg-color: #22c55e;
-    --md-primary-fg-color--light: #86efac;
-    --md-primary-fg-color--dark: #166534;
-    --md-accent-fg-color: #86efac;
+    --climate-green: #10b981;
+    --climate-blue: #0ea5e9;
+    --climate-earth: #78716c;
+    --climate-light: #ecfdf5;
+    --climate-dark: #064e3b;
+    --primary-color: #064e3b;
+    --secondary-color: #10b981;
+    --accent-color: #0ea5e9;
+    --bg-color: #f0fdf4;
+    --border-color: #10b981;
+    --card-shadow: #047857;
 }
 
-/* Import VT323 font */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+[data-md-color-scheme="slate"] {
+    --climate-light: #022c22;
+    --climate-dark: #ecfdf5;
+    --primary-color: #ecfdf5;
+    --secondary-color: #6ee7b7;
+    --accent-color: #22d3ee;
+    --bg-color: #0f1419;
+    --border-color: #047857;
+    --card-shadow: #065f46;
+}
 
-/* Pixel-art style theme */
+/* Climate-themed pixel aesthetic */
 body {
-    background-color: #f0fdf4 !important;
+    background-color: var(--bg-color) !important;
+    background-image: 
+        radial-gradient(circle at 20% 50%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(14, 165, 233, 0.05) 0%, transparent 50%);
 }
 
-.md-typeset h1,
-.md-typeset h2,
-.md-typeset h3,
-.md-typeset h4 {
-    font-family: 'VT323', monospace !important;
-    text-transform: uppercase;
-    color: #166534;
-    border-bottom: 2px dashed #000;
-    padding-bottom: 10px;
-    font-weight: 400;
-    letter-spacing: 1px;
+.md-typeset {
+    font-size: 1.25rem;
+    line-height: 1.6;
+    color: var(--primary-color);
+    font-family: 'VT323', monospace;
 }
 
+/* Pixelated typography */
 .md-typeset h1 {
-    font-size: 2.5em;
+    font-size: 3rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    color: var(--primary-color);
+    border-bottom: 4px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0px var(--secondary-color);
 }
 
 .md-typeset h2 {
-    font-size: 2em;
+    font-size: 2.2rem;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    color: var(--primary-color);
+    border-bottom: 3px dashed var(--border-color);
+    padding-bottom: 0.5rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
 }
 
 .md-typeset h3 {
-    font-size: 1.5em;
+    font-size: 1.8rem;
+    font-weight: 400;
+    color: var(--secondary-color);
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 1px;
 }
 
-/* Pixel-style links */
+.md-typeset h4 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--climate-blue);
+    margin-top: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Pixel-style links with climate colors */
 .md-typeset a {
-    color: #000;
+    color: var(--primary-color);
     text-decoration: none;
-    border: 2px solid #000;
-    padding: 2px 8px;
-    background: #e2e8f0;
-    box-shadow: 4px 4px 0px #000;
+    border: 3px solid var(--border-color);
+    padding: 4px 12px;
+    background: var(--climate-light);
+    box-shadow: 5px 5px 0px var(--card-shadow);
     display: inline-block;
-    margin: 2px 0;
-    transition: all 0.1s;
+    margin: 4px 2px;
+    transition: all 0.15s;
+    font-size: 1.1rem;
 }
 
 .md-typeset a:hover {
-    background: #22c55e;
-    box-shadow: 2px 2px 0px #000;
+    background: var(--secondary-color);
+    color: var(--bg-color);
+    box-shadow: 3px 3px 0px var(--card-shadow);
     transform: translate(2px, 2px);
 }
 
-/* Card styling */
+/* Climate-themed card styling */
 .md-typeset .grid {
-    grid-gap: 1rem;
+    grid-gap: 2rem;
+    margin: 3rem 0;
 }
 
 .md-typeset .grid.cards>ol>li,
 .md-typeset .grid.cards>ul>li,
 .md-typeset .grid>.card {
-    border: 4px solid #000 !important;
-    box-shadow: 8px 8px 0px #166534 !important;
-    background: #fff;
-    padding: 1.5rem !important;
+    border: 4px solid var(--border-color) !important;
+    box-shadow: 8px 8px 0px var(--card-shadow) !important;
+    background: var(--bg-color);
+    padding: 2rem !important;
     transition: all 0.2s;
+    border-radius: 0;
+    position: relative;
 }
 
 .md-typeset .grid.cards>ol>li:hover,
 .md-typeset .grid.cards>ul>li:hover,
 .md-typeset .grid>.card:hover {
-    box-shadow: 4px 4px 0px #166534 !important;
+    box-shadow: 4px 4px 0px var(--card-shadow) !important;
     transform: translate(4px, 4px);
+    background: var(--climate-light);
 }
 
 /* Content container */
 .md-content {
+    max-width: 900px;
     font-family: 'VT323', monospace;
-    font-size: 1.3rem;
-    line-height: 1.6;
 }
 
-/* Navigation */
+.md-content__inner {
+    padding-top: 2rem;
+}
+
+/* Retro pixel navigation */
 .md-header {
-    background-color: #166534 !important;
-    border-bottom: 4px solid #000;
+    background: linear-gradient(135deg, var(--climate-dark) 0%, var(--climate-green) 100%) !important;
+    border-bottom: 4px solid var(--primary-color);
+    box-shadow: 0 4px 0 var(--card-shadow);
+    color: var(--climate-light);
+}
+
+.md-header__title {
+    font-family: 'VT323', monospace;
+    font-size: 1.8rem;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
 }
 
 .md-tabs {
-    background-color: #22c55e !important;
-    border-bottom: 2px solid #000;
+    background: var(--secondary-color) !important;
+    border-bottom: 3px solid var(--primary-color);
+    box-shadow: 0 3px 0 var(--card-shadow);
 }
 
 .md-tabs__link {
     font-family: 'VT323', monospace;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* Buttons */
+/* Pixel-style buttons */
 .md-button {
-    border: 2px solid #000 !important;
-    box-shadow: 4px 4px 0px #000 !important;
+    border: 3px solid var(--primary-color) !important;
+    box-shadow: 5px 5px 0px var(--card-shadow) !important;
     font-family: 'VT323', monospace;
     text-transform: uppercase;
+    background: var(--climate-light);
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    border-radius: 0;
 }
 
 .md-button:hover {
-    box-shadow: 2px 2px 0px #000 !important;
+    box-shadow: 3px 3px 0px var(--card-shadow) !important;
     transform: translate(2px, 2px);
+    background: var(--secondary-color);
+    color: var(--bg-color);
 }
 
-/* Code blocks */
+/* Retro code blocks */
 .md-typeset code {
-    border: 2px solid #000;
-    background: #f1f5f9;
-    padding: 2px 6px;
+    border: 2px solid var(--border-color);
+    background: var(--climate-light);
+    padding: 3px 8px;
+    font-family: 'Roboto Mono', monospace;
+    font-size: 1rem;
+    border-radius: 0;
 }
 
 .md-typeset pre {
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #166534;
+    border: 3px solid var(--border-color);
+    background: var(--climate-light);
+    box-shadow: 5px 5px 0px var(--card-shadow);
 }
 
 /* Lists */
-.md-typeset ul li,
-.md-typeset ol li {
-    margin-bottom: 0.5rem;
+.md-typeset ul,
+.md-typeset ol {
+    margin-left: 1rem;
 }
 
-/* Emoji sizing */
+.md-typeset li {
+    margin-bottom: 0.8rem;
+}
+
+/* Climate-themed hero section */
+.hero {
+    text-align: center;
+    padding: 3rem 1rem;
+    margin-bottom: 3rem;
+    background: linear-gradient(135deg, var(--climate-light) 0%, var(--bg-color) 100%);
+    border: 4px solid var(--border-color);
+    box-shadow: 10px 10px 0px var(--card-shadow);
+    position: relative;
+}
+
+.hero::before {
+    content: '\ud83c\udf0d';
+    font-size: 4rem;
+    display: block;
+    margin-bottom: 1rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+    border: none;
+    text-shadow: 4px 4px 0px var(--secondary-color);
+    color: var(--primary-color);
+}
+
+.hero p {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+    line-height: 1.5;
+}
+
+/* Resource cards with climate theme */
+.resource-link {
+    display: block;
+    padding: 1.5rem;
+    border: 3px solid var(--border-color);
+    border-left: 8px solid var(--secondary-color);
+    background: var(--bg-color);
+    box-shadow: 6px 6px 0px var(--card-shadow);
+    margin-bottom: 1.5rem;
+    transition: all 0.2s;
+}
+
+.resource-link:hover {
+    box-shadow: 3px 3px 0px var(--card-shadow);
+    transform: translate(3px, 3px);
+    background: var(--climate-light);
+    border-left-color: var(--climate-blue);
+}
+
+.resource-link h3 {
+    margin: 0 0 0.8rem 0;
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.1);
+}
+
+.resource-link p {
+    margin: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+    line-height: 1.5;
+}
+
+/* Category badges */
+.category-badge {
+    display: inline-block;
+    background: var(--secondary-color);
+    color: var(--bg-color);
+    padding: 4px 12px;
+    border: 2px solid var(--primary-color);
+    box-shadow: 3px 3px 0px var(--card-shadow);
+    font-size: 1rem;
+    margin: 4px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navigation sidebar */
+.md-sidebar {
+    width: 14rem;
+}
+
+.md-nav__title {
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-family: 'VT323', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.md-nav__link {
+    font-size: 1.1rem;
+    font-family: 'VT323', monospace;
+}
+
+/* Footer */
+.md-footer {
+    background: linear-gradient(135deg, var(--climate-dark) 0%, var(--climate-green) 100%);
+    border-top: 4px solid var(--primary-color);
+    color: var(--climate-light);
+}
+
+.md-footer-meta {
+    background: var(--climate-dark);
+}
+
+/* Spacing adjustments */
+.md-typeset p {
+    margin-bottom: 1.5rem;
+}
+
+.md-typeset hr {
+    border: none;
+    border-top: 3px dashed var(--border-color);
+    margin: 3rem 0;
+}
+
+/* Climate-themed icons */
 .md-typeset .lg {
-    font-size: 2em;
+    width: 3rem;
+    height: 3rem;
+    filter: drop-shadow(2px 2px 0px var(--card-shadow));
 }
 
 .md-typeset .middle {
     vertical-align: middle;
 }
 
-/* Footer */
-.md-footer {
-    background-color: #166534 !important;
-    border-top: 4px solid #000;
+/* Image styling */
+.md-typeset img {
+    border: 4px solid var(--border-color);
+    box-shadow: 8px 8px 0px var(--card-shadow);
+    max-width: 100%;
+    height: auto;
+}
+
+/* Climate badges for visual interest */
+.climate-badge {
+    display: inline-block;
+    padding: 8px 16px;
+    background: var(--climate-light);
+    border: 3px solid var(--border-color);
+    box-shadow: 4px 4px 0px var(--card-shadow);
+    margin: 5px;
+    font-size: 1.2rem;
+}
+
+.climate-badge::before {
+    margin-right: 8px;
+}
+
+/* Responsive */
+@media screen and (max-width: 76.1875em) {
+    .md-content {
+        max-width: 100%;
+    }
+    
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .hero::before {
+        font-size: 3rem;
+    }
+}
+
+/* Material icons with climate colors */
+.md-typeset .twemoji,
+.md-typeset svg {
+    color: var(--secondary-color);
+    fill: currentColor;
 }
 
 /* Search */
 .md-search__input {
-    border: 2px solid #000;
+    border: 3px solid var(--border-color);
     border-radius: 0;
+    background: var(--bg-color);
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
 }
+
+.md-search__input:focus {
+    border-color: var(--secondary-color);
+}
+
+/* Fun pixel animations */
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
+
+.pulse {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+/* Section dividers */
+.section-divider {
+    text-align: center;
+    font-size: 2rem;
+    margin: 3rem 0;
+    color: var(--secondary-color);
+}
+
+/* Info boxes */
+.info-box {
+    background: var(--climate-light);
+    border: 4px solid var(--border-color);
+    border-left: 8px solid var(--climate-blue);
+    padding: 1.5rem;
+    margin: 2rem 0;
+    box-shadow: 6px 6px 0px var(--card-shadow);
+}
+
+.info-box::before {
+    content: '\u2139\ufe0f';
+    font-size: 2rem;
+    margin-right: 1rem;
+}
+

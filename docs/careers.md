@@ -1,46 +1,35 @@
----
-layout: default
-title: Careers & Opportunities
----
-
-# Careers & Opportunities
+# 💼 Careers & Opportunities
 
 Find your path in climate tech and sustainability.
 
-## Job Boards
+<div class="section-divider">🚀 💚 🌱 💡</div>
+
+## 🌐 Job Boards
 
 ### Climatebase
-[Visit Site →](https://climatebase.org/)
-
-Leading platform for climate jobs and companies.
+Leading platform for climate jobs, companies, and career resources.  
+[Visit Site](https://climatebase.org/)
 
 ### ClimateTechList
-[Visit Site →](https://www.climatetechlist.com/)
-
-Climate tech job board.
+Climate tech job board connecting talent with climate solutions companies.  
+[Visit Site](https://www.climatetechlist.com/)
 
 ### GreenJobs
-[Visit Site →](https://greenjobs.greenjobsearch.org/)
+Sustainability careers across environmental sectors.  
+[Visit Site](https://greenjobs.greenjobsearch.org/)
 
-Sustainability careers.
+<div class="section-divider">🎓 🌟 📝</div>
 
-## Fellowships & Programs
+## 🎓 Fellowships & Programs
 
 ### Climate Fellowships
-[Visit Site →](https://www.climatefellowships.com/)
-
-Discover climate-focused fellowships.
+Discover climate-focused fellowships and leadership programs.  
+[Visit Site](https://www.climatefellowships.com/)
 
 ### Climate Internships
-[Visit Site →](https://www.climateinternships.org/)
-
-Internship opportunities.
+Internship opportunities in climate science and sustainability.  
+[Visit Site](https://www.climateinternships.org/)
 
 ### Work on Climate
-[Visit Site →](https://workonclimate.org/starter-packs/#climate-solutions)
-
-Resources for transitioning into climate careers.
-
----
-
-[← Back to Home](index.md)
+Resources for transitioning into climate careers and finding your path.  
+[Visit Site](https://workonclimate.org/starter-packs/#climate-solutions)

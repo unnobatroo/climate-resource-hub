@@ -1,13 +1,23 @@
-site_name: Pixel Resource Hub
-site_description: A community-driven map of the climate movement
-site_author: Resource Hub Contributors
+site_name: 🌍 Climate Resource Hub
+site_description: A community-driven map of climate science & solutions
+site_author: Climate Community
 
 theme:
   name: material
   custom_dir: overrides
   palette:
-    primary: green
-    accent: light green
+    - scheme: default
+      primary: teal
+      accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   font:
     text: VT323
     code: Roboto Mono
@@ -16,9 +26,10 @@ theme:
     - navigation.tracking
     - navigation.tabs
     - navigation.sections
-    - navigation.expand
     - navigation.top
-    - toc.integrate
+    - toc.follow
+    - content.code.copy
+    - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
