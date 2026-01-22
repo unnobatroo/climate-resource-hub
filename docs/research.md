@@ -1,35 +1,61 @@
-# 🔬 Research & Science
+# Research & Science
 
-Access to cutting-edge climate research and data.
+<p class="page-intro">Access cutting-edge climate research, scientific reports, and data from leading institutions worldwide.</p>
 
-<div class="section-divider">📊 🌡️ 🔍 📈</div>
+<div class="section-columns" markdown>
 
-## 📊 Climate Data & Reports
+<div class="section-column" markdown>
 
-### IPCC Interactive Atlas
-Explore regional climate projections with interactive maps and detailed analysis.  
-[Visit Site](https://interactive-atlas.ipcc.ch/)
+### Climate Data & Reports
 
-### Climate Watch
-Historical and projected climate data from the World Resources Institute.  
-[Visit Site](https://www.climatewatchdata.org/)
+<div class="resource-card">
+<div class="card-icon">📊</div>
+<div class="card-title">IPCC Interactive Atlas</div>
+<div class="card-description">Explore regional climate projections with interactive maps and detailed analysis from the Intergovernmental Panel on Climate Change.</div>
+<a href="https://interactive-atlas.ipcc.ch/" class="card-link">Visit Site</a>
+</div>
 
-### Climate Action Tracker
-Track global warming projections and country climate policies.  
-[Visit Site](https://climateactiontracker.org/global/cat-thermometer/)
+<div class="resource-card">
+<div class="card-icon">🌡️</div>
+<div class="card-title">Climate Watch</div>
+<div class="card-description">Historical and projected climate data from the World Resources Institute. Track emissions, NDCs, and climate indicators.</div>
+<a href="https://www.climatewatchdata.org/" class="card-link">Visit Site</a>
+</div>
 
-<div class="section-divider">🏛️ 🌍 🔬</div>
+<div class="resource-card">
+<div class="card-icon">📈</div>
+<div class="card-title">Climate Action Tracker</div>
+<div class="card-description">Independent scientific analysis tracking government climate action against Paris Agreement goals.</div>
+<a href="https://climateactiontracker.org/global/cat-thermometer/" class="card-link">Visit Site</a>
+</div>
 
-## 🏛️ Research Organizations
+</div>
 
-### Global Carbon Project
-Leading carbon cycle research and global carbon budget analysis.  
-[Visit Site](https://www.globalcarbonproject.org/index.htm)
+<div class="section-column" markdown>
 
-### World Climate Research Programme
-International collaboration coordinating climate research worldwide.  
-[Visit Site](https://www.wcrp-climate.org/)
+### Research Organizations
 
-### CMCC Foundation
-Climate modeling and science from Italy's leading research center.  
-[Visit Site](https://www.cmcc.it/)
+<div class="resource-card">
+<div class="card-icon">🌍</div>
+<div class="card-title">Global Carbon Project</div>
+<div class="card-description">Leading carbon cycle research providing the annual global carbon budget and emissions analysis.</div>
+<a href="https://www.globalcarbonproject.org/index.htm" class="card-link">Visit Site</a>
+</div>
+
+<div class="resource-card">
+<div class="card-icon">🔬</div>
+<div class="card-title">World Climate Research Programme</div>
+<div class="card-description">International collaboration coordinating climate science to understand and predict climate variability.</div>
+<a href="https://www.wcrp-climate.org/" class="card-link">Visit Site</a>
+</div>
+
+<div class="resource-card">
+<div class="card-icon">🏛️</div>
+<div class="card-title">CMCC Foundation</div>
+<div class="card-description">Italy's leading climate research center specializing in climate modeling, impacts, and policy analysis.</div>
+<a href="https://www.cmcc.it/" class="card-link">Visit Site</a>
+</div>
+
+</div>
+
+</div>

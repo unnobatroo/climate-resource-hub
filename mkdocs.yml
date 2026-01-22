@@ -19,8 +19,8 @@ theme:
         icon: material/weather-sunny
         name: Switch to light mode
   font:
-    text: VT323
-    code: Roboto Mono
+    text: Open Sans
+    code: Source Code Pro
   features:
     - navigation.instant
     - navigation.tracking

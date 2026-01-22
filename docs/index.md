@@ -2,18 +2,16 @@
 
 # Climate Resource Hub
 
-Your community-driven map of climate science & solutions  
+Your community-driven map of climate science & solutions
 Explore · Learn · Act · Connect
 
 </div>
-
-<div class="section-divider">🌱 🌊 🌍 ☀️ 🌬️</div>
 
 ## Explore Resources
 
 <div class="grid cards" markdown>
 
--   🎓 **Education & Learning**
+-   **Education & Learning**
 
     ---
 
@@ -21,7 +19,7 @@ Explore · Learn · Act · Connect
 
     [:octicons-arrow-right-24: Start Learning](education.md)
 
--   🔬 **Research & Science**
+-   **Research & Science**
 
     ---
 
@@ -29,7 +27,7 @@ Explore · Learn · Act · Connect
 
     [:octicons-arrow-right-24: Explore Research](research.md)
 
--   💾 **Data & Tech Tools**
+-   **Data & Tech Tools**
 
     ---
 
@@ -37,7 +35,7 @@ Explore · Learn · Act · Connect
 
     [:octicons-arrow-right-24: Browse Tools](data.md)
 
--   💼 **Careers & Jobs**
+-   **Careers & Jobs**
 
     ---
 
@@ -45,7 +43,7 @@ Explore · Learn · Act · Connect
 
     [:octicons-arrow-right-24: Find Jobs](careers.md)
 
--   💰 **Finance & Investment**
+-   **Finance & Investment**
 
     ---
 
@@ -53,7 +51,7 @@ Explore · Learn · Act · Connect
 
     [:octicons-arrow-right-24: Learn More](invest.md)
 
--   ❓ **About This Hub**
+-   **About This Hub**
 
     ---
 
@@ -63,18 +61,14 @@ Explore · Learn · Act · Connect
 
 </div>
 
-<div class="section-divider">⚡ 🌿 🔋 ♻️ 🌏</div>
-
 <div class="info-box" markdown>
 **Community Powered** — This hub is maintained by climate enthusiasts, scientists, and activists. Want to add a resource? Open a PR on GitHub!
 </div>
 
 ---
 
-<div style="text-align: center; margin-top: 3rem; font-size: 1.3rem;" markdown>
+<div style="text-align: center; margin-top: 2rem;" markdown>
 
-[🌐 GitHub](https://github.com/unnobatroo/resource-hub) · [📚 About](about.md) · [✨ Contribute](https://github.com/unnobatroo/resource-hub/blob/main/README.md)
+[GitHub](https://github.com/unnobatroo/resource-hub) · [About](about.md) · [Contribute](https://github.com/unnobatroo/resource-hub/blob/main/README.md)
 
 </div>
-
-
