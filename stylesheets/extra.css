@@ -24,26 +24,15 @@
    Layout: Full Width Content
    ================================ */
 
-/* Hide sidebars on desktop for full-width layout */
-@media (min-width: 76.25em) {
-    .md-sidebar--primary,
-    .md-sidebar--secondary {
-        display: none;
-    }
+/* Hide right sidebar on all screens, keep left for mobile nav */
+.md-sidebar--secondary {
+    display: none;
 }
 
-/* Ensure mobile navigation works */
-@media (max-width: 76.1875em) {
-    /* Make sure hamburger menu is visible and clickable */
-    .md-header__button.md-logo,
-    .md-header__button {
-        display: inline-block;
-        z-index: 1000;
-    }
-    
-    /* Ensure navigation drawer works */
-    .md-nav--primary {
-        display: block;
+/* Hide left sidebar only on desktop */
+@media (min-width: 76.25em) {
+    .md-sidebar--primary {
+        display: none;
     }
 }
 
