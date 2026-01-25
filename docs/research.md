@@ -125,6 +125,13 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
+<a href="https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e&sz=32" class="card-favicon"> YOUNGO WGs and OTs</h4>
+<p>YOUNGO working groups (WGs) and operational teams (OTs).</p>
+</div>
+</a>
+
 <a href="https://iiasa.ac.at/programs/ece" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=iiasa.ac.at&sz=32" class="card-favicon"> IIASA: Energy, Climate & Environment</h4>
