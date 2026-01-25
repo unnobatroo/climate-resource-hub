@@ -1,19 +1,19 @@
-# Pixel Climate Hub
+# Climate Resource Hub
 
-A community-driven resource hub for the climate movement, built with MkDocs.
+A resource database for the climate movement, built with MkDocs.
 
-## 🚀 Quick Start
+## Setup
 
 ### Installation
 
-1. Install Python dependencies:
+Install Python dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### Development
 
-Run the development server:
+Run the local development server:
 ```bash
 mkdocs serve
 ```
@@ -27,7 +27,7 @@ Build the static site:
 mkdocs build
 ```
 
-The site will be generated in the `site/` directory.
+Output is generated in the `site/` directory.
 
 ### Deploy
 
@@ -36,38 +36,37 @@ Deploy to GitHub Pages:
 mkdocs gh-deploy
 ```
 
-## 🎨 Features
+## Features
 
-- 🎮 Pixel-art retro aesthetic
-- 🌿 Climate-focused resource categorization
-- 📱 Responsive design with Material theme
-- 🔍 Full-text search
-- ⚡ Fast static site generation
+- Climate-focused resource organization
+- Full-text search
+- Responsive Material Design theme
+- Static site generation (fast and secure)
 
-## 📁 Structure
+## Project Structure
 
 ```
-resource-hub/
-├── docs/              # Documentation source
-│   ├── index.md       # Homepage
-│   ├── education.md   # Education resources
-│   ├── research.md    # Research resources
-│   ├── data.md        # Data & tools
-│   ├── careers.md     # Career resources
-│   ├── invest.md      # Finance resources
-│   ├── about.md       # About page
-│   └── stylesheets/   # Custom CSS
-├── mkdocs.yml         # MkDocs configuration
-└── requirements.txt   # Python dependencies
+docs/
+├── index.md           # Homepage
+├── education.md       # Education resources
+├── research.md        # Research resources
+├── data.md            # Data and tools
+├── careers.md         # Career resources
+├── invest.md          # Finance and investment resources
+├── javascripts/       # Custom scripts
+└── stylesheets/       # Custom styles
+
+mkdocs.yml            # Site configuration
+requirements.txt      # Python dependencies
 ```
 
-## 🤝 Contributing
+## Contributing
 
 1. Fork the repository
-2. Add your resources to the appropriate page
+2. Add resources to the appropriate markdown file
 3. Test locally with `mkdocs serve`
 4. Submit a pull request
 
-## 📄 License
+## License
 
-Open source - feel free to use and contribute!
+Open source - contributions welcome

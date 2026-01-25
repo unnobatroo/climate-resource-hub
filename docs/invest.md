@@ -8,10 +8,10 @@ Climate funds, green financing, and investment resources.
 
 ### Funds
 
-<a href="https://www.greenclimate.fund/" class="resource-card-link">
+<a href="https://elementalimpact.com/elemental-impact/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.greenclimate.fund&sz=32" class="card-favicon"> Green Climate Fund</h4>
-<p>World's largest climate fund supporting developing countries' climate action.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=elementalimpact.com&sz=32" class="card-favicon"> Elemental Impact</h4>
+<p>Impact investment advisory focused on climate and sustainability.</p>
 </div>
 </a>
 
@@ -22,10 +22,10 @@ Climate funds, green financing, and investment resources.
 </div>
 </a>
 
-<a href="https://elementalimpact.com/elemental-impact/" class="resource-card-link">
+<a href="https://www.greenclimate.fund/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=elementalimpact.com&sz=32" class="card-favicon"> Elemental Impact</h4>
-<p>Impact investment advisory focused on climate and sustainability.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=www.greenclimate.fund&sz=32" class="card-favicon"> Green Climate Fund</h4>
+<p>World's largest climate fund supporting developing countries' climate action.</p>
 </div>
 </a>
 
@@ -35,17 +35,17 @@ Climate funds, green financing, and investment resources.
 
 ### Investments
 
-<a href="https://www.iwmbd.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.iwmbd.org&sz=32" class="card-favicon"> IWM</h4>
-<p>Institutional water management and climate finance expertise.</p>
-</div>
-</a>
-
 <a href="https://www.climateinsiders.com/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=www.climateinsiders.com&sz=32" class="card-favicon"> Climate Insiders</h4>
 <p>Investment intelligence and insights for climate tech and green finance.</p>
+</div>
+</a>
+
+<a href="https://www.iwmbd.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.iwmbd.org&sz=32" class="card-favicon"> IWM</h4>
+<p>Institutional water management and climate finance expertise.</p>
 </div>
 </a>
 

@@ -8,17 +8,17 @@ Climate science education resources for all levels. From introductory content to
 
 ### Getting started
 
+<a href="https://climatekids.nasa.gov/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=climatekids.nasa.gov&sz=32" class="card-favicon"> NASA Climate Kids</h4>
+<p>Kid-friendly climate science from NASA. Great for young learners and families.</p>
+</div>
+</a>
+
 <a href="https://heatmap.news/climate-101" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=heatmap.news&sz=32" class="card-favicon"> Heatmap Climate 101</h4>
 <p>Comprehensive introduction to climate science basics. Perfect starting point for beginners.</p>
-</div>
-</a>
-
-<a href="https://ocean-climate.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=ocean-climate.org&sz=32" class="card-favicon"> Ocean & Climate Platform</h4>
-<p>Understanding the critical link between oceans and climate. Awareness materials and resources.</p>
 </div>
 </a>
 
@@ -29,10 +29,10 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
-<a href="https://climatekids.nasa.gov/" class="resource-card-link">
+<a href="https://ocean-climate.org/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=climatekids.nasa.gov&sz=32" class="card-favicon"> NASA Climate Kids</h4>
-<p>Kid-friendly climate science from NASA. Great for young learners and families.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=ocean-climate.org&sz=32" class="card-favicon"> Ocean & Climate Platform</h4>
+<p>Understanding the critical link between oceans and climate. Awareness materials and resources.</p>
 </div>
 </a>
 
@@ -49,17 +49,10 @@ Climate science education resources for all levels. From introductory content to
 
 ### Courses
 
-<a href="https://www.terra.do/climate-change-courses/software-for-climate/" class="resource-card-link">
+<a href="https://climatescience.org/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=terra.do&sz=32" class="card-favicon"> Terra.do - Software for Climate</h4>
-<p>Learn to build climate solutions with code. Perfect for software developers transitioning to climate.</p>
-</div>
-</a>
-
-<a href="https://www.khanacademy.org/science/ap-college-environmental-science" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=khanacademy.org&sz=32" class="card-favicon"> Khan Academy Environmental Science</h4>
-<p>Free AP-level environmental science course with comprehensive videos and exercises.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=climatescience.org&sz=32" class="card-favicon"> ClimateScience</h4>
+<p>Interactive climate education platform with engaging gamified content for all ages.</p>
 </div>
 </a>
 
@@ -70,17 +63,10 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
-<a href="https://climatescience.org/" class="resource-card-link">
+<a href="https://www.khanacademy.org/science/ap-college-environmental-science" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=climatescience.org&sz=32" class="card-favicon"> ClimateScience</h4>
-<p>Interactive climate education platform with engaging gamified content for all ages.</p>
-</div>
-</a>
-
-<a href="https://unccelearn.org/course/view.php?id=206" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=unccelearn.org&sz=32" class="card-favicon"> Mastering International Climate Negotiations</h4>
-<p>UN course on understanding and participating in international climate policy negotiations.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=khanacademy.org&sz=32" class="card-favicon"> Khan Academy Environmental Science</h4>
+<p>Free AP-level environmental science course with comprehensive videos and exercises.</p>
 </div>
 </a>
 
@@ -91,10 +77,24 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
+<a href="https://unccelearn.org/course/view.php?id=206" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=unccelearn.org&sz=32" class="card-favicon"> Mastering International Climate Negotiations</h4>
+<p>UN course on understanding and participating in international climate policy negotiations.</p>
+</div>
+</a>
+
 <a href="https://academy.unglobalcompact.org/home-v2/dashboard-v2" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=academy.unglobalcompact.org&sz=32" class="card-favicon"> UN Global Compact Academy</h4>
 <p>Business-focused climate education from the UN Global Compact initiative.</p>
+</div>
+</a>
+
+<a href="https://www.terra.do/climate-change-courses/software-for-climate/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=terra.do&sz=32" class="card-favicon"> Terra.do - Software for Climate</h4>
+<p>Learn to build climate solutions with code. Perfect for software developers transitioning to climate.</p>
 </div>
 </a>
 
@@ -104,17 +104,10 @@ Climate science education resources for all levels. From introductory content to
 
 ### Mentorships
 
-<a href="https://opensustain.tech/education/" class="resource-card-link">
+<a href="https://www.aeyn.org/mentorship-program" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=opensustain.tech&sz=32" class="card-favicon"> Open Sustainable Tech: Education</h4>
-<p>Curated list of open source tools and educational resources for sustainability.</p>
-</div>
-</a>
-
-<a href="https://netzeroclimate.org/global-youth-training/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=netzeroclimate.org&sz=32" class="card-favicon"> Global Youth Climate Training</h4>
-<p>Comprehensive climate action training program for young leaders worldwide.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=aeyn.org&sz=32" class="card-favicon"> AEYN Mentorship Programme</h4>
+<p>African-European Youth Network mentorship for climate professionals.</p>
 </div>
 </a>
 
@@ -125,17 +118,10 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
-<a href="https://oxfordclimatesociety.com/" class="resource-card-link">
+<a href="https://netzeroclimate.org/global-youth-training/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=oxfordclimatesociety.com&sz=32" class="card-favicon"> Oxford Climate Society</h4>
-<p>Student-led climate education and advocacy at Oxford University.</p>
-</div>
-</a>
-
-<a href="https://www.aeyn.org/mentorship-program" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=aeyn.org&sz=32" class="card-favicon"> AEYN Mentorship Programme</h4>
-<p>African-European Youth Network mentorship for climate professionals.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=netzeroclimate.org&sz=32" class="card-favicon"> Global Youth Climate Training</h4>
+<p>Comprehensive climate action training program for young leaders worldwide.</p>
 </div>
 </a>
 
@@ -146,11 +132,32 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
+<a href="https://opensustain.tech/education/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=opensustain.tech&sz=32" class="card-favicon"> Open Sustainable Tech: Education</h4>
+<p>Curated list of open source tools and educational resources for sustainability.</p>
+</div>
+</a>
+
+<a href="https://oxfordclimatesociety.com/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=oxfordclimatesociety.com&sz=32" class="card-favicon"> Oxford Climate Society</h4>
+<p>Student-led climate education and advocacy at Oxford University.</p>
+</div>
+</a>
+
 </div>
 
 <div class="kanban-column" markdown>
 
 ### Media
+
+<a href="https://www.epa.gov/climate-change" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=epa.gov&sz=32" class="card-favicon"> US EPA Climate Change</h4>
+<p>Environmental Protection Agency's comprehensive climate resources and data.</p>
+</div>
+</a>
 
 <a href="https://www.youtube.com/@HotMessPBS/videos" class="resource-card-link">
 <div class="resource-card">
@@ -159,10 +166,10 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
-<a href="https://www.epa.gov/climate-change" class="resource-card-link">
+<a href="https://community.preciousplastic.com/academy/start" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=epa.gov&sz=32" class="card-favicon"> US EPA Climate Change</h4>
-<p>Environmental Protection Agency's comprehensive climate resources and data.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=community.preciousplastic.com&sz=32" class="card-favicon"> Precious Plastic Academy</h4>
+<p>Learn plastic recycling and circular economy principles through hands-on projects.</p>
 </div>
 </a>
 
@@ -177,13 +184,6 @@ Climate science education resources for all levels. From introductory content to
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=undp.org&sz=32" class="card-favicon"> UNDP: Climate Counts</h4>
 <p>Interactive storytelling on climate impacts and solutions from UNDP.</p>
-</div>
-</a>
-
-<a href="https://community.preciousplastic.com/academy/start" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=community.preciousplastic.com&sz=32" class="card-favicon"> Precious Plastic Academy</h4>
-<p>Learn plastic recycling and circular economy principles through hands-on projects.</p>
 </div>
 </a>
 

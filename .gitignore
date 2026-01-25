@@ -1,4 +1,3 @@
 # Add site build output to gitignore
 site/
 virenv/
-bookmarks_25_01_2026.html

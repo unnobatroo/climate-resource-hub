@@ -8,6 +8,20 @@ Open datasets, APIs, and tools for climate analysis.
 
 ### Databases
 
+<a href="https://www.climateapi.io/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.climateapi.io&sz=32" class="card-favicon"> ClimateAPI</h4>
+<p>API for accessing climate change data and projections.</p>
+</div>
+</a>
+
+<a href="https://climatetrace.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=climatetrace.org&sz=32" class="card-favicon"> Climate TRACE</h4>
+<p>Real-time emissions tracking using satellite data and AI.</p>
+</div>
+</a>
+
 <a href="https://cds.climate.copernicus.eu/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=cds.climate.copernicus.eu&sz=32" class="card-favicon"> Copernicus Climate Data Store</h4>
@@ -22,13 +36,6 @@ Open datasets, APIs, and tools for climate analysis.
 </div>
 </a>
 
-<a href="https://climatetrace.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=climatetrace.org&sz=32" class="card-favicon"> Climate TRACE</h4>
-<p>Real-time emissions tracking using satellite data and AI.</p>
-</div>
-</a>
-
 <a href="https://www.ncdc.noaa.gov/cdo-web/datasets" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=www.ncdc.noaa.gov&sz=32" class="card-favicon"> NOAA CDO Datasets</h4>
@@ -40,13 +47,6 @@ Open datasets, APIs, and tools for climate analysis.
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=www.ncei.noaa.gov&sz=32" class="card-favicon"> NCEI</h4>
 <p>National Centers for Environmental Information - authoritative climate data.</p>
-</div>
-</a>
-
-<a href="https://www.climateapi.io/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.climateapi.io&sz=32" class="card-favicon"> ClimateAPI</h4>
-<p>API for accessing climate change data and projections.</p>
 </div>
 </a>
 
@@ -70,10 +70,10 @@ Open datasets, APIs, and tools for climate analysis.
 
 ### Open-source
 
-<a href="https://opensustain.tech/" class="resource-card-link">
+<a href="https://climatetriage.com/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=opensustain.tech&sz=32" class="card-favicon"> Open Sustainable Tech</h4>
-<p>Curated list of open source climate and sustainability projects.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=climatetriage.com&sz=32" class="card-favicon"> ClimateTriage</h4>
+<p>Find climate-related open source projects that need contributors.</p>
 </div>
 </a>
 
@@ -84,17 +84,17 @@ Open datasets, APIs, and tools for climate analysis.
 </div>
 </a>
 
+<a href="https://opensustain.tech/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=opensustain.tech&sz=32" class="card-favicon"> Open Sustainable Tech</h4>
+<p>Curated list of open source climate and sustainability projects.</p>
+</div>
+</a>
+
 <a href="https://discourse.pangeo.io/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=discourse.pangeo.io&sz=32" class="card-favicon"> Pangeo</h4>
 <p>Community platform for big data geoscience research.</p>
-</div>
-</a>
-
-<a href="https://climatetriage.com/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=climatetriage.com&sz=32" class="card-favicon"> ClimateTriage</h4>
-<p>Find climate-related open source projects that need contributors.</p>
 </div>
 </a>
 
@@ -104,10 +104,10 @@ Open datasets, APIs, and tools for climate analysis.
 
 ### Jupyter Notebooks
 
-<a href="https://oceanpython.org/" class="resource-card-link">
+<a href="https://earthpy.org/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=oceanpython.org&sz=32" class="card-favicon"> Ocean Python</h4>
-<p>Oceanography with Python - tutorials and code examples.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=earthpy.org&sz=32" class="card-favicon"> EarthPy</h4>
+<p>Collaborative blog for Python in Earth sciences.</p>
 </div>
 </a>
 
@@ -125,10 +125,10 @@ Open datasets, APIs, and tools for climate analysis.
 </div>
 </a>
 
-<a href="https://seismo-live.github.io/" class="resource-card-link">
+<a href="https://oceanpython.org/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=seismo-live.github.io&sz=32" class="card-favicon"> Seismo-Live</h4>
-<p>Live Jupyter Notebooks for Seismology education and research.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=oceanpython.org&sz=32" class="card-favicon"> Ocean Python</h4>
+<p>Oceanography with Python - tutorials and code examples.</p>
 </div>
 </a>
 
@@ -139,30 +139,30 @@ Open datasets, APIs, and tools for climate analysis.
 </div>
 </a>
 
+<a href="https://seismo-live.github.io/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=seismo-live.github.io&sz=32" class="card-favicon"> Seismo-Live</h4>
+<p>Live Jupyter Notebooks for Seismology education and research.</p>
+</div>
+</a>
+
 </div>
 
 <div class="kanban-column" markdown>
 
 ### GitHub curations
 
-<a href="https://github.com/pangeo-data/awesome-open-climate-science" class="resource-card-link">
+<a href="https://github.com/pangeo-data/awesome-opegeosci-tools" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=github.com&sz=32" class="card-favicon"> Awesome Open Climate Science</h4>
-<p>Pangeo's list of open climate science resources and tools.</p>
+<h4>🌍 geosci tools</h4>
+<p>Tools for geoscience to be faster and more fun.</p>
 </div>
 </a>
 
 <a href="https://github.com/stars/unnobatroo/lists/ipython-library-for-geosci" class="resource-card-link">
 <div class="resource-card">
 <h4>📚 IPython library for geosci</h4>
-<p>A collection of Jupyter Notebooks.</p>
-</div>
-</a>
-
-<a href="https://github.com/stars/unnobatroo/lists/geosci-tools" class="resource-card-link">
-<div class="resource-card">
-<h4>🌍 geosci tools</h4>
-<p>Tools for geoscience to be faster and more fun.</p>
+<p>A collection of Jupyter Notebook.</p>
 </div>
 </a>
 

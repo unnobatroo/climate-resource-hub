@@ -32,9 +32,6 @@ theme:
 extra_css:
   - stylesheets/extra.css
 
-extra_javascript:
-  - javascripts/sort-resources.js
-
 plugins:
   - search:
       lang:

@@ -8,20 +8,6 @@ Access cutting-edge climate research, data, and scientific organisations.
 
 ### Data and reports
 
-<a href="https://interactive-atlas.ipcc.ch/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=interactive-atlas.ipcc.ch&sz=32" class="card-favicon"> IPCC Interactive Atlas</h4>
-<p>Explore regional climate projections with interactive maps and detailed analysis.</p>
-</div>
-</a>
-
-<a href="https://www.climatewatchdata.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.climatewatchdata.org&sz=32" class="card-favicon"> Climate Watch</h4>
-<p>Historical and projected climate data from the World Resources Institute.</p>
-</div>
-</a>
-
 <a href="https://climateactiontracker.org/global/cat-thermometer/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=climateactiontracker.org&sz=32" class="card-favicon"> Climate Action Tracker</h4>
@@ -29,10 +15,10 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
-<a href="https://globalcarbonatlas.org/" class="resource-card-link">
+<a href="https://www.climatewatchdata.org/" class="resource-card-link">
 <div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=globalcarbonatlas.org&sz=32" class="card-favicon"> Global Carbon Atlas</h4>
-<p>Visualize global carbon emissions and explore carbon data by country and sector.</p>
+<h4><img src="https://www.google.com/s2/favicons?domain=www.climatewatchdata.org&sz=32" class="card-favicon"> Climate Watch</h4>
+<p>Historical and projected climate data from the World Resources Institute.</p>
 </div>
 </a>
 
@@ -50,11 +36,32 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
+<a href="https://globalcarbonatlas.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=globalcarbonatlas.org&sz=32" class="card-favicon"> Global Carbon Atlas</h4>
+<p>Visualize global carbon emissions and explore carbon data by country and sector.</p>
+</div>
+</a>
+
+<a href="https://interactive-atlas.ipcc.ch/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=interactive-atlas.ipcc.ch&sz=32" class="card-favicon"> IPCC Interactive Atlas</h4>
+<p>Explore regional climate projections with interactive maps and detailed analysis.</p>
+</div>
+</a>
+
 </div>
 
 <div class="kanban-column" markdown>
 
 ### Policies
+
+<a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.unep.org&sz=32" class="card-favicon"> Beating the Heat Handbook</h4>
+<p>UNEP's comprehensive guide to sustainable cooling for cities.</p>
+</div>
+</a>
 
 <a href="https://drawdown.org/explorer" class="resource-card-link">
 <div class="resource-card">
@@ -67,13 +74,6 @@ Access cutting-edge climate research, data, and scientific organisations.
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=energypolicy.solutions&sz=32" class="card-favicon"> Energy Policy Simulator</h4>
 <p>Interactive tool to design and test climate policy packages.</p>
-</div>
-</a>
-
-<a href="https://www.unep.org/resources/report/beating-heat-sustainable-cooling-handbook-cities" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.unep.org&sz=32" class="card-favicon"> Beating the Heat Handbook</h4>
-<p>UNEP's comprehensive guide to sustainable cooling for cities.</p>
 </div>
 </a>
 
@@ -97,24 +97,17 @@ Access cutting-edge climate research, data, and scientific organisations.
 
 ### Organisations
 
-<a href="https://www.globalcarbonproject.org/index.htm" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.globalcarbonproject.org&sz=32" class="card-favicon"> Global Carbon Project</h4>
-<p>Leading carbon cycle research and global carbon budget analysis.</p>
-</div>
-</a>
-
-<a href="https://www.wcrp-climate.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.wcrp-climate.org&sz=32" class="card-favicon"> World Climate Research Programme</h4>
-<p>International collaboration coordinating climate research worldwide.</p>
-</div>
-</a>
-
 <a href="https://www.cmcc.it/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=www.cmcc.it&sz=32" class="card-favicon"> CMCC Foundation</h4>
 <p>Climate modeling and science from Italy's leading research center.</p>
+</div>
+</a>
+
+<a href="https://www.globalcarbonproject.org/index.htm" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.globalcarbonproject.org&sz=32" class="card-favicon"> Global Carbon Project</h4>
+<p>Leading carbon cycle research and global carbon budget analysis.</p>
 </div>
 </a>
 
@@ -125,13 +118,6 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
-<a href="https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e&sz=32" class="card-favicon"> YOUNGO WGs and OTs</h4>
-<p>YOUNGO working groups (WGs) and operational teams (OTs).</p>
-</div>
-</a>
-
 <a href="https://iiasa.ac.at/programs/ece" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=iiasa.ac.at&sz=32" class="card-favicon"> IIASA: Energy, Climate & Environment</h4>
@@ -139,17 +125,31 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
-<a href="https://www.wcrp-esmo.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=www.wcrp-esmo.org&sz=32" class="card-favicon"> WCRP ESMO</h4>
-<p>Earth System Modelling and Observations research coordination.</p>
-</div>
-</a>
-
 <a href="https://polarres.eu/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=polarres.eu&sz=32" class="card-favicon"> PolarRES</h4>
 <p>Polar Regions in the Earth System research initiative.</p>
+</div>
+</a>
+
+<a href="https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=https://checkered-griffin-0b3.notion.site/YOUNGO-Working-Groups-and-Operational-Teams-22a3cafc05f78151b602eebc5c3e717e&sz=32" class="card-favicon"> YOUNGO WGs and OTs</h4>
+<p>YOUNGO working groups (WGs) and operational teams (OTs).</p>
+</div>
+</a>
+
+<a href="https://www.wcrp-climate.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.wcrp-climate.org&sz=32" class="card-favicon"> World Climate Research Programme</h4>
+<p>International collaboration coordinating climate research worldwide.</p>
+</div>
+</a>
+
+<a href="https://www.wcrp-esmo.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.wcrp-esmo.org&sz=32" class="card-favicon"> WCRP ESMO</h4>
+<p>Earth System Modelling and Observations research coordination.</p>
 </div>
 </a>
 
