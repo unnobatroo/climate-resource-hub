@@ -1,52 +1,108 @@
 # 📚 Education & Learning
 
-Climate science education resources for all levels.
+Climate science education resources for all levels. Browse by category below.
 
-<div class="section-divider">🎓 📖 🧪 🌡️</div>
+<div class="kanban-board" markdown>
 
-## 🌟 Getting Started
+<div class="kanban-column" markdown>
 
-### Heatmap Climate 101
-Comprehensive introduction to climate science basics. Perfect starting point for beginners.  
+### 🌟 Getting Started
+
+<div class="resource-card" markdown>
+
+#### 🔥 Heatmap Climate 101
+
+Comprehensive introduction to climate science basics. Perfect starting point for beginners.
+
 [Visit Site](https://heatmap.news/climate-101)
 
-### NASA Climate Kids
-Kid-friendly climate science from NASA. Great for young learners and families.  
+</div>
+
+<div class="resource-card" markdown>
+
+#### 👶 NASA Climate Kids
+
+Kid-friendly climate science from NASA. Great for young learners and families.
+
 [Visit Site](https://climatekids.nasa.gov/)
 
-### NASA Climate Change
-Latest climate data and scientific evidence from NASA's research.  
+</div>
+
+<div class="resource-card" markdown>
+
+#### 🛰️ NASA Climate Change
+
+Latest climate data and scientific evidence from NASA's research.
+
 [Visit Site](https://science.nasa.gov/climate-change/)
 
-<div class="section-divider">💻 🎯 📊</div>
+</div>
 
-## 🎯 Online Courses
+</div>
 
-### Terra.do - Software for Climate
-Learn to build climate solutions with code. Perfect for developers.  
+<div class="kanban-column" markdown>
+
+### 🎯 Online Courses
+
+<div class="resource-card" markdown>
+
+#### 💻 Terra.do - Software for Climate
+
+Learn to build climate solutions with code. Perfect for developers.
+
 [Visit Site](https://www.terra.do/climate-change-courses/software-for-climate/)
 
-### Khan Academy Environmental Science
-Free AP-level environmental science course with videos and exercises.  
+</div>
+
+<div class="resource-card" markdown>
+
+#### 📊 Khan Academy Environmental Science
+
+Free AP-level environmental science course with videos and exercises.
+
 [Visit Site](https://www.khanacademy.org/science/ap-college-environmental-science)
 
-### ClimateScience
-Interactive climate education platform with engaging content.  
+</div>
+
+<div class="resource-card" markdown>
+
+#### 🎓 ClimateScience
+
+Interactive climate education platform with engaging content.
+
 [Visit Site](https://climatescience.org/)
 
-<div class="section-divider">🌍 🚀 🎓</div>
+</div>
 
-## 🚀 Training Programs
+</div>
 
-### Global Youth Climate Training
-Comprehensive climate action training for young leaders.  
+<div class="kanban-column" markdown>
+
+### 🚀 Training Programs
+
+<div class="resource-card" markdown>
+
+#### 🌍 Global Youth Climate Training
+
+Comprehensive climate action training for young leaders.
+
 [Visit Site](https://netzeroclimate.org/global-youth-training/)
 
+</div>
 
-### AEYN Mentorship
-[Visit Site →](https://www.aeyn.org/mentorship-program)
+<div class="resource-card" markdown>
 
-Climate mentorship for young professionals.
+#### 🤝 AEYN Mentorship
+
+Climate mentorship for young professionals in the space.
+
+[Visit Site](https://www.aeyn.org/mentorship-program)
+
+</div>
+
+</div>
+
+</div>
 
 ---
 

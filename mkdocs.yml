@@ -1,6 +1,6 @@
-site_name: 🌍 Climate Resource Hub
-site_description: A community-driven map of climate science & solutions
-site_author: Climate Community
+site_name: Climate Resource Hub
+site_description: The database of all things climate, curated by YOUNGO Science WG.
+site_author: Jaloliddin Ismailov
 
 theme:
   name: material
@@ -25,23 +25,22 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
-    - navigation.sections
     - navigation.top
-    - toc.follow
     - content.code.copy
     - navigation.indexes
+    - toc.integrate
 
 extra_css:
   - stylesheets/extra.css
 
 nav:
   - Home: index.md
-  - Education & Learning: education.md
-  - Research & Science: research.md
-  - Data & Tech Tools: data.md
-  - Careers & Jobs: careers.md
-  - Finance & Investment: invest.md
-  - About: about.md
+  - Edu: education.md
+  - Research: research.md
+  - Data & Tech: data.md
+  - Careers: careers.md
+  - Finance: invest.md
+  - Info: about.md
 
 markdown_extensions:
   - admonition
