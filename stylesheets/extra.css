@@ -41,6 +41,8 @@ body {
 .md-header {
     background: var(--primary-teal);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* Site title styling */
@@ -50,6 +52,8 @@ body {
     font-weight: 400;
     letter-spacing: 0.06em;
     color: var(--light-bg);
+    display: flex !important;
+    align-items: center !important;
 }
 
 /* Navigation tabs styling */
@@ -58,6 +62,9 @@ body {
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
     transition: transform 0.3s ease-in-out;
+    display: flex !important;
+    align-items: center !important;
+    height: auto;
 }
 
 /* Keep nav links packed to the left instead of stretching across the bar */
