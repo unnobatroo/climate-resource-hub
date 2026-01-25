@@ -24,10 +24,12 @@
    Layout: Full Width Content
    ================================ */
 
-/* Hide sidebars for full-width layout */
-.md-sidebar--primary,
-.md-sidebar--secondary {
-    display: none;
+/* Hide sidebars on desktop for full-width layout */
+@media (min-width: 76.25em) {
+    .md-sidebar--primary,
+    .md-sidebar--secondary {
+        display: none;
+    }
 }
 
 /* Full width content */
