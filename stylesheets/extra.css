@@ -1,156 +1,202 @@
+/* ================================
+   Climate Resource Hub - Clean Start
+   ================================ */
+
+/* Color Variables */
 :root {
-    --md-primary-fg-color: #22c55e;
-    --md-primary-fg-color--light: #86efac;
-    --md-primary-fg-color--dark: #166534;
-    --md-accent-fg-color: #86efac;
+    --primary-green: #10b981;
+    --primary-teal: #0d9488;
+    --accent-blue: #0ea5e9;
+    --light-bg: #f0fdf4;
+    --card-bg: #ffffff;
+    --text-dark: #064e3b;
+    --border-color: #10b981;
 }
 
-/* Import VT323 font */
-@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
-/* Pixel-art style theme */
-body {
-    background-color: #f0fdf4 !important;
+[data-md-color-scheme="slate"] {
+    --light-bg: #0f1419;
+    --card-bg: #1a1a1a;
+    --text-dark: #ecfdf5;
+    --border-color: #047857;
 }
 
+/* ================================
+   Layout: Full Width Content
+   ================================ */
+
+/* Hide sidebars for full-width layout */
+.md-sidebar--primary,
+.md-sidebar--secondary {
+    display: none;
+}
+
+/* Full width content */
+.md-main__inner {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.md-content {
+    max-width: 100% !important;
+}
+
+.md-content__inner {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 95%;
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .md-content__inner {
+        padding: 1rem;
+    }
+}
+
+/* ================================
+   Typography
+   ================================ */
+
+/* Keep pixel font for headings */
 .md-typeset h1,
 .md-typeset h2,
 .md-typeset h3,
 .md-typeset h4 {
-    font-family: 'VT323', monospace !important;
-    text-transform: uppercase;
-    color: #166534;
-    border-bottom: 2px dashed #000;
-    padding-bottom: 10px;
-    font-weight: 400;
-    letter-spacing: 1px;
-}
-
-.md-typeset h1 {
-    font-size: 2.5em;
-}
-
-.md-typeset h2 {
-    font-size: 2em;
-}
-
-.md-typeset h3 {
-    font-size: 1.5em;
-}
-
-/* Pixel-style links */
-.md-typeset a {
-    color: #000;
-    text-decoration: none;
-    border: 2px solid #000;
-    padding: 2px 8px;
-    background: #e2e8f0;
-    box-shadow: 4px 4px 0px #000;
-    display: inline-block;
-    margin: 2px 0;
-    transition: all 0.1s;
-}
-
-.md-typeset a:hover {
-    background: #22c55e;
-    box-shadow: 2px 2px 0px #000;
-    transform: translate(2px, 2px);
-}
-
-/* Card styling */
-.md-typeset .grid {
-    grid-gap: 1rem;
-}
-
-.md-typeset .grid.cards>ol>li,
-.md-typeset .grid.cards>ul>li,
-.md-typeset .grid>.card {
-    border: 4px solid #000 !important;
-    box-shadow: 8px 8px 0px #166534 !important;
-    background: #fff;
-    padding: 1.5rem !important;
-    transition: all 0.2s;
-}
-
-.md-typeset .grid.cards>ol>li:hover,
-.md-typeset .grid.cards>ul>li:hover,
-.md-typeset .grid>.card:hover {
-    box-shadow: 4px 4px 0px #166534 !important;
-    transform: translate(4px, 4px);
-}
-
-/* Content container */
-.md-content {
     font-family: 'VT323', monospace;
-    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+/* Clean readable font for body text */
+.md-typeset,
+.md-typeset p,
+.md-typeset li {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica', 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--text-dark);
+}
+
+/* ================================
+   Kanban Board Layout
+   ================================ */
+
+.kanban-board {
+    display: flex;
+    gap: 1.5rem;
+    margin: 2rem 0;
+    overflow-x: auto;
+    padding-bottom: 1rem;
+}
+
+.kanban-column {
+    min-width: 320px;
+    max-width: none;
+    flex: 1;
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+}
+
+[data-md-color-scheme="slate"] .kanban-column {
+    background: #1a1a1a;
+}
+
+.kanban-column > h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1.5rem 0 !important;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--border-color);
+    font-family: 'VT323', monospace;
+}
+
+/* Responsive kanban */
+@media (max-width: 1200px) {
+    .kanban-board {
+        gap: 1rem;
+    }
+    
+    .kanban-column {
+        min-width: 280px;
+        max-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .kanban-board {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .kanban-column {
+        min-width: 260px;
+        max-width: 300px;
+        flex: 0 0 auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .kanban-column {
+        min-width: 240px;
+        padding: 1rem;
+    }
+    
+    .kanban-column > h3 {
+        font-size: 1.3rem;
+    }
+}
+
+/* ================================
+   Resource Cards
+   ================================ */
+
+.resource-card {
+    background: white;
+    border-left: 5px solid var(--primary-green);
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin: 0 0 1rem 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+[data-md-color-scheme="slate"] .resource-card {
+    background: #252525;
+}
+
+.resource-card:hover {
+    box-shadow: 0 4px 8px rgba(16, 185, 129, 0.15);
+    transform: translateY(-2px);
+}
+
+.resource-card h4 {
+    font-size: 1.25rem;
+    margin: 0 0 0.5rem 0 !important;
+    font-family: 'VT323', monospace;
+}
+
+.resource-card p {
+    font-size: 1rem;
+    margin: 0.5rem 0 1rem 0 !important;
     line-height: 1.6;
 }
 
-/* Navigation */
-.md-header {
-    background-color: #166534 !important;
-    border-bottom: 4px solid #000;
+.resource-card a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s ease;
 }
 
-.md-tabs {
-    background-color: #22c55e !important;
-    border-bottom: 2px solid #000;
+.resource-card a:hover {
+    color: var(--accent-blue);
 }
 
-.md-tabs__link {
-    font-family: 'VT323', monospace;
-    font-size: 1.2rem;
-    text-transform: uppercase;
-}
-
-/* Buttons */
-.md-button {
-    border: 2px solid #000 !important;
-    box-shadow: 4px 4px 0px #000 !important;
-    font-family: 'VT323', monospace;
-    text-transform: uppercase;
-}
-
-.md-button:hover {
-    box-shadow: 2px 2px 0px #000 !important;
-    transform: translate(2px, 2px);
-}
-
-/* Code blocks */
-.md-typeset code {
-    border: 2px solid #000;
-    background: #f1f5f9;
-    padding: 2px 6px;
-}
-
-.md-typeset pre {
-    border: 3px solid #000;
-    box-shadow: 6px 6px 0px #166534;
-}
-
-/* Lists */
-.md-typeset ul li,
-.md-typeset ol li {
-    margin-bottom: 0.5rem;
-}
-
-/* Emoji sizing */
-.md-typeset .lg {
-    font-size: 2em;
-}
-
-.md-typeset .middle {
-    vertical-align: middle;
-}
-
-/* Footer */
-.md-footer {
-    background-color: #166534 !important;
-    border-top: 4px solid #000;
-}
-
-/* Search */
-.md-search__input {
-    border: 2px solid #000;
-    border-radius: 0;
+@media (max-width: 480px) {
+    .resource-card {
+        padding: 1rem;
+    }
+    
+    .resource-card h4 {
+        font-size: 1.15rem;
+    }
 }
