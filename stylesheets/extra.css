@@ -64,6 +64,7 @@ body {
 .md-tabs__inner {
     justify-content: flex-start !important;
     padding: 0 1rem;
+    align-items: center;
 }
 
 .md-tabs__list {
@@ -71,10 +72,14 @@ body {
     gap: 0.5rem;
     width: auto;
     flex: 0 0 auto;
+    align-items: center;
 }
 
 .md-tabs__item {
     flex: 0 0 auto !important;
+    height: 100%;
+    display: flex;
+    align-items: center;
 }
 
 /* Hide tabs when scrolling down */
