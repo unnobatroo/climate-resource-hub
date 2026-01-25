@@ -62,6 +62,8 @@ body {
 
 /* Keep nav links packed to the left instead of stretching across the bar */
 .md-tabs__inner {
+    display: flex !important;
+    align-items: center !important;
     justify-content: flex-start !important;
     padding: 0 1rem;
 }
