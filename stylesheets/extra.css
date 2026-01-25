@@ -32,6 +32,21 @@
     }
 }
 
+/* Ensure mobile navigation works */
+@media (max-width: 76.1875em) {
+    /* Make sure hamburger menu is visible and clickable */
+    .md-header__button.md-logo,
+    .md-header__button {
+        display: inline-block;
+        z-index: 1000;
+    }
+    
+    /* Ensure navigation drawer works */
+    .md-nav--primary {
+        display: block;
+    }
+}
+
 /* Full width content */
 .md-main__inner {
     margin-left: 0 !important;
