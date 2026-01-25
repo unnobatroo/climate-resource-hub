@@ -39,6 +39,8 @@ plugins:
   - search:
       lang:
         - en
+  - optimize:
+      enabled: !ENV [CI, false]
 
 extra:
   social:
