@@ -1,25 +1,16 @@
 site_name: Climate Resource Hub
 site_description: The database of all things climate, curated by YOUNGO Science WG.
 site_author: Jaloliddin Ismailov
+# site_url: https://climate-resource.hub  # Update this once you get your domain
 
 theme:
   name: material
-  custom_dir: overrides
   palette:
     - scheme: default
       primary: teal
       accent: green
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      primary: teal
-      accent: light green
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
   font:
-    text: VT323
+    text: Roboto
     code: Roboto Mono
   features:
     - navigation.instant
@@ -40,7 +31,7 @@ nav:
   - Data & Tech: data.md
   - Careers: careers.md
   - Finance: invest.md
-  - Info: about.md
+
 
 markdown_extensions:
   - admonition
