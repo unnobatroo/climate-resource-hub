@@ -1,6 +1,8 @@
 // Automatically sort resource cards alphabetically within each section
-document.addEventListener('DOMContentLoaded', function() {
+function sortResourceCards() {
   const kanbanColumns = document.querySelectorAll('.kanban-column');
+  
+  if (kanbanColumns.length === 0) return;
   
   kanbanColumns.forEach(column => {
     // Get all resource card links in this column
@@ -25,9 +27,24 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Reorder the cards in the DOM
-    const container = cards[0].parentElement;
     sortedCards.forEach(card => {
-      container.appendChild(card);
+      column.appendChild(card);
     });
   });
+}
+
+// Run on page load and on content changes (for MkDocs navigation)
+document.addEventListener('DOMContentLoaded', sortResourceCards);
+document.addEventListener('load', sortResourceCards);
+
+// Also run after a short delay for dynamic content
+setTimeout(sortResourceCards, 100);
+setTimeout(sortResourceCards, 500);
+
+// Watch for mutations in case content is dynamically loaded
+const observer = new MutationObserver(sortResourceCards);
+observer.observe(document.body, {
+  childList: true,
+  subtree: true,
+  attributes: false
 });
