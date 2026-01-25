@@ -24,10 +24,14 @@
    Layout: Full Width Content
    ================================ */
 
-/* Hide sidebars on desktop for full-width layout */
+/* Hide right sidebar on all screens, keep left for mobile nav */
+.md-sidebar--secondary {
+    display: none;
+}
+
+/* Hide left sidebar only on desktop */
 @media (min-width: 76.25em) {
-    .md-sidebar--primary,
-    .md-sidebar--secondary {
+    .md-sidebar--primary {
         display: none;
     }
 }

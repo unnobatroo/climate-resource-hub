@@ -16,10 +16,10 @@ theme:
     - navigation.instant
     - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.top
     - content.code.copy
     - navigation.indexes
-    - toc.integrate
 
 extra_css:
   - stylesheets/extra.css
