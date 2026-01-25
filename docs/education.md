@@ -8,13 +8,6 @@ Climate science education resources for all levels. From introductory content to
 
 ### Getting started
 
-<a href="https://climatekids.nasa.gov/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=climatekids.nasa.gov&sz=32" class="card-favicon"> NASA Climate Kids</h4>
-<p>Kid-friendly climate science from NASA. Great for young learners and families.</p>
-</div>
-</a>
-
 <a href="https://heatmap.news/climate-101" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=heatmap.news&sz=32" class="card-favicon"> Heatmap Climate 101</h4>
@@ -29,17 +22,24 @@ Climate science education resources for all levels. From introductory content to
 </div>
 </a>
 
-<a href="https://ocean-climate.org/" class="resource-card-link">
-<div class="resource-card">
-<h4><img src="https://www.google.com/s2/favicons?domain=ocean-climate.org&sz=32" class="card-favicon"> Ocean & Climate Platform</h4>
-<p>Understanding the critical link between oceans and climate. Awareness materials and resources.</p>
-</div>
-</a>
-
 <a href="https://science.nasa.gov/climate-change/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=science.nasa.gov&sz=32" class="card-favicon"> NASA Climate Change</h4>
 <p>Latest climate data and scientific evidence from NASA's research.</p>
+</div>
+</a>
+
+<a href="https://climatekids.nasa.gov/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=climatekids.nasa.gov&sz=32" class="card-favicon"> NASA Climate Kids</h4>
+<p>Kid-friendly climate science from NASA. Great for young learners and families.</p>
+</div>
+</a>
+
+<a href="https://ocean-climate.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=ocean-climate.org&sz=32" class="card-favicon"> Ocean & Climate Platform</h4>
+<p>Understanding the critical link between oceans and climate. Awareness materials and resources.</p>
 </div>
 </a>
 

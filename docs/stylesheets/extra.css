@@ -41,6 +41,13 @@ body {
 .md-header {
     background: var(--primary-teal);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+}
+
+/* Remove any extra space in header */
+.md-header__inner {
+    padding: 0;
 }
 
 /* Site title styling */
@@ -58,12 +65,20 @@ body {
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
     transition: transform 0.3s ease-in-out;
+    height: auto;
+    min-height: 48px;
+    box-shadow: none;
+    position: relative;
+    top: 0;
+    margin: 0;
 }
 
 /* Keep nav links packed to the left instead of stretching across the bar */
 .md-tabs__inner {
     justify-content: flex-start !important;
     padding: 0 1rem;
+    align-items: center;
+    min-height: 48px;
 }
 
 .md-tabs__list {
@@ -71,10 +86,17 @@ body {
     gap: 0.5rem;
     width: auto;
     flex: 0 0 auto;
+    align-items: center;
+    margin: 0;
 }
 
 .md-tabs__item {
     flex: 0 0 auto !important;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
 /* Hide tabs when scrolling down */
@@ -87,8 +109,12 @@ body {
     opacity: 0.9;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    padding: 0.9rem 1.2rem;
+    padding: 0.75rem 1.2rem;
     color: var(--light-bg);
+    font-size: 1.3rem;
+    line-height: 1;
+    background: transparent !important;
+    transition: none;
 }
 
 .md-tabs__link--active,
@@ -97,6 +123,7 @@ body {
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 0 var(--accent-plum);
+    background: transparent !important;
 }
 
 /* Search bar styling */
