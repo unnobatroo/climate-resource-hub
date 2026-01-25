@@ -1,4 +1,4 @@
-# 💰 Finance & Investment
+# Finance & investments
 
 Climate funds, green financing, and investment resources.
 
@@ -6,53 +6,48 @@ Climate funds, green financing, and investment resources.
 
 <div class="kanban-column" markdown>
 
-### 💚 Climate Funds
+### Funds
 
-<div class="resource-card" markdown>
-
-#### 🌍 Green Climate Fund
-
-World's largest climate fund supporting developing countries.
-
-[Visit Site](https://www.greenclimate.fund/)
-
+<a href="https://www.greenclimate.fund/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.greenclimate.fund&sz=32" class="card-favicon"> Green Climate Fund</h4>
+<p>World's largest climate fund supporting developing countries' climate action.</p>
 </div>
+</a>
 
-<div class="resource-card" markdown>
-
-#### 🚀 Founders Pledge
-
-Platform for entrepreneurs to direct capital to high-impact climate solutions.
-
-[Visit Site](https://www.founderspledge.com/)
-
+<a href="https://www.founderspledge.com/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.founderspledge.com&sz=32" class="card-favicon"> Founders Pledge</h4>
+<p>Platform for entrepreneurs to direct capital to high-impact climate solutions.</p>
 </div>
+</a>
+
+<a href="https://elementalimpact.com/elemental-impact/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=elementalimpact.com&sz=32" class="card-favicon"> Elemental Impact</h4>
+<p>Impact investment advisory focused on climate and sustainability.</p>
+</div>
+</a>
 
 </div>
 
 <div class="kanban-column" markdown>
 
-### 🌱 Climate Solutions
+### Investments
 
-<div class="resource-card" markdown>
-
-#### 📊 Project Drawdown
-
-Comprehensive plan to reverse global warming with ranked solutions.
-
-[Visit Site](https://drawdown.org/explorer)
-
+<a href="https://www.iwmbd.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.iwmbd.org&sz=32" class="card-favicon"> IWM</h4>
+<p>Institutional water management and climate finance expertise.</p>
 </div>
+</a>
 
-<div class="resource-card" markdown>
-
-#### ⚡ Energy Policy Solutions
-
-Policy simulator showing climate policy impact and pathways.
-
-[Visit Site](https://energypolicy.solutions/)
-
+<a href="https://www.climateinsiders.com/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.climateinsiders.com&sz=32" class="card-favicon"> Climate Insiders</h4>
+<p>Investment intelligence and insights for climate tech and green finance.</p>
 </div>
+</a>
 
 </div>
 

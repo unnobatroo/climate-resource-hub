@@ -5,24 +5,42 @@ site_author: Jaloliddin Ismailov
 
 theme:
   name: material
+  language: en
   palette:
     - scheme: default
       primary: teal
       accent: green
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: teal
+      accent: light green
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
   font:
-    text: Roboto
+    text: VT323
     code: Roboto Mono
   features:
-    - navigation.instant
     - navigation.tracking
     - navigation.tabs
-    - navigation.tabs.sticky
     - navigation.top
     - content.code.copy
     - navigation.indexes
 
 extra_css:
   - stylesheets/extra.css
+
+plugins:
+  - search:
+      lang:
+        - en
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/unnobatroo/resource-hub
 
 nav:
   - Home: index.md
@@ -41,16 +59,3 @@ markdown_extensions:
       emoji_generator: !!python/name:material.extensions.emoji.to_svg
   - attr_list
   - md_in_html
-  - toc:
-      permalink: true
-
-plugins:
-  - search
-
-extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/unnobatroo/resource-hub
-
-repo_url: https://github.com/unnobatroo/resource-hub
-repo_name: Climate Resource Hub

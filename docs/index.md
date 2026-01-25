@@ -1,47 +1,45 @@
-# 🌍 Climate Resource Hub
+# Climate Resource Hub
 
-Your community-driven map of climate science & solutions.
+A curated hub of climate science resources built by Jaloliddin Ismailov & YOUNGO Science WG.
 
-## What is this?
+## Browse by the topic of choice:
 
-This resource hub is a **curated collection** of climate science resources, tools, and opportunities built by and for the climate community.
+<div class="section-cards">
 
-We believe that **open access** to high-quality resources accelerates progress toward climate solutions. Everyone should have the tools they need to understand, research, and act on climate change.
+<a href="education" class="section-card">
+<div class="section-icon">🎓</div>
+<h3>Education</h3>
+<p>Courses, training programmes, and learning platforms</p>
+</a>
 
----
+<a href="research" class="section-card">
+<div class="section-icon">🔬</div>
+<h3>Research</h3>
+<p>Scientific reports and research organisations</p>
+</a>
 
-## 🗺️ Explore Resources
+<a href="data" class="section-card">
+<div class="section-icon">💾</div>
+<h3>Data & tools</h3>
+<p>Datasets, APIs, Python libraries, and analysis tools</p>
+</a>
 
-Navigate to any section using the tabs above:
+<a href="careers" class="section-card">
+<div class="section-icon">💼</div>
+<h3>Careers</h3>
+<p>Climate tech jobs, fellowships, and opportunities</p>
+</a>
 
-- **🎓 Education & Learning** - Courses, training programs, and interactive learning resources
-- **🔬 Research & Science** - Research organizations, climate data, and scientific reports
-- **💾 Data & Tech Tools** - Open datasets, APIs, Python libraries, and analytical tools
-- **💼 Careers & Jobs** - Climate tech jobs, fellowships, and career opportunities
-- **💰 Finance & Investment** - Climate funds, green financing, and investment resources
+<a href="invest" class="section-card">
+<div class="section-icon">💰</div>
+<h3>Finance</h3>
+<p>Climate funds and investment resources</p>
+</a>
 
----
+</div>
 
-## 🤝 How to Contribute
+Navigating the vast landscape of available info was a great challenge when I was just getting into climate science, so I created a spreadsheet. Eventually it grew into an extensive Notion database that I shared with peers. This is an open-source version of that.
 
-This is a **community-driven project**. You can help by:
+The Climate Resource Hub is currently maintained solely by me. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.
 
-- 📝 Submitting new resources via pull requests
-- 🔗 Reporting broken links or outdated information
-- 💡 Suggesting improvements to organization and content
-- 🌐 Sharing this hub with your network
-- ⭐ [Starring the repo](https://github.com/unnobatroo/resource-hub) to show your support
-
-**Everyone is welcome!** Whether you're a climate scientist, developer, student, activist, or just climate-curious, your contributions help build a better resource for all.
-
----
-
-## 🛠️ Technical Details
-
-**Built with:** MkDocs Material  
-**Hosted on:** GitHub Pages  
-**License:** MIT (Open Source)
-
-[View on GitHub →](https://github.com/unnobatroo/resource-hub)
-
-
+</p>
