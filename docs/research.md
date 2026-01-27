@@ -84,6 +84,13 @@ Access cutting-edge climate research, data, and scientific organisations.
 </div>
 </a>
 
+<a href="https://www.iea.org/articles/the-go-to-guide-for-sustainable-district-cooling" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.iea.org&sz=32" class="card-favicon"> IEA: Sustainable District Cooling</h4>
+<p>Analysis and implementation guide for sustainable district cooling systems.</p>
+</div>
+</a>
+
 <a href="https://www.iea.org/reports/the-future-of-cooling" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=www.iea.org&sz=32" class="card-favicon"> IEA: Future of Cooling</h4>
@@ -122,6 +129,13 @@ Access cutting-edge climate research, data, and scientific organisations.
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=iiasa.ac.at&sz=32" class="card-favicon"> IIASA: Energy, Climate & Environment</h4>
 <p>Integrated modeling of energy systems and climate change solutions.</p>
+</div>
+</a>
+
+<a href="https://www.irena.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.irena.org&sz=32" class="card-favicon"> IRENA</h4>
+<p>International Renewable Energy Agency - global leader in renewable energy transition.</p>
 </div>
 </a>
 

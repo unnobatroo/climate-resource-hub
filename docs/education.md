@@ -49,6 +49,13 @@ Climate science education resources for all levels. From introductory content to
 
 ### Courses
 
+<a href="http://climatechangeacademy.com/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=climatechangeacademy.com&sz=32" class="card-favicon"> Climate Change Academy</h4>
+<p>Online learning platform dedicated to climate change education and awareness.</p>
+</div>
+</a>
+
 <a href="https://climatescience.org/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=climatescience.org&sz=32" class="card-favicon"> ClimateScience</h4>

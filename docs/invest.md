@@ -8,6 +8,13 @@ Climate funds, green financing, and investment resources.
 
 ### Funds
 
+<a href="https://www.adb.org/" class="resource-card-link">
+<div class="resource-card">
+<h4><img src="https://www.google.com/s2/favicons?domain=www.adb.org&sz=32" class="card-favicon"> Asian Development Bank</h4>
+<p>Multilateral development bank advancing climate finance and sustainable development in Asia-Pacific.</p>
+</div>
+</a>
+
 <a href="https://elementalimpact.com/elemental-impact/" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=elementalimpact.com&sz=32" class="card-favicon"> Elemental Impact</h4>
