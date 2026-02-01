@@ -1,10 +1,7 @@
-# Climate Resource Hub
 
 A resource database for the climate movement, built with MkDocs.
 
 ## Setup
-
-### Installation
 
 Install Python dependencies:
 ```bash
@@ -35,13 +32,6 @@ Deploy to GitHub Pages:
 ```bash
 mkdocs gh-deploy
 ```
-
-## Features
-
-- Climate-focused resource organization
-- Full-text search
-- Responsive Material Design theme
-- Static site generation (fast and secure)
 
 ## Project Structure
 
