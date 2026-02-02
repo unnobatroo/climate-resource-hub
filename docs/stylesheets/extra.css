@@ -316,10 +316,10 @@ body::after {
     min-width: 260px;
     max-width: 260px;
     flex: 0 0 260px;
-    background: rgba(255, 255, 255, 0.7);
+    background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
     border-radius: 18px;
     padding: 1rem;
-    border: 2px dashed rgba(74, 157, 95, 0.3);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 [data-md-color-scheme="slate"] .kanban-column {
@@ -479,7 +479,7 @@ a.resource-card-link {
 }
 
 .resource-card {
-    background: linear-gradient(135deg, #ffffff 0%, #fdfcfa 100%);
+    background: #ffffff;
     border: 2px dashed var(--primary-green);
     border-radius: 14px;
     padding: 0.75rem 0.875rem;
