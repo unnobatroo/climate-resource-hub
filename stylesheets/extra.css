@@ -56,10 +56,20 @@ body {
 /* Site title styling */
 .md-header__title {
     font-family: 'VT323', monospace;
-    font-size: 1.6rem;
+    font-size: clamp(1rem, 4vw, 1.6rem);
     font-weight: 400;
     letter-spacing: 0.06em;
     color: var(--cream);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+    .md-header__title {
+        font-size: 1rem;
+        letter-spacing: 0.02em;
+    }
 }
 
 /* Navigation tabs styling */
