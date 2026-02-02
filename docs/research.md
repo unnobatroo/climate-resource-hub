@@ -1,8 +1,10 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 # Research & development
 
 Access cutting-edge climate research, data, and scientific organisations.
 
-<div class="kanban-board" markdown>
+<div class="kanban-board" markdown id="main-content">
 
 <div class="kanban-column" markdown>
 

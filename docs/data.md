@@ -1,8 +1,10 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 # Data, tools & tech
 
 Open datasets, APIs, and tools for climate analysis.
 
-<div class="kanban-board" markdown>
+<div class="kanban-board" markdown id="main-content">
 
 <div class="kanban-column" markdown>
 

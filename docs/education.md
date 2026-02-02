@@ -1,8 +1,10 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 # Education
 
 Climate science education resources for all levels. From introductory content to specialized courses.
 
-<div class="kanban-board" markdown>
+<div class="kanban-board" markdown id="main-content">
 
 <div class="kanban-column" markdown>
 
@@ -114,7 +116,7 @@ Climate science education resources for all levels. From introductory content to
 <a href="https://www.aeyn.org/mentorship-program" class="resource-card-link">
 <div class="resource-card">
 <h4><img src="https://www.google.com/s2/favicons?domain=aeyn.org&sz=32" class="card-favicon"> AEYN Mentorship Programme</h4>
-<p>African-European Youth Network mentorship for climate professionals.</p>
+<p>Asian Environmental Youth Network mentorship for climate professionals.</p>
 </div>
 </a>
 

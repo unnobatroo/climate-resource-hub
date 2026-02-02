@@ -1,8 +1,10 @@
+<a href="#main-content" class="skip-link">Skip to main content</a>
+
 # Finance & investments
 
 Climate funds, green financing, and investment resources.
 
-<div class="kanban-board" markdown>
+<div class="kanban-board" markdown id="main-content">
 
 <div class="kanban-column" markdown>
 

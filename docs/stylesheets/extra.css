@@ -129,7 +129,7 @@ body {
 /* Search bar styling */
 .md-search__form {
     background-color: white;
-    border-radius: 4px;
+    border-radius: 12px;
 }
 
 .md-search__input {
@@ -242,12 +242,12 @@ body {
 
 .kanban-board::-webkit-scrollbar-track {
     background: #f1f1f1;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .kanban-board::-webkit-scrollbar-thumb {
     background: #10b981;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .kanban-board::-webkit-scrollbar-thumb:hover {
@@ -259,7 +259,7 @@ body {
     max-width: 260px;
     flex: 0 0 260px;
     background: #f8f9fa;
-    border-radius: 6px;
+    border-radius: 16px;
     padding: 1rem;
 }
 
@@ -289,8 +289,8 @@ body {
 
 .section-card {
     background: var(--card-bg);
-    border: 2px solid var(--primary-teal);
-    border-radius: 8px;
+    border: 3px dashed var(--primary-teal);
+    border-radius: 16px;
     padding: 1.5rem;
     text-align: center;
     text-decoration: none;
@@ -418,8 +418,8 @@ a.resource-card-link {
 
 .resource-card {
     background: var(--card-bg);
-    border: 1.5px solid var(--primary-teal);
-    border-radius: 4px;
+    border: 2px dashed var(--primary-teal);
+    border-radius: 12px;
     padding: 0.75rem 0.875rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
     transition: all 0.2s ease;
@@ -483,5 +483,166 @@ a.resource-card-link:hover .resource-card h4 {
     
     .resource-card h4 {
         font-size: 1.15rem;
+    }
+}
+
+/* ================================
+   ACCESSIBILITY ENHANCEMENTS
+   ================================ */
+
+/* Skip to main content link */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary-green);
+    color: white;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-weight: bold;
+    z-index: 10000;
+    border-radius: 0 0 8px 0;
+    transition: top 0.3s;
+}
+
+.skip-link:focus {
+    top: 0;
+    outline: 3px solid var(--accent-blue);
+    outline-offset: 2px;
+}
+
+/* Enhanced focus indicators */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+}
+
+.section-card:focus,
+.resource-card a:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 4px;
+    box-shadow: 0 0 0 4px rgba(48, 170, 0, 0.2);
+}
+
+/* Ensure focus is visible on navigation */
+.md-tabs__link:focus,
+.md-nav__link:focus {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 2px;
+    background: rgba(48, 170, 0, 0.1);
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --border-color: #000000;
+    }
+    
+    .resource-card,
+    .section-card,
+    .kanban-column {
+        border-width: 3px;
+        border-color: #000000;
+    }
+    
+    .section-card:hover,
+    .resource-card:hover {
+        border-color: var(--primary-green);
+        box-shadow: 0 0 0 3px var(--primary-green);
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* Screen reader only content */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Focus visible for keyboard navigation */
+.resource-card a:focus-visible,
+.section-card:focus-visible {
+    outline: 3px solid var(--primary-green);
+    outline-offset: 4px;
+}
+
+/* Improved link contrast */
+a {
+    color: var(--primary-teal);
+    text-decoration-color: var(--primary-green);
+}
+
+a:hover {
+    color: var(--primary-green);
+    text-decoration-thickness: 2px;
+}
+
+/* ARIA live region styling */
+[aria-live="polite"],
+[aria-live="assertive"] {
+    position: absolute;
+    left: -10000px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+/* Ensure text remains readable at 200% zoom */
+@media (min-width: 1280px) {
+    .resource-card,
+    .section-card {
+        font-size: clamp(14px, 1vw, 16px);
+    }
+}
+
+/* Print styles for accessibility */
+@media print {
+    .skip-link,
+    .md-header,
+    .md-tabs,
+    .md-sidebar {
+        display: none;
+    }
+    
+    .resource-card,
+    .section-card {
+        border: 2px solid #000;
+        page-break-inside: avoid;
+    }
+    
+    a::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+}
+
+/* Dark mode focus indicators */
+@media (prefers-color-scheme: dark) {
+    .skip-link:focus,
+    a:focus,
+    button:focus {
+        outline-color: #76b041;
     }
 }
