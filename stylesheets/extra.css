@@ -209,65 +209,15 @@ body {
     }
 }
 
-/* Decorative nature elements */
+/* Decorative nature elements - disabled */
 body::before,
 body::after {
-    content: '';
-    position: fixed;
-    background-repeat: no-repeat;
-    background-size: contain;
-    pointer-events: none;
-    opacity: 0.15;
-    z-index: 0;
+    display: none !important;
 }
 
-body::before {
-    content: '🌸';
-    font-size: 80px;
-    top: 120px;
-    left: 20px;
-    animation: float 6s ease-in-out infinite;
-}
-
-body::after {
-    content: '🪷';
-    font-size: 60px;
-    bottom: 80px;
-    right: 30px;
-    animation: float 8s ease-in-out infinite;
-    animation-delay: 1s;
-}
-
-@keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); }
-}
-
-/* Add more decorative elements */
-.md-content::before {
-    content: '🌿';
-    position: fixed;
-    font-size: 70px;
-    top: 50%;
-    right: 10px;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
-    animation: float 7s ease-in-out infinite;
-    animation-delay: 2s;
-}
-
+.md-content::before,
 .md-content::after {
-    content: '🍃';
-    position: fixed;
-    font-size: 50px;
-    bottom: 200px;
-    left: 40px;
-    opacity: 0.12;
-    pointer-events: none;
-    z-index: 0;
-    animation: float 9s ease-in-out infinite;
-    animation-delay: 0.5s;
+    display: none !important;
 }
 
 /* Ensure content stays above decorations */
