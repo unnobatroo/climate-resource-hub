@@ -1,8 +1,9 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
+<div class="hero-section" markdown>
 
 # Climate Resource Hub
 
 A curated hub of climate science resources built by Jaloliddin Ismailov & YOUNGO Science WG.
+</div>
 
 ## Browse by the topic of choice:
 

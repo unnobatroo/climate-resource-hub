@@ -1,5 +1,3 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 # Careers & opportunities
 
 Find your path in climate tech and sustainability.

@@ -1,5 +1,3 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 # Research & development
 
 Access cutting-edge climate research, data, and scientific organisations.

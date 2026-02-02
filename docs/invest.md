@@ -1,5 +1,3 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 # Finance & investments
 
 Climate funds, green financing, and investment resources.

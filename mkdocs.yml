@@ -15,7 +15,7 @@ theme:
         name: Switch to dark mode
     - scheme: slate
       primary: teal
-      accent: light green
+      accent: green
       toggle:
         icon: material/weather-sunny
         name: Switch to light mode
@@ -28,6 +28,8 @@ theme:
     - navigation.top
     - content.code.copy
     - navigation.indexes
+  logo: assets/Science%20WG%20Logo%20White.png
+  favicon: assets/Science%20WG%20Logo%20Color.png
 
 extra_css:
   - stylesheets/extra.css

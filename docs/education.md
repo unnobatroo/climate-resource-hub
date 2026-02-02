@@ -1,5 +1,3 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 # Education
 
 Climate science education resources for all levels. From introductory content to specialized courses.

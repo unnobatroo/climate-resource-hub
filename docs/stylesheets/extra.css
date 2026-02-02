@@ -2,17 +2,19 @@
    Climate Resource Hub - Clean Start
    ================================ */
 
-/* Color Variables */
+/* Color Variables - YOUNGO Theme */
 
 :root {
-    --primary-green: #30aa00;
-    --primary-teal: #004d20;
-    --accent-blue: #438b00;
-    --accent-plum: #ffffff;
-    --light-bg: #f0f0f0;
+    --primary-teal: #1a5c5c;
+    --dark-teal: #0d3d3d;
+    --primary-green: #4a9d5f;
+    --light-green: #76b041;
+    --accent-pink: #e88ba8;
+    --cream: #f5f0e8;
+    --light-bg: #e8f4f0;
     --card-bg: #ffffff;
     --text-dark: #1a1a1a;
-    --border-color: #76b041;
+    --border-color: #4a9d5f;
 }
 
 /* Smooth scrolling */
@@ -29,8 +31,9 @@ html {
 }
 
 body {
-    background: var(--light-bg);
+    background: linear-gradient(135deg, var(--light-bg) 0%, var(--cream) 100%);
     color-scheme: light;
+    position: relative;
 }
 
 /* ================================
@@ -39,7 +42,7 @@ body {
 
 /* Main header background */
 .md-header {
-    background: var(--primary-teal);
+    background: var(--dark-teal);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
@@ -56,12 +59,12 @@ body {
     font-size: 1.6rem;
     font-weight: 400;
     letter-spacing: 0.06em;
-    color: var(--light-bg);
+    color: var(--cream);
 }
 
 /* Navigation tabs styling */
 .md-tabs {
-    background: var(--accent-blue);
+    background: var(--primary-teal);
     font-family: 'VT323', monospace;
     font-size: 1.1rem;
     transition: transform 0.3s ease-in-out;
@@ -181,6 +184,51 @@ body {
 }
 
 /* ================================
+   Hero Section with YOUNGO Logo
+   ================================ */
+
+.hero-section {
+    text-align: center;
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.youngo-logo {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    margin: 0 auto 1rem;
+    display: block;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+@media (max-width: 768px) {
+    .youngo-logo {
+        max-width: 150px;
+    }
+}
+
+/* Decorative nature elements - disabled */
+body::before,
+body::after {
+    display: none !important;
+}
+
+.md-content::before,
+.md-content::after {
+    display: none !important;
+}
+
+/* Ensure content stays above decorations */
+.md-content__inner,
+.md-header,
+.md-tabs {
+    position: relative;
+    z-index: 1;
+}
+
+/* ================================
    Typography
    ================================ */
 
@@ -258,22 +306,24 @@ body {
     min-width: 260px;
     max-width: 260px;
     flex: 0 0 260px;
-    background: #f8f9fa;
-    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 18px;
     padding: 1rem;
+    border: 2px dashed rgba(74, 157, 95, 0.3);
 }
 
 [data-md-color-scheme="slate"] .kanban-column {
-    background: var(--card-bg);
+    background: rgba(255, 255, 255, 0.7);
 }
 
 .kanban-column > h3 {
     font-size: 1.5rem;
     margin: 0 0 1rem 0 !important;
     padding-bottom: 0.625rem;
-    border-bottom: 2.5px solid var(--border-color);
+    border-bottom: 2.5px solid var(--primary-green);
     font-family: 'VT323', monospace;
     line-height: 1.2;
+    color: var(--primary-teal);
 }
 
 /* ================================
@@ -288,25 +338,27 @@ body {
 }
 
 .section-card {
-    background: var(--card-bg);
-    border: 3px dashed var(--primary-teal);
-    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+    border: 3px dashed var(--primary-green);
+    border-radius: 20px;
     padding: 1.5rem;
     text-align: center;
     text-decoration: none;
     transition: all 0.3s ease;
     cursor: pointer;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 [data-md-color-scheme="slate"] .section-card {
-    background: var(--card-bg);
-    border-color: var(--primary-teal);
+    background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+    border-color: var(--primary-green);
 }
 
 .section-card:hover {
     transform: translateY(-4px);
-    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.15);
-    border-color: var(--primary-green);
+    box-shadow: 0 6px 16px rgba(74, 157, 95, 0.2);
+    border-color: var(--light-green);
+    border-width: 3px;
 }
 
 .section-icon {
@@ -417,24 +469,25 @@ a.resource-card-link {
 }
 
 .resource-card {
-    background: var(--card-bg);
-    border: 2px dashed var(--primary-teal);
-    border-radius: 12px;
+    background: linear-gradient(135deg, #ffffff 0%, #fdfcfa 100%);
+    border: 2px dashed var(--primary-green);
+    border-radius: 14px;
     padding: 0.75rem 0.875rem;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     transition: all 0.2s ease;
     cursor: pointer;
 }
 
 [data-md-color-scheme="slate"] .resource-card {
-    background: var(--card-bg);
-    border-color: var(--primary-teal);
+    background: linear-gradient(135deg, #ffffff 0%, #fdfcfa 100%);
+    border-color: var(--primary-green);
 }
 
 a.resource-card-link:hover .resource-card {
-    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.12);
-    transform: translateY(-1px);
-    border-color: var(--primary-green);
+    box-shadow: 0 3px 8px rgba(74, 157, 95, 0.15);
+    transform: translateY(-2px);
+    border-color: var(--light-green);
+    border-width: 2px;
 }
 
 .resource-card h4 {
@@ -489,27 +542,6 @@ a.resource-card-link:hover .resource-card h4 {
 /* ================================
    ACCESSIBILITY ENHANCEMENTS
    ================================ */
-
-/* Skip to main content link */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 0;
-    background: var(--primary-green);
-    color: white;
-    padding: 8px 16px;
-    text-decoration: none;
-    font-weight: bold;
-    z-index: 10000;
-    border-radius: 0 0 8px 0;
-    transition: top 0.3s;
-}
-
-.skip-link:focus {
-    top: 0;
-    outline: 3px solid var(--accent-blue);
-    outline-offset: 2px;
-}
 
 /* Enhanced focus indicators */
 a:focus,

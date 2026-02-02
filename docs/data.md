@@ -1,5 +1,3 @@
-<a href="#main-content" class="skip-link">Skip to main content</a>
-
 # Data, tools & tech
 
 Open datasets, APIs, and tools for climate analysis.
