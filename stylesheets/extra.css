@@ -141,17 +141,84 @@ body {
 
 /* Search bar styling */
 .md-search__form {
-    background-color: white;
+    background-color: white !important;
     border-radius: 12px;
 }
 
 .md-search__input {
-    background-color: white;
-    color: #064e3b;
+    background-color: white !important;
+    color: var(--text-dark) !important;
 }
 
 .md-search__input::placeholder {
-    color: #6b7280;
+    color: #6b7280 !important;
+}
+
+/* Search results overlay */
+.md-search__overlay {
+    background-color: rgba(0, 0, 0, 0.54) !important;
+    z-index: 100 !important;
+}
+
+.md-search__output {
+    background-color: white !important;
+    border-radius: 0 0 12px 12px !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+    z-index: 101 !important;
+}
+
+.md-search__scrollwrap {
+    background-color: white !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+/* Search result items */
+.md-search-result {
+    background-color: white !important;
+}
+
+.md-search-result__meta {
+    background-color: var(--light-bg) !important;
+    color: var(--text-dark) !important;
+    font-family: 'VT323', monospace !important;
+}
+
+.md-search-result__item {
+    border-bottom: 1px solid #e5e7eb !important;
+    background-color: white !important;
+}
+
+.md-search-result__link {
+    color: var(--text-dark) !important;
+}
+
+.md-search-result__link:hover {
+    background-color: var(--light-bg) !important;
+}
+
+.md-search-result__title {
+    color: var(--primary-green) !important;
+    font-family: 'VT323', monospace !important;
+    font-size: 1.1rem !important;
+}
+
+.md-search-result__teaser {
+    color: #4b5563 !important;
+}
+
+.md-search-result__more summary {
+    color: var(--primary-green) !important;
+}
+
+.md-search-result__article {
+    color: var(--text-dark) !important;
+}
+
+[data-md-color-scheme="slate"] .md-search__output,
+[data-md-color-scheme="slate"] .md-search__scrollwrap,
+[data-md-color-scheme="slate"] .md-search-result,
+[data-md-color-scheme="slate"] .md-search-result__item {
+    background-color: white !important;
 }
 
 /* ================================
