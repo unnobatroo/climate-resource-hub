@@ -1,11 +1,4 @@
-<div class="hero-section" markdown>
-
-# Climate Resource Hub
-
-A curated hub of climate science resources built by Jaloliddin Ismailov & YOUNGO Science WG.
-</div>
-
-## Browse by the topic of choice:
+When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle. And I once started a simple spreadsheet to keep track of it all. Over time that grew into an extensive Notion database I shared with my peers and now it has evolved into this open-source Climate Resource Hub.
 
 <div class="section-cards" id="main-content">
 
@@ -41,6 +34,4 @@ A curated hub of climate science resources built by Jaloliddin Ismailov & YOUNGO
 
 </div>
 
-Navigating the vast landscape of available info was a great challenge when I was just getting into climate science, so I created a spreadsheet. Eventually it grew into an extensive Notion database that I shared with peers. This is an open-source version of that.
-
-The Climate Resource Hub is currently maintained solely by me. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.
+This site is currently a solo project. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.

@@ -10,15 +10,6 @@ theme:
     - scheme: default
       primary: teal
       accent: green
-      toggle:
-        icon: material/weather-night
-        name: Switch to dark mode
-    - scheme: slate
-      primary: teal
-      accent: green
-      toggle:
-        icon: material/weather-sunny
-        name: Switch to light mode
   font:
     text: VT323
     code: Roboto Mono
@@ -29,7 +20,7 @@ theme:
     - content.code.copy
     - navigation.indexes
   logo: assets/Science%20WG%20Logo%20White.png
-  favicon: assets/Science%20WG%20Logo%20Color.png
+  favicon: assets/favicon.png
 
 extra_css:
   - stylesheets/extra.css
@@ -44,13 +35,13 @@ plugins:
 extra:
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/unnobatroo/resource-hub
+      link: https://github.com/unnobatroo/climate-resource-hub
 
 nav:
   - Home: index.md
-  - Edu: education.md
+  - Education: education.md
   - Research: research.md
-  - Data: data.md
+  - Data & tools: data.md
   - Careers: careers.md
   - Finance: invest.md
 
