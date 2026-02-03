@@ -1,4 +1,4 @@
-When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle. And I once started a simple spreadsheet to keep track of it all. Over time that grew into an extensive Notion database I shared with my peers and now it has evolved into this open-source Climate Resource Hub.
+When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle. And I once started a simple spreadsheet to keep track of it all. Over time that grew into an extensive Notion database I shared with my peers and now it has evolved into this open-source Climate Resource Hub - developed by me (Jaloliddin Ismailov) for the YOUNGO Science Working Group.
 
 <div class="section-cards" id="main-content">
 
