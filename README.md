@@ -3,8 +3,31 @@ A resource database for the climate movement, built with MkDocs.
 
 ## Setup
 
-Install Python dependencies:
+### Prerequisites
+- Python 3.10 or higher (3.12+ recommended)
+- pip (latest version recommended)
+
+### Quick Start
+
+1. Create a virtual environment:
 ```bash
+python3 -m venv venv
+source venv/bin/activate  # On macOS/Linux
+# or
+venv\Scripts\activate  # On Windows
+```
+
+2. Upgrade pip:
+```bash
+pip install --upgrade pip
+```
+
+3. Install dependencies:
+```bash
+# Option 1: Core dependencies only (recommended for most users)
+pip install -r requirements-core.txt
+
+# Option 2: Exact versions (for reproducing exact environment)
 pip install -r requirements.txt
 ```
 

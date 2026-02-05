@@ -1,5 +1,3 @@
-When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle. And I once started a simple spreadsheet to keep track of it all. Over time that grew into an extensive Notion database I shared with my peers and now it has evolved into this open-source Climate Resource Hub - developed by me (Jaloliddin Ismailov) for the YOUNGO Science Working Group.
-
 <div class="section-cards" id="main-content">
 
 <a href="education" class="section-card">
@@ -34,4 +32,6 @@ When I first started exploring climate science, navigating the mountain of avail
 
 </div>
 
-This site is currently a solo project. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.
+Hi! My name is Jaloliddin Ismailov. When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle.To keep track of it all, I once started a simple spreadsheet. Over time that grew into an extensive Notion database I would share with my peers, and now it has evolved into this open-source Climate Resource Hub - developed by me for the YOUNGO Science Working Group.
+
+The site is currently a solo project. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.
