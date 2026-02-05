@@ -1,3 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://youngo-science.org/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://youngo-science.org/careers/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://youngo-science.org/data/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://youngo-science.org/education/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://youngo-science.org/invest/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
+    <url>
+         <loc>https://youngo-science.org/research/</loc>
+         <lastmod>2026-02-05</lastmod>
+    </url>
 </urlset>
