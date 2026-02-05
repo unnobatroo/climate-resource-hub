@@ -157,19 +157,19 @@ body {
 /* Search results overlay */
 .md-search__overlay {
     background-color: rgba(0, 0, 0, 0.54) !important;
+    z-index: 100 !important;
 }
 
 .md-search__output {
     background-color: white !important;
     border-radius: 0 0 12px 12px !important;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-    z-index: 100 !important;
+    z-index: 101 !important;
 }
 
 .md-search__scrollwrap {
     background-color: white !important;
     border-radius: 0 0 12px 12px !important;
-    z-index: 100 !important;
 }
 
 /* Search result items */
