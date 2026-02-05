@@ -32,6 +32,6 @@
 
 </div>
 
-Hi! My name is Jaloliddin Ismailov. When I first started exploring climate science, navigating the mountain of available information felt like a huge hurdle.To keep track of it all, I once started a simple spreadsheet. Over time that grew into an extensive Notion database I would share with my peers, and now it has evolved into this open-source Climate Resource Hub - developed by me for the YOUNGO Science Working Group.
+Hi, my name is Jaloliddin Ismailov. I built this Hub because navigating climate science resources shouldn't feel like a chore. What initially started as a short spreadsheet for myself has grown into this open-source project for the YOUNGO Science Working Group.
 
-The site is currently a solo project. If you encounter an outdated link, bug, and/or would like to suggest a new resource, please open a PR on [GitHub](https://github.com/unnobatroo/resource-hub) or [email me](mailto:unnobatroo@icloud.com) and I'll look into it in 5-6 days.
+I'm currently maintaining the site alone. If you find a bug or have a suggestion, feel free to open a pull request on [GitHub](https://github.com/unnobatroo/climate-resource-hub) or [email](mailto:unnobatroo@icloud.com) me directly.

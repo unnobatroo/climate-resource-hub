@@ -1,7 +1,7 @@
 site_name: Climate Resource Hub
-site_description: The database of all things climate, curated by YOUNGO Science WG.
+site_description: The database of all things climate.
 site_author: Jaloliddin Ismailov
-# site_url: https://climate-resource.hub  # Update this once you get your domain
+site_url: https://youngo-science.org
 
 theme:
   name: material
