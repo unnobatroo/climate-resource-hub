@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research - climate resource hub</title>
+  <meta name="description" content="Policy, datasets, notebooks, and climate-tech research sources.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+  <link href="assets/style.css" rel="stylesheet">
+</head>
+<body data-topic="Research">
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <header class="container my-4" role="banner">
+    <section class="hero p-4 p-md-5">
+      <div class="d-flex flex-wrap gap-2 mb-3">
+        <a href="index.html" class="btn btn-light nav-btn"><i class="bi bi-house" aria-hidden="true"></i> Home</a>
+        <a href="career.html" class="btn btn-warning nav-btn">Career</a>
+        <a href="research.html" class="btn btn-info nav-btn is-active" aria-current="page">Research</a>
+        <a href="education.html" class="btn btn-success nav-btn">Education</a>
+        <a href="invest.html" class="btn btn-danger nav-btn">Invest</a>
+      </div>
+      <p class="fs-5 mb-0">Policy, datasets, notebooks, and climate-tech research sources.</p>
+    </section>
+  </header>
+
+  <main id="main-content" class="container pb-4" role="main">
+    <section class="panel p-3 p-md-4 mb-3" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="h5 fw-bold">Search in <b>Research</b></h2>
+      <input id="searchInput" type="search" class="form-control" placeholder="Try: datasets, policy, ipcc, notebook">
+      <div class="sort-toolbar" aria-label="Sorting controls">
+        <button id="sectionSortToggle" class="sort-toggle" data-key="Section" type="button">
+          <span class="sort-key">Section</span>
+          <span class="sort-value">A-Z</span>
+          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
+        </button>
+        <button id="linkSortToggle" class="sort-toggle" data-key="Link" type="button">
+          <span class="sort-key">Link</span>
+          <span class="sort-value">A-Z</span>
+          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
+        </button>
+        <button id="dateSortToggle" class="sort-toggle" data-key="Date" type="button">
+          <span class="sort-key">Date</span>
+          <span class="sort-value">None</span>
+          <i class="sort-icon bi bi-dash-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p id="resultStatus" role="status" aria-live="polite" class="mt-2 mb-0 fw-bold"></p>
+    </section>
+
+    <section id="generalLane" class="panel general-window p-3 mb-3 d-none" aria-label="General links"></section>
+
+    <section id="kanbanBoard" class="kanban" aria-label="Research subsections board"></section>
+  </main>
+
+  <script src="assets/data.js"></script>
+  <script src="assets/page.js"></script>
+</body>
+</html>

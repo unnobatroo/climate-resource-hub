@@ -1,85 +1,110 @@
+# 🌱 climate resource hub
 
-A resource database for the climate movement, built with MkDocs.
+A multi-page, accessible climate resource directory.
 
-## Setup
+## Features
 
-### Prerequisites
-- Python 3.10 or higher (3.12+ recommended)
-- pip (latest version recommended)
-
-### Quick Start
-
-1. Create a virtual environment:
-```bash
-python3 -m venv venv
-source venv/bin/activate  # On macOS/Linux
-# or
-venv\Scripts\activate  # On Windows
-```
-
-2. Upgrade pip:
-```bash
-pip install --upgrade pip
-```
-
-3. Install dependencies:
-```bash
-# Option 1: Core dependencies only (recommended for most users)
-pip install -r requirements-core.txt
-
-# Option 2: Exact versions (for reproducing exact environment)
-pip install -r requirements.txt
-```
-
-### Development
-
-Run the local development server:
-```bash
-mkdocs serve
-```
-
-Visit http://localhost:8000
-
-### Build
-
-Build the static site:
-```bash
-mkdocs build
-```
-
-Output is generated in the `site/` directory.
-
-### Deploy
-
-Deploy to GitHub Pages:
-```bash
-mkdocs gh-deploy
-```
+- Topic-based pages: "career", "research", "education", and "invest".
+- Dedicated top lane for general links.
+- Search with internal keyword tags.
+- URL cards with favicon, summary, tags, host, and date information.
+- Accessibility-friendly structure (landmarks, labels, focus states, skip links)
 
 ## Project Structure
 
+```text
+climate-resource-hub/
+├── index.html            # Landing page with topic navigation
+├── career.html           # Career links page
+├── research.html         # Research links page
+├── education.html        # Education links page
+├── invest.html           # Invest links page
+├── CNAME                 # Custom domain for GitHub Pages
+├── .nojekyll             # Disables Jekyll processing on GitHub Pages
+├── .github/
+│   └── workflows/
+│       └── deploy-pages.yml   # GitHub Actions deploy workflow
+└── assets/
+  ├── data.js           # Link dataset
+  ├── page.js           # Rendering, search, and sorting logic
+  └── style.css         # Shared styling
 ```
-docs/
-├── index.md           # Homepage
-├── education.md       # Education resources
-├── research.md        # Research resources
-├── data.md            # Data and tools
-├── careers.md         # Career resources
-├── invest.md          # Finance and investment resources
-├── javascripts/       # Custom scripts
-└── stylesheets/       # Custom styles
 
-mkdocs.yml            # Site configuration
-requirements.txt      # Python dependencies
+## Run Locally
+
+This is a static site. You can open `index.html` directly in a browser.
+
+For best behavior with external assets and a local URL, run a simple local server:
+
+```bash
+python3 -m http.server 8000
 ```
 
-## Contributing
+Then open `http://localhost:8000`.
 
-1. Fork the repository
-2. Add resources to the appropriate markdown file
-3. Test locally with `mkdocs serve`
-4. Submit a pull request
+## Data Format
 
-## License
+Each link item in `assets/data.js` includes:
 
-Open source - contributions welcome
+- `title`
+- `url`
+- `topic`
+- `subtopic`
+- `date`
+
+Example:
+
+```js
+{
+  title: "Climatebase",
+  url: "https://climatebase.org/",
+  topic: "Career",
+  subtopic: "General",
+  date: "2024-01-03"
+}
+```
+
+## Deployment
+
+Deploy as static files on any static host:
+
+- GitHub Pages
+- Netlify
+- Vercel (static)
+- Cloudflare Pages
+
+No build step required.
+
+### GitHub Pages Setup (Prepared)
+
+This repository is already prepared for GitHub Pages:
+
+- `CNAME` is set to `youngo-science.org`
+- `.nojekyll` is included for plain static serving
+- `.github/workflows/deploy-pages.yml` deploys automatically on push to `main`
+
+To publish:
+
+1. Push the repository to GitHub.
+2. In GitHub repository settings, open **Pages**.
+3. Set **Source** to **GitHub Actions**.
+4. Push to `main` (or run the workflow manually).
+
+### Name.com DNS Setup for `youngo-science.org`
+
+At Name.com DNS records, configure:
+
+1. `A` record for host `@` to `185.199.108.153`
+2. `A` record for host `@` to `185.199.109.153`
+3. `A` record for host `@` to `185.199.110.153`
+4. `A` record for host `@` to `185.199.111.153`
+5. `CNAME` record for host `www` to `<your-github-username>.github.io`
+
+After DNS propagation, in GitHub Pages settings ensure:
+
+- Custom domain is `youngo-science.org`
+- **Enforce HTTPS** is enabled
+
+## Notes
+
+- Set link dates manually in `assets/data.js` for full control.
