@@ -1,16 +1,14 @@
-# 🌱 climate resource hub
+# climate resource hub
 
 A multi-page, accessible climate resource directory.
 
-## Features
-
-- Topic-based pages: "career", "research", "education", and "invest".
+- Topic-based pages: "Career", "Research", "Education", and "Invest".
 - Dedicated top lane for general links.
 - Search with internal keyword tags.
 - URL cards with favicon, summary, tags, host, and date information.
 - Accessibility-friendly structure (landmarks, labels, focus states, skip links)
 
-## Project Structure
+### Project Structure
 
 ```text
 climate-resource-hub/
@@ -30,29 +28,9 @@ climate-resource-hub/
   └── style.css         # Shared styling
 ```
 
-## Run Locally
-
-This is a static site. You can open `index.html` directly in a browser.
-
-For best behavior with external assets and a local URL, run a simple local server:
-
-```bash
-python3 -m http.server 8000
-```
-
-Then open `http://localhost:8000`.
-
-## Data Format
+### Data format
 
 Each link item in `assets/data.js` includes:
-
-- `title`
-- `url`
-- `topic`
-- `subtopic`
-- `date`
-
-Example:
 
 ```js
 {
@@ -64,47 +42,10 @@ Example:
 }
 ```
 
-## Deployment
-
-Deploy as static files on any static host:
-
-- GitHub Pages
-- Netlify
-- Vercel (static)
-- Cloudflare Pages
-
-No build step required.
-
-### GitHub Pages Setup (Prepared)
+## GitHub Pages setup
 
 This repository is already prepared for GitHub Pages:
 
 - `CNAME` is set to `youngo-science.org`
 - `.nojekyll` is included for plain static serving
 - `.github/workflows/deploy-pages.yml` deploys automatically on push to `main`
-
-To publish:
-
-1. Push the repository to GitHub.
-2. In GitHub repository settings, open **Pages**.
-3. Set **Source** to **GitHub Actions**.
-4. Push to `main` (or run the workflow manually).
-
-### Name.com DNS Setup for `youngo-science.org`
-
-At Name.com DNS records, configure:
-
-1. `A` record for host `@` to `185.199.108.153`
-2. `A` record for host `@` to `185.199.109.153`
-3. `A` record for host `@` to `185.199.110.153`
-4. `A` record for host `@` to `185.199.111.153`
-5. `CNAME` record for host `www` to `<your-github-username>.github.io`
-
-After DNS propagation, in GitHub Pages settings ensure:
-
-- Custom domain is `youngo-science.org`
-- **Enforce HTTPS** is enabled
-
-## Notes
-
-- Set link dates manually in `assets/data.js` for full control.
