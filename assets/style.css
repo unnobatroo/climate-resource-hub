@@ -317,6 +317,18 @@ body {
   font-size: 0.9rem;
 }
 
+.footer-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: var(--focus);
+}
+
 .sort-help {
   font-size: 0.78rem;
   margin-top: 0.25rem;
