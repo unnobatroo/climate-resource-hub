@@ -3,8 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
+  <!-- theme.js loads before viewport to apply the saved dark/light theme without a flash of unstyled content (FOUC) -->
+  <script src="assets/theme.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Education - climate resource hub</title>
   <meta name="description" content="Learn about climate change and its science.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,6 +23,9 @@
 
   <header class="container my-4" role="banner">
     <section class="hero p-4 p-md-5">
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" type="button">
+        <i class="bi bi-moon-fill" aria-hidden="true"></i>
+      </button>
       <div class="d-flex flex-wrap gap-2 mb-3">
         <a href="index.html" class="btn btn-light nav-btn"><i class="bi bi-house" aria-hidden="true"></i> Home</a>
         <a href="career.html" class="btn btn-warning nav-btn">Career</a>
@@ -29,6 +33,7 @@
         <a href="education.html" class="btn btn-success nav-btn is-active" aria-current="page">Education</a>
         <a href="invest.html" class="btn btn-danger nav-btn">Invest</a>
       </div>
+      <h1 class="site-title mb-3">education</h1>
       <p class="fs-5 mb-0">Learn about climate change and its science.</p>
     </section>
   </header>
@@ -61,6 +66,21 @@
 
     <section id="kanbanBoard" class="kanban" aria-label="Education subsections board"></section>
   </main>
+
+  <footer class="container pb-4" role="contentinfo">
+    <section class="panel p-3">
+      <p class="footer-note mb-2"><strong>Climate links curated by Jaloliddin Ismailov — YOUNGO Science WG.</strong></p>
+      <p class="footer-note mb-0">
+        <a href="https://github.com/unnobatroo/climate-resource-hub" class="footer-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> View source on GitHub</a>
+        &nbsp;·&nbsp;
+        Know an education resource that belongs here?
+        <a href="https://github.com/unnobatroo/climate-resource-hub/issues/new" class="footer-link" target="_blank" rel="noopener noreferrer">Open an issue</a>
+        or
+        <a href="https://github.com/unnobatroo/climate-resource-hub/compare" class="footer-link" target="_blank" rel="noopener noreferrer">submit a pull request</a>
+        — contributions are very welcome!
+      </p>
+    </section>
+  </footer>
 
   <script src="assets/data.js"></script>
   <script src="assets/page.js"></script>

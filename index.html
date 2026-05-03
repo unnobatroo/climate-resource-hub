@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <!-- theme.js loads before viewport to apply the saved dark/light theme without a flash of unstyled content (FOUC) -->
+  <script src="assets/theme.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>climate resource hub</title>
   <meta name="description" content="Accessible multi-page climate directory.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +19,9 @@
 
   <header class="container my-4" role="banner">
     <section class="hero p-4 p-md-5">
+      <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" type="button">
+        <i class="bi bi-moon-fill" aria-hidden="true"></i>
+      </button>
       <p class="pixel-chip px-2 py-1 mb-3"><i class="bi bi-stars" aria-hidden="true"></i>YOUNGO Science WG</p>
       <h1 class="site-title mb-3">climate resource hub</h1>
       <p class="fs-5 mb-0">Welcome! To get started, choose a section down below.</p>
@@ -33,8 +37,17 @@
 
   <footer class="container pb-4" role="contentinfo">
     <section class="panel p-3">
-      <p class="footer-note mb-1"><strong>Climate relared links collected by me - Jaloliddin Ismailov - to get you started in the field.</strong></p>
-      <p class="footer-note mb-0">When I was first starting my journey in climate tech, the vast majority of the available resources was terryfying, rather than exciting. I didn't know where to start. That's why I created a website to reach more people and speed up the capacity building all over the workld.</p>
+      <p class="footer-note mb-2"><strong>Climate links curated by Jaloliddin Ismailov — YOUNGO Science WG.</strong></p>
+      <p class="footer-note mb-2">When starting out in climate tech, finding the right resources can feel terrifying rather than exciting. This hub was built to help people get started and speed up capacity building all over the world.</p>
+      <p class="footer-note mb-0">
+        <a href="https://github.com/unnobatroo/climate-resource-hub" class="footer-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> View source on GitHub</a>
+        &nbsp;·&nbsp;
+        Know a resource that belongs here?
+        <a href="https://github.com/unnobatroo/climate-resource-hub/issues/new" class="footer-link" target="_blank" rel="noopener noreferrer">Open an issue</a>
+        or
+        <a href="https://github.com/unnobatroo/climate-resource-hub/compare" class="footer-link" target="_blank" rel="noopener noreferrer">submit a pull request</a>
+        — contributions are very welcome!
+      </p>
     </section>
   </footer>
 
