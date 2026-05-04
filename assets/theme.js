@@ -10,10 +10,12 @@
   }
 
   function getSaved() {
+    // localStorage may be unavailable in private browsing or when blocked by security policies
     try { return localStorage.getItem("theme"); } catch (_) { return null; }
   }
 
   function setSaved(theme) {
+    // Silently skip persistence if localStorage is unavailable (private browsing, storage quota)
     try { localStorage.setItem("theme", theme); } catch (_) {}
   }
 

@@ -334,6 +334,18 @@ body {
   font-size: 0.9rem;
 }
 
+.footer-link {
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  opacity: 0.75;
+}
+
 .sort-help {
   font-size: 0.78rem;
   margin-top: 0.25rem;
@@ -664,6 +676,10 @@ body {
 [data-theme="dark"] .theme-toggle:hover,
 [data-theme="dark"] .theme-toggle:focus-visible {
   background: rgba(255, 255, 255, 0.22);
+}
+
+[data-theme="dark"] .footer-link {
+  color: var(--ink);
 }
 
 @media (max-width: 767px) {
