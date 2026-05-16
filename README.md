@@ -8,7 +8,7 @@ A multi-page, accessible climate resource directory.
 - URL cards with favicon, summary, tags, host, and date information.
 - Accessibility-friendly structure (landmarks, labels, focus states, skip links)
 
-### Project Structure
+### Structure
 
 ```text
 climate-resource-hub/
@@ -42,7 +42,7 @@ Each link item in `assets/data.js` includes:
 }
 ```
 
-## GitHub Pages setup
+## Pages' setup
 
 This repository is already prepared for GitHub Pages:
 
