@@ -22,22 +22,25 @@
       <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" type="button">
         <i class="bi bi-moon-fill" aria-hidden="true"></i>
       </button>
-      <div class="d-flex flex-wrap gap-2 mb-3">
+      <div class="nav-bar mb-3">
+        <button id="navToggle" class="btn btn-light nav-btn nav-toggle" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><i class="bi bi-list" aria-hidden="true"></i> Menu</button>
+        <div id="navMenu" class="nav-menu">
         <a href="index.html" class="btn btn-light nav-btn"><i class="bi bi-house" aria-hidden="true"></i> Home</a>
-        <a href="career.html" class="btn btn-warning nav-btn">Career</a>
-        <a href="research.html" class="btn btn-info nav-btn">Research</a>
-        <a href="education.html" class="btn btn-success nav-btn">Education</a>
-        <a href="invest.html" class="btn btn-danger nav-btn is-active" aria-current="page">Invest</a>
+        <a href="career.html" class="btn btn-warning nav-btn"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Career</a>
+        <a href="research.html" class="btn btn-info nav-btn"><i class="bi bi-bar-chart-fill" aria-hidden="true"></i> Research</a>
+        <a href="education.html" class="btn btn-success nav-btn"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a>
+        <a href="invest.html" class="btn btn-danger nav-btn is-active" aria-current="page"><i class="bi bi-piggy-bank-fill" aria-hidden="true"></i> Invest</a>
       </div>
-      <h1 class="site-title mb-3">invest</h1>
+      </div>
+      <h1 class="site-title mb-3">Invest</h1>
       <p class="fs-5 mb-0">Contribute to the transition.</p>
     </section>
   </header>
 
   <main id="main-content" class="container pb-4" role="main">
     <section class="panel p-3 p-md-4 mb-3" aria-labelledby="search-heading">
-      <h2 id="search-heading" class="h5 fw-bold">Search in <b>Invest</b></h2>
-      <input id="searchInput" type="search" class="form-control" placeholder="Try: fund, impact, climate, pledge">
+      <h2 id="search-heading" class="h5 fw-bold">Search all resources</h2>
+      <input id="searchInput" type="search" class="form-control" placeholder="Search all topics — e.g. solar, policy, jobs, courses">
       <div class="sort-toolbar" aria-label="Sorting controls">
         <button id="sectionSortToggle" class="sort-toggle" data-key="Section" type="button">
           <span class="sort-key">Section</span>

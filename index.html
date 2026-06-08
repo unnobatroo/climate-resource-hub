@@ -23,16 +23,41 @@
         <i class="bi bi-moon-fill" aria-hidden="true"></i>
       </button>
       <p class="pixel-chip px-2 py-1 mb-3"><i class="bi bi-stars" aria-hidden="true"></i>YOUNGO Science WG</p>
-      <h1 class="site-title mb-3">climate resource hub</h1>
-      <p class="fs-5 mb-0">Welcome! To get started, choose a section down below.</p>
+      <h1 class="site-title mb-3">Climate Resource Hub</h1>
+      <p class="fs-5 mb-0">Welcome! Search across everything, or choose a section below.</p>
     </section>
   </header>
 
   <main id="main-content" class="container pb-4" role="main">
-    <section class="panel p-3 p-md-4" aria-labelledby="section-heading">
-      <h2 id="section-heading" class="h4 fw-bold mb-3">Sections</h2>
-      <div id="topicGrid" class="row g-3" aria-live="polite"></div>
+    <section class="panel p-3 p-md-4 mb-3" aria-labelledby="search-heading">
+      <h2 id="search-heading" class="h5 fw-bold">Search all resources</h2>
+      <input id="searchInput" type="search" class="form-control" placeholder="Search all topics — e.g. solar, policy, jobs, courses">
+      <div class="sort-toolbar" aria-label="Sorting controls">
+        <button id="sectionSortToggle" class="sort-toggle" data-key="Section" type="button">
+          <span class="sort-key">Section</span>
+          <span class="sort-value">A-Z</span>
+          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
+        </button>
+        <button id="linkSortToggle" class="sort-toggle" data-key="Link" type="button">
+          <span class="sort-key">Link</span>
+          <span class="sort-value">A-Z</span>
+          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
+        </button>
+        <button id="dateSortToggle" class="sort-toggle" data-key="Date" type="button">
+          <span class="sort-key">Date</span>
+          <span class="sort-value">None</span>
+          <i class="sort-icon bi bi-dash-circle" aria-hidden="true"></i>
+        </button>
+      </div>
+      <p id="resultStatus" role="status" aria-live="polite" class="mt-2 mb-0 fw-bold"></p>
     </section>
+
+    <section id="sectionsPanel" class="panel p-3 p-md-4" aria-labelledby="section-heading">
+      <h2 id="section-heading" class="h4 fw-bold mb-3">Sections</h2>
+      <div id="topicGrid" class="home-grid" aria-live="polite"></div>
+    </section>
+
+    <section id="kanbanBoard" class="kanban d-none" aria-label="Search results"></section>
   </main>
 
   <footer class="container pb-4" role="contentinfo">
