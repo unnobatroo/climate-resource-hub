@@ -1,76 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <!-- theme.js loads before viewport to apply the saved dark/light theme without a flash of unstyled content (FOUC) -->
-  <script src="assets/theme.js"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Accessible multi-page climate directory.">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;700;800&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
   <link href="assets/style.css" rel="stylesheet">
 </head>
+
 <body>
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-  <header class="container my-4" role="banner">
-    <section class="hero p-4 p-md-5">
-      <button id="themeToggle" class="theme-toggle" aria-label="Switch to dark mode" aria-pressed="false" type="button">
-        <i class="bi bi-moon-fill" aria-hidden="true"></i>
-      </button>
-      <p class="pixel-chip px-2 py-1 mb-3"><i class="bi bi-stars" aria-hidden="true"></i>YOUNGO Science WG</p>
-      <h1 class="site-title mb-3">Climate Resource Hub</h1>
-      <p class="fs-5 mb-0">Welcome! Search across everything, or choose a section below.</p>
+  <header class="container mt-3 mb-3" role="banner">
+    <section class="hero p-3">
+      <div class="hero-top">
+        <div class="nav-bar">
+          <button id="navToggle" class="btn nav-btn nav-toggle nav-home" type="button" aria-expanded="false" aria-controls="navMenu" aria-label="Open menu"><i class="bi bi-list" aria-hidden="true"></i> Menu</button>
+          <div id="navMenu" class="nav-menu">
+          <a href="index.html" class="btn nav-btn nav-home is-active" aria-current="page"><i class="bi bi-house" aria-hidden="true"></i> Home</a>
+          <a href="career.html" class="btn nav-btn nav-career"><i class="bi bi-briefcase-fill" aria-hidden="true"></i> Career</a>
+          <a href="research.html" class="btn nav-btn nav-research"><i class="bi bi-bar-chart-fill" aria-hidden="true"></i> Research</a>
+          <a href="education.html" class="btn nav-btn nav-education"><i class="bi bi-mortarboard-fill" aria-hidden="true"></i> Education</a>
+          <a href="invest.html" class="btn nav-btn nav-invest"><i class="bi bi-piggy-bank-fill" aria-hidden="true"></i> Invest</a>
+          </div>
+        </div>
+        <div class="header-search input-group">
+          <span class="input-group-text" aria-hidden="true"><i class="bi bi-search"></i></span>
+          <input id="searchInput" type="search" class="form-control" placeholder="Search all topics — e.g. solar, policy, jobs, courses" aria-label="Search all resources">
+        </div>
+      </div>
+      <h1 class="site-title">Climate Resource Hub</h1>
+      <div class="hero-meta">
+        <p class="hero-tagline mb-0">Welcome! Search across everything, or choose a section below.</p>
+        <div class="sort-toolbar" aria-label="Sorting controls">
+          <button id="sectionSortToggle" class="btn btn-outline-secondary sort-toggle" data-key="Section" type="button"><span class="sort-key">Section</span><i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i></button>
+          <button id="linkSortToggle" class="btn btn-outline-secondary sort-toggle" data-key="Link" type="button"><span class="sort-key">Link</span><i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i></button>
+          <button id="dateSortToggle" class="btn btn-outline-secondary sort-toggle" data-key="Date" type="button"><span class="sort-key">Date</span><i class="sort-icon bi bi-x-circle" aria-hidden="true"></i></button>
+        </div>
+      </div>
     </section>
   </header>
 
   <main id="main-content" class="container pb-4" role="main">
-    <section class="panel p-3 p-md-4 mb-3" aria-labelledby="search-heading">
-      <h2 id="search-heading" class="h5 fw-bold">Search all resources</h2>
-      <input id="searchInput" type="search" class="form-control" placeholder="Search all topics — e.g. solar, policy, jobs, courses">
-      <div class="sort-toolbar" aria-label="Sorting controls">
-        <button id="sectionSortToggle" class="sort-toggle" data-key="Section" type="button">
-          <span class="sort-key">Section</span>
-          <span class="sort-value">A-Z</span>
-          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
-        </button>
-        <button id="linkSortToggle" class="sort-toggle" data-key="Link" type="button">
-          <span class="sort-key">Link</span>
-          <span class="sort-value">A-Z</span>
-          <i class="sort-icon bi bi-sort-alpha-down" aria-hidden="true"></i>
-        </button>
-        <button id="dateSortToggle" class="sort-toggle" data-key="Date" type="button">
-          <span class="sort-key">Date</span>
-          <span class="sort-value">None</span>
-          <i class="sort-icon bi bi-dash-circle" aria-hidden="true"></i>
-        </button>
-      </div>
-      <p id="resultStatus" role="status" aria-live="polite" class="mt-2 mb-0 fw-bold"></p>
-    </section>
+    <h2 id="search-heading" class="visually-hidden">Search all resources</h2>
+    <p id="resultStatus" role="status" aria-live="polite" class="mb-3 fw-semibold text-secondary"></p>
 
-    <section id="sectionsPanel" class="panel p-3 p-md-4" aria-labelledby="section-heading">
-      <h2 id="section-heading" class="h4 fw-bold mb-3">Sections</h2>
+    <section id="sectionsPanel" aria-labelledby="section-heading">
+      <h2 id="section-heading" class="visually-hidden">Sections</h2>
       <div id="topicGrid" class="home-grid" aria-live="polite"></div>
     </section>
 
-    <section id="kanbanBoard" class="kanban d-none" aria-label="Search results"></section>
+    <section id="results" class="kanban d-none" aria-label="Resource list"></section>
   </main>
 
   <footer class="container pb-4" role="contentinfo">
-    <section class="panel p-3">
+    <section class="site-footer">
       <p class="footer-note mb-2"><strong>Climate links curated by Jaloliddin Ismailov — YOUNGO Science WG.</strong></p>
-      <p class="footer-note mb-2">When starting out in climate tech, finding the right resources can feel terrifying rather than exciting. This hub was built to help people get started and speed up capacity building all over the world.</p>
+      <p class="footer-note mb-2">When starting out in climate tech, finding the right resources can feel terrifying
+        rather than exciting. This hub was built to help people get started and speed up capacity building all over the
+        world.</p>
       <p class="footer-note mb-0">
-        <a href="https://github.com/unnobatroo/climate-resource-hub" class="footer-link" target="_blank" rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> View source on GitHub</a>
+        <a href="https://github.com/unnobatroo/climate-resource-hub" class="footer-link" target="_blank"
+          rel="noopener noreferrer"><i class="bi bi-github" aria-hidden="true"></i> View source on GitHub</a>
         &nbsp;·&nbsp;
         Know a resource that belongs here?
-        <a href="https://github.com/unnobatroo/climate-resource-hub/issues/new" class="footer-link" target="_blank" rel="noopener noreferrer">Open an issue</a>
+        <a href="https://github.com/unnobatroo/climate-resource-hub/issues/new" class="footer-link" target="_blank"
+          rel="noopener noreferrer">Open an issue</a>
         or
-        <a href="https://github.com/unnobatroo/climate-resource-hub/compare" class="footer-link" target="_blank" rel="noopener noreferrer">submit a pull request</a>
+        <a href="https://github.com/unnobatroo/climate-resource-hub/compare" class="footer-link" target="_blank"
+          rel="noopener noreferrer">submit a pull request</a>
         — contributions are very welcome!
       </p>
     </section>
@@ -79,4 +85,5 @@
   <script src="assets/data.js"></script>
   <script src="assets/page.js"></script>
 </body>
+
 </html>
