@@ -1,320 +1,371 @@
+/* Climate Resource Hub — rendering and search.
+   Reads window.CLIMATE_LINKS (assets/data.js) and renders either:
+   - home: one overview card per section, or
+   - a section page: links grouped by category,
+   plus a global search (all sections) available everywhere. */
 (function () {
+  "use strict";
+
+  /* Each section has its own personality: colour, voice, emoji,
+     and a pixel-art mascot drawn from the `art` string map. */
   const TOPICS = {
-    Career: { icon: "bi-briefcase-fill", page: "career.html", colorClass: "career" },
-    Research: { icon: "bi-bar-chart-fill", page: "research.html", colorClass: "research" },
-    Education: { icon: "bi-mortarboard-fill", page: "education.html", colorClass: "education" },
-    Invest: { icon: "bi-piggy-bank-fill", page: "invest.html", colorClass: "invest" }
+    Career: {
+      page: "career.html",
+      colorClass: "career",
+      blurb: "Clock in for the planet — job boards, hiring climate-tech companies, and career pathways.",
+      icon: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
+      art: [
+        "...DDDDDD...",
+        "...D....D...",
+        "DDDDDDDDDDDD",
+        "DAAAAAAAAAAD",
+        "DAAAADDAAAAD",
+        "DAAAAAAAAAAD",
+        "DAAAAAAAAAAD",
+        "DDDDDDDDDDDD"
+      ],
+      palette: { D: "#92400e", A: "#f59e0b" }
+    },
+    Research: {
+      page: "research.html",
+      colorClass: "research",
+      blurb: "Bring receipts — datasets, models, policy tools, and open-source climate science.",
+      icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
+      art: [
+        ".........CC..",
+        ".........CC..",
+        "....MM...CC..",
+        "....MM...CC..",
+        "LL..MM...CC..",
+        "LL..MM...CC..",
+        "LL..MM...CC..",
+        "DDDDDDDDDDDDD"
+      ],
+      palette: { L: "#67e8f9", M: "#22d3ee", C: "#0891b2", D: "#155e75" }
+    },
+    Education: {
+      page: "education.html",
+      colorClass: "education",
+      blurb: "Zero to climate-literate — explainers, courses, and communities for learning the science.",
+      icon: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
+      art: [
+        ".DDDDD.DDDDD.",
+        "DPPPPPDPPPPPD",
+        "DPPPPPDPPPPPD",
+        "DPLLLPDPLLLPD",
+        "DPPPPPDPPPPPD",
+        "DPLLLPDPLLLPD",
+        "DPPPPPDPPPPPD",
+        ".DDDDDDDDDDD."
+      ],
+      palette: { D: "#15803d", P: "#ecfdf5", L: "#4ade80" }
+    },
+    Invest: {
+      page: "invest.html",
+      colorClass: "invest",
+      blurb: "Plant money, grow futures — funds and organizations financing climate solutions.",
+      icon: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
+      art: [
+        "..LL.....LL..",
+        ".LLLL...LLLL.",
+        ".LLLLL.LLLLL.",
+        "...LL.S.LL...",
+        "......S......",
+        "......S......",
+        "....GGGGG....",
+        "...GGYYYGG...",
+        "...GGYYYGG...",
+        "....GGGGG...."
+      ],
+      palette: { L: "#22c55e", S: "#22c55e", G: "#d97706", Y: "#fbbf24" }
+    }
   };
   const TOPIC_ORDER = ["Career", "Research", "Education", "Invest"];
 
-  function hostFromUrl(url) {
+  const ALL_LINKS = (window.CLIMATE_LINKS || []).slice()
+    .sort((a, b) => a.title.localeCompare(b.title));
+
+  /* ---------------- helpers ---------------- */
+
+  function escapeHtml(text) {
+    return String(text)
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;");
+  }
+
+  function slugify(text) {
+    return String(text).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
+  }
+
+  /* "General" first as the entry point, then the rest alphabetically. */
+  function sortCategories(names) {
+    return names.sort((a, b) => {
+      if (a === "General") return -1;
+      if (b === "General") return 1;
+      return a.localeCompare(b);
+    });
+  }
+
+  function hostOf(url) {
     try {
       return new URL(url).hostname.replace(/^www\./, "");
     } catch (_) {
-      return "external link";
+      return "";
     }
   }
 
-  function faviconUrl(url) {
-    try {
-      const host = new URL(url).hostname;
-      return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=64`;
-    } catch (_) {
-      return "https://www.google.com/s2/favicons?domain=example.com&sz=64";
-    }
+  function faviconOf(url) {
+    const host = hostOf(url);
+    return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=64`;
   }
 
-  function formatDate(value) {
-    if (!value) return "—";
-    const parsed = Date.parse(value);
-    if (Number.isNaN(parsed)) return "—";
-    return new Date(parsed).toISOString().slice(0, 10);
+  function svgIcon(paths, className) {
+    return `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
   }
 
-  function summaryFor(link) {
-    const key = `${link.topic}:${link.subtopic}`.toLowerCase();
-    const templates = {
-      "career:general": "A practical career resource for finding roles, companies, and climate work paths.",
-      "career:water resources": "Focused on water-sector impact work, organizations, and sustainability careers.",
-      "career:agriculture": "Climate-smart agriculture opportunities, tools, and market insights.",
-      "career:co2": "Carbon measurement, reduction, removals, and emissions-tech company landscape.",
-      "career:forestry": "Forestry intelligence and nature-focused climate mitigation opportunities.",
-      "career:green energy": "Clean-energy companies, innovation, and transition-focused career ecosystem.",
-      "career:marine": "Ocean and maritime climate solutions, monitoring, and resilience initiatives.",
-      "research:general": "Core climate research datasets, trackers, and global monitoring resources.",
-      "research:policy": "Policy-focused tools for scenario planning, governance, and emissions strategy.",
-      "research:green energy": "Technical references and evidence for renewable and low-carbon energy systems.",
-      "research:tech for climate": "Open tools, communities, and computational research for climate action.",
-      "research:datasets": "Data catalogs and APIs for climate analysis, forecasting, and visualization.",
-      "research:jupyter notebooks": "Notebook-based learning and reproducible workflows for climate science.",
-      "education:general": "Accessible explainers and learning hubs to build climate literacy quickly.",
-      "education:courses": "Structured courses and training paths to deepen climate expertise.",
-      "invest:funds and organizations": "Climate funding organizations and networks for impact-oriented investing."
-    };
-    const fallback = `Useful ${link.topic.toLowerCase()} resource in ${link.subtopic.toLowerCase()} for climate action.`;
-    return link.summary || templates[key] || fallback;
+  const EXTERNAL_ICON = svgIcon('<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>', "external-icon");
+  const CLEAR_ICON = svgIcon('<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>', "clear-icon");
+
+  /* ---------------- card + group markup ---------------- */
+
+  function linkCard(link) {
+    const host = hostOf(link.url);
+    return `
+      <a class="link-card" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="link-card-head">
+          <img class="favicon" src="${escapeHtml(faviconOf(link.url))}" alt="" loading="lazy" width="20" height="20">
+          <h3>${escapeHtml(link.title)}<span class="visually-hidden"> (opens in a new tab)</span></h3>
+          ${EXTERNAL_ICON}
+        </span>
+        <p class="link-summary">${escapeHtml(link.summary || "")}</p>
+        <span class="link-host">${escapeHtml(host)}</span>
+      </a>`;
   }
 
-  function keywordTagsFor(link) {
-    const key = `${link.topic}:${link.subtopic}`.toLowerCase();
-    const byScope = {
-      "career:general": ["jobs", "hiring", "career-path", "climate-tech"],
-      "career:water resources": ["water", "hydrology", "sanitation"],
-      "career:agriculture": ["agriculture", "food-system", "agritech"],
-      "career:co2": ["carbon", "co2", "removals", "emissions"],
-      "career:forestry": ["forest", "nature", "land-use"],
-      "career:green energy": ["renewables", "energy", "decarbonization"],
-      "career:marine": ["ocean", "marine", "coastal"],
-      "research:general": ["climate-data", "evidence", "monitoring"],
-      "research:policy": ["policy", "scenario", "governance"],
-      "research:green energy": ["solar", "power", "generation"],
-      "research:tech for climate": ["opensource", "modeling", "tooling"],
-      "research:datasets": ["datasets", "api", "observations"],
-      "research:jupyter notebooks": ["python", "notebooks", "reproducible"],
-      "education:general": ["learning", "intro", "awareness"],
-      "education:courses": ["course", "training", "curriculum"],
-      "invest:funds and organizations": ["funding", "venture", "grants", "impact"]
-    };
-    const host = hostFromUrl(link.url).replace(/\.[a-z]{2,}$/i, "").toLowerCase();
-    return [
-      link.topic.toLowerCase(),
-      link.subtopic.toLowerCase(),
-      host,
-      ...(byScope[key] || [])
-    ];
+  function group(title, links, colorClass, href) {
+    const heading = href
+      ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>`
+      : escapeHtml(title);
+    return `
+      <section class="group group-${colorClass}" id="${slugify(title)}">
+        <div class="group-head">
+          <h2>${heading}</h2>
+          <span class="group-count">${links.length} ${links.length === 1 ? "link" : "links"}</span>
+        </div>
+        <div class="card-grid">${links.map(linkCard).join("")}</div>
+      </section>`;
   }
 
-  function colorClassOf(topic) {
-    return TOPICS[topic] ? TOPICS[topic].colorClass : "career";
-  }
-  function topicIcon(topic) {
-    return TOPICS[topic] ? TOPICS[topic].icon : "bi-link-45deg";
-  }
-  function escapeAttr(text) {
-    return String(text).replace(/"/g, "&quot;");
-  }
+  /* ---------------- views ---------------- */
 
-  /* ----------------- Home sections grid ----------------- */
-  function renderHome() {
-    const container = document.getElementById("topicGrid");
-    if (!container || !window.CLIMATE_LINKS) return;
-
-    const counts = window.CLIMATE_LINKS.reduce((acc, item) => {
-      acc[item.topic] = (acc[item.topic] || 0) + 1;
-      return acc;
-    }, {});
-
-    container.innerHTML = TOPIC_ORDER.map((topic) => {
+  function homeOverview() {
+    const cards = TOPIC_ORDER.map((topic) => {
       const cfg = TOPICS[topic];
-      const linksCount = counts[topic] || 0;
+      const links = ALL_LINKS.filter((l) => l.topic === topic);
+      const categories = sortCategories([...new Set(links.map((l) => l.subtopic))]);
+      const chips = categories.map((c) =>
+        `<li><a href="${cfg.page}#${slugify(c)}">${escapeHtml(c)}</a></li>`
+      ).join("");
       return `
-        <a class="resource-card home-topic-card card-${cfg.colorClass}" href="${cfg.page}" aria-label="Open ${topic} page with ${linksCount} links">
-          <div class="resource-head">
-            <i class="bi ${cfg.icon}" aria-hidden="true"></i>
-            <h2 class="resource-title">${topic}</h2>
-          </div>
-          <p class="resource-summary mb-0">${linksCount} links · open page →</p>
-        </a>
-      `;
+        <article class="topic-card topic-${cfg.colorClass}">
+          ${svgIcon(cfg.icon, "topic-icon")}
+          <h2><a class="topic-link" href="${cfg.page}">${topic}</a></h2>
+          <p>${cfg.blurb}</p>
+          <ul class="topic-cats" aria-label="${topic} categories">${chips}</ul>
+          <span class="topic-count">${links.length} links →</span>
+        </article>`;
     }).join("");
+
+    return `<div class="topic-grid">${cards}</div>`;
   }
 
-  /* ----------------- Search + grouped card grid ----------------- */
-  function setupSearch() {
-    const results = document.getElementById("results");
-    const sectionsPanel = document.getElementById("sectionsPanel");
+  function topicData(topic) {
+    const links = ALL_LINKS.filter((l) => l.topic === topic);
+    const bySubtopic = {};
+    links.forEach((l) => {
+      (bySubtopic[l.subtopic] = bySubtopic[l.subtopic] || []).push(l);
+    });
+    return {
+      bySubtopic,
+      subtopics: sortCategories(Object.keys(bySubtopic)),
+      colorClass: TOPICS[topic].colorClass,
+      total: links.length
+    };
+  }
+
+  function searchView(query) {
+    const matches = ALL_LINKS.filter((l) => {
+      const text = `${l.title} ${l.topic} ${l.subtopic} ${l.summary || ""} ${hostOf(l.url)}`.toLowerCase();
+      return text.includes(query);
+    });
+
+    const byTopic = {};
+    matches.forEach((l) => {
+      (byTopic[l.topic] = byTopic[l.topic] || []).push(l);
+    });
+
+    const html = TOPIC_ORDER
+      .filter((t) => byTopic[t])
+      .map((t) => group(t, byTopic[t], TOPICS[t].colorClass, TOPICS[t].page))
+      .join("");
+
+    return { html, count: matches.length };
+  }
+
+  /* ---------------- decorative pixel art (hero mascots) ---------------- */
+
+  const EARTH = [
+    "....WWWWW....",
+    "...WLLWWWW...",
+    "..WLLLLWWWW..",
+    ".WLLLLWWWWLW.",
+    ".WWLLLWWLLLW.",
+    "WWWWLLWWWLLWW",
+    "WWWWWLWWWLLLW",
+    "WWWWWWWWLLLWW",
+    ".WWWLLWWWLWW.",
+    ".WWWWLLLWWWW.",
+    "..WWWWLLWWW..",
+    "...WWWWWWW...",
+    "....WWWWW...."
+  ];
+  const EARTH_PALETTE = { W: "var(--pixel-water)", L: "var(--pixel-land)" };
+
+  /* Draws string-map pixel art as a single box-shadow — one element,
+     no images, scales crisply. */
+  function renderPixelArt(el, art, palette, P) {
+    P = P || 8;
+    const shadows = [];
+    art.forEach((row, y) => {
+      row.split("").forEach((ch, x) => {
+        if (palette[ch]) shadows.push(`${x * P}px ${y * P}px 0 0 ${palette[ch]}`);
+      });
+    });
+    el.style.width = el.style.height = `${P}px`;
+    el.style.boxShadow = shadows.join(",");
+  }
+
+  function setupHeroArt(currentTopic) {
+    const el = document.getElementById("pixelArt");
+    if (!el) return;
+    if (currentTopic && TOPICS[currentTopic]) {
+      renderPixelArt(el, TOPICS[currentTopic].art, TOPICS[currentTopic].palette);
+    } else {
+      renderPixelArt(el, EARTH, EARTH_PALETTE);
+    }
+  }
+
+  /* ---------------- page controller ---------------- */
+
+  function init() {
+    const content = document.getElementById("content");
+    const status = document.getElementById("resultStatus");
     const searchInput = document.getElementById("searchInput");
-    const sectionSortToggle = document.getElementById("sectionSortToggle");
-    const linkSortToggle = document.getElementById("linkSortToggle");
-    const dateSortToggle = document.getElementById("dateSortToggle");
-    const resultStatus = document.getElementById("resultStatus");
-    if (!results || !searchInput || !sectionSortToggle || !linkSortToggle || !dateSortToggle || !resultStatus || !window.CLIMATE_LINKS) return;
+    if (!content || !ALL_LINKS.length) return;
 
     const currentTopic = document.body.dataset.topic || null;
-    const allLinks = window.CLIMATE_LINKS;
-    const topicLinks = currentTopic ? allLinks.filter((item) => item.topic === currentTopic) : [];
-    const globalIndex = new Map(allLinks.map((item, idx) => [item.url, idx]));
 
-    const sortState = { section: "az", link: "az", date: "none" };
-
-    function dateIndex(link) {
-      if (link.date) {
-        const parsed = Date.parse(link.date);
-        if (!Number.isNaN(parsed)) return parsed;
-      }
-      return globalIndex.has(link.url) ? globalIndex.get(link.url) : 0;
+    /* Category filters (section pages): ordered list of toggled-on
+       categories. Empty = show everything. Arriving with a #hash
+       (e.g. from a home-page chip) pre-selects that category. */
+    let selected = [];
+    if (currentTopic && location.hash) {
+      const hash = decodeURIComponent(location.hash.slice(1));
+      const match = topicData(currentTopic).subtopics.find((st) => slugify(st) === hash);
+      if (match) selected = [match];
     }
 
-    function compareLinks(a, b, linkMode, dateMode) {
-      if (dateMode === "date-desc") return dateIndex(b) - dateIndex(a) || a.title.localeCompare(b.title);
-      if (dateMode === "date-asc") return dateIndex(a) - dateIndex(b) || a.title.localeCompare(b.title);
-      if (linkMode === "za") return b.title.localeCompare(a.title);
-      return a.title.localeCompare(b.title);
-    }
-
-    function sortSubtopics(subtopics, grouped, sectionMode, dateMode) {
-      if (dateMode === "date-desc") {
-        return subtopics.sort((a, b) => Math.max(...grouped[b].map(dateIndex)) - Math.max(...grouped[a].map(dateIndex)) || a.localeCompare(b));
-      }
-      if (dateMode === "date-asc") {
-        return subtopics.sort((a, b) => Math.min(...grouped[a].map(dateIndex)) - Math.min(...grouped[b].map(dateIndex)) || a.localeCompare(b));
-      }
-      if (sectionMode === "za") return subtopics.sort((a, b) => b.localeCompare(a));
-      return subtopics.sort((a, b) => a.localeCompare(b));
-    }
-
-    function setToggleUI(toggle, valueText, icon) {
-      const iconEl = toggle.querySelector(".sort-icon");
-      if (iconEl) iconEl.className = `sort-icon bi ${icon}`;
-      toggle.setAttribute("aria-label", `${toggle.dataset.key} sort: ${valueText}`);
-    }
-
-    function syncSortToggles() {
-      setToggleUI(sectionSortToggle, sortState.section === "az" ? "A-Z" : "Z-A", sortState.section === "az" ? "bi-sort-alpha-down" : "bi-sort-alpha-up");
-      setToggleUI(linkSortToggle, sortState.link === "az" ? "A-Z" : "Z-A", sortState.link === "az" ? "bi-sort-alpha-down" : "bi-sort-alpha-up");
-      if (sortState.date === "date-asc") setToggleUI(dateSortToggle, "Old-New", "bi-sort-numeric-down");
-      else if (sortState.date === "date-desc") setToggleUI(dateSortToggle, "New-Old", "bi-sort-numeric-up");
-      else setToggleUI(dateSortToggle, "None", "bi-x-circle");
-    }
-
-    function groupBy(links, keyFn) {
-      return links.reduce((acc, link) => {
-        const k = keyFn(link);
-        if (!acc[k]) acc[k] = [];
-        acc[k].push(link);
-        return acc;
-      }, {});
-    }
-
-    function matchesQuery(link, query) {
-      if (!query) return true;
-      const tags = keywordTagsFor(link);
-      const text = `${link.title} ${link.topic} ${link.subtopic} ${link.url} ${summaryFor(link)} ${formatDate(link.date)} ${tags.join(" ")}`.toLowerCase();
-      return text.includes(query);
-    }
-
-    function buildCard(link, showTopic) {
-      const host = hostFromUrl(link.url);
-      const dateText = formatDate(link.date);
-      const summary = summaryFor(link);
-      const tags = keywordTagsFor(link).slice(0, 3);
-      const aria = escapeAttr(`${link.title}. ${summary} Opens in a new tab.`);
-      const meta = showTopic
-        ? `<span class="resource-host"><i class="bi ${topicIcon(link.topic)}" aria-hidden="true"></i> ${link.subtopic}</span>`
-        : `<span class="resource-host">${host}</span>`;
+    function filterBar(data) {
+      const chips = data.subtopics.map((st) => `
+        <button type="button" class="filter-chip" data-cat="${escapeHtml(st)}"
+          aria-pressed="${selected.includes(st)}">
+          ${escapeHtml(st)}<span class="chip-count">${data.bySubtopic[st].length}</span>
+        </button>`).join("");
+      const clear = selected.length
+        ? `<button type="button" class="filter-clear">${CLEAR_ICON}Show all</button>`
+        : "";
       return `
-        <a class="link-card" href="${link.url}" target="_blank" rel="noopener noreferrer" aria-label="${aria}">
-          <div class="resource-head">
-            <img class="favicon" src="${faviconUrl(link.url)}" alt="" aria-hidden="true" loading="lazy">
-            <h3 class="resource-title">${link.title}</h3>
-          </div>
-          <p class="resource-summary">${summary}</p>
-          <div class="resource-meta">${meta}<span class="resource-date">${dateText}</span></div>
-          <div class="tag-list" aria-label="Related tags">${tags.map((t) => `<span class="tag-chip">#${t}</span>`).join("")}</div>
-        </a>
-      `;
+        <div class="filter-bar" role="group" aria-label="Filter ${currentTopic} categories">
+          ${chips}${clear}
+        </div>`;
     }
 
-    function buildGroup(title, colorClass, links, showTopic) {
-      const cards = links.map((l) => buildCard(l, showTopic)).join("");
-      return `
-        <section class="kanban-col" aria-label="${escapeAttr(title)}">
-          <h2 class="col-head"><span class="group-title">${title}</span><span class="group-count">${links.length}</span></h2>
-          <div class="col-cards">${cards}</div>
-        </section>
-      `;
+    function renderTopicPage() {
+      const data = topicData(currentTopic);
+      // Toggled-on categories show alone, in the order they were picked.
+      const shown = selected.length ? selected : data.subtopics;
+      const shownCount = shown.reduce((n, st) => n + data.bySubtopic[st].length, 0);
+
+      content.innerHTML = filterBar(data) +
+        shown.map((st) => group(st, data.bySubtopic[st], data.colorClass)).join("");
+
+      const catWord = data.subtopics.length === 1 ? "category" : "categories";
+      status.textContent = selected.length
+        ? `Showing ${shownCount} links in ${selected.length} of ${data.subtopics.length} ${catWord}.`
+        : `${data.total} links in ${data.subtopics.length} ${catWord}.`;
     }
 
-    function showResults(show) {
-      results.classList.toggle("d-none", !show);
-      if (sectionsPanel) sectionsPanel.classList.toggle("d-none", show);
-    }
-
-    /* Section page default: this topic's links, grouped by subtopic */
-    function renderTopicDefault() {
-      const grouped = groupBy(topicLinks, (l) => l.subtopic);
-      const subtopics = sortSubtopics(Object.keys(grouped), grouped, sortState.section, sortState.date);
-      results.innerHTML = subtopics.map((st) => {
-        const links = grouped[st].slice().sort((a, b) => compareLinks(a, b, sortState.link, sortState.date));
-        return buildGroup(st, colorClassOf(currentTopic), links, false);
-      }).join("");
-      showResults(true);
-      resultStatus.textContent = `${topicLinks.length} links in ${currentTopic}.`;
-    }
-
-    /* Global search: matches across all topics, grouped by topic */
-    function renderGlobalSearch(query) {
-      const filtered = allLinks.filter((l) => matchesQuery(l, query));
-      const grouped = groupBy(filtered, (l) => l.topic);
-      let topics = TOPIC_ORDER.filter((t) => grouped[t] && grouped[t].length);
-      if (sortState.section === "za") topics = topics.slice().reverse();
-
-      if (filtered.length === 0) {
-        results.innerHTML = `<p class="empty-row">No links match your search. Try another word.</p>`;
-        showResults(true);
-        resultStatus.textContent = "0 links found across all topics.";
-        return;
+    function renderDefault() {
+      if (currentTopic) {
+        renderTopicPage();
+      } else {
+        content.innerHTML = homeOverview();
+        status.textContent = "";
       }
-
-      results.innerHTML = topics.map((t) => {
-        const links = grouped[t].slice().sort((a, b) => compareLinks(a, b, sortState.link, sortState.date));
-        return buildGroup(t, colorClassOf(t), links, true);
-      }).join("");
-      showResults(true);
-      resultStatus.textContent = `${filtered.length} links found across all topics.`;
     }
 
     function render() {
-      const query = searchInput.value.toLowerCase().trim();
-      if (query.length === 0) {
-        if (currentTopic) {
-          renderTopicDefault();
-        } else {
-          showResults(false);
-          resultStatus.textContent = "";
-        }
-      } else {
-        renderGlobalSearch(query);
+      const query = (searchInput ? searchInput.value : "").trim().toLowerCase();
+      if (!query) {
+        renderDefault();
+        return;
       }
+      const view = searchView(query);
+      if (view.count === 0) {
+        content.innerHTML = `
+          <div class="empty-state">
+            <p><strong>No links match “${escapeHtml(query)}”.</strong></p>
+            <p>Try a broader word like “energy”, “data”, or “course”.</p>
+          </div>`;
+      } else {
+        content.innerHTML = view.html;
+      }
+      status.textContent = `${view.count} ${view.count === 1 ? "link" : "links"} found across all sections.`;
     }
 
-    searchInput.addEventListener("input", render);
-    sectionSortToggle.addEventListener("click", () => {
-      sortState.section = sortState.section === "az" ? "za" : "az";
-      syncSortToggles();
-      render();
-    });
-    linkSortToggle.addEventListener("click", () => {
-      sortState.link = sortState.link === "az" ? "za" : "az";
-      syncSortToggles();
-      render();
-    });
-    dateSortToggle.addEventListener("click", () => {
-      if (sortState.date === "none") sortState.date = "date-asc";
-      else if (sortState.date === "date-asc") sortState.date = "date-desc";
-      else sortState.date = "none";
-      syncSortToggles();
-      render();
-    });
+    /* Filter chip toggling (event delegation survives re-renders). */
+    if (currentTopic) {
+      content.addEventListener("click", (e) => {
+        const chip = e.target.closest(".filter-chip");
+        if (chip) {
+          const cat = chip.dataset.cat;
+          selected = selected.includes(cat)
+            ? selected.filter((c) => c !== cat)
+            : [...selected, cat];
+          renderTopicPage();
+          const again = content.querySelector(`.filter-chip[data-cat="${CSS.escape(cat)}"]`);
+          if (again) again.focus();
+          return;
+        }
+        if (e.target.closest(".filter-clear")) {
+          selected = [];
+          renderTopicPage();
+          const first = content.querySelector(".filter-chip");
+          if (first) first.focus();
+        }
+      });
+    }
 
-    syncSortToggles();
+    /* Live total in the home hero badge, if present. */
+    const totalEl = document.getElementById("linkTotal");
+    if (totalEl) totalEl.textContent = String(ALL_LINKS.length);
+
+    setupHeroArt(currentTopic);
+    if (searchInput) searchInput.addEventListener("input", render);
     render();
   }
 
-  function setupNav() {
-    const navToggle = document.getElementById("navToggle");
-    const navMenu = document.getElementById("navMenu");
-    if (!navToggle || !navMenu) return;
-    navToggle.addEventListener("click", () => {
-      const open = navMenu.classList.toggle("is-open");
-      navToggle.setAttribute("aria-expanded", String(open));
-      navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-    });
-  }
-
-  document.addEventListener("DOMContentLoaded", () => {
-    renderHome();
-    setupSearch();
-    setupNav();
-  });
+  document.addEventListener("DOMContentLoaded", init);
 })();

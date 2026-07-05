@@ -1,48 +1,50 @@
 # climate resource hub
 
-A multi-page, accessible climate resource directory.
+A hand-curated, accessible directory of climate links — careers, research, education, and funding.
 
-- Topic-based pages: "Career", "Research", "Education", and "Invest".
-- Dedicated top lane for general links.
-- Search with internal keyword tags.
-- URL cards with favicon, summary, tags, host, and date information.
-- Accessibility-friendly structure (landmarks, labels, focus states, skip links)
+- **No frameworks, no build step** — plain HTML, one small CSS file, one small JS file. The only external asset is the Space Grotesk display font (Google Fonts).
+- Topic pages: [Career](career.html), [Research](research.html), [Education](education.html), [Invest](invest.html), each grouped by category with **toggleable category filters** (selected categories jump to the top).
+- Global search across every section, available from any page.
+- Quirky design: hand-drawn box-shadow pixel-art mascots, per-section colours and voices, one consistent stroke-icon family.
+- Automatic light/dark theme (follows the visitor's system preference).
+- Accessible by design: landmarks, skip link, labelled search, live result announcements, visible focus states, no horizontal scrolling.
 
-### Structure
+## Structure
 
 ```text
 climate-resource-hub/
-├── index.html            # Landing page with topic navigation
-├── career.html           # Career links page
-├── research.html         # Research links page
-├── education.html        # Education links page
-├── invest.html           # Invest links page
+├── index.html            # Home: section overview + global search
+├── career.html           # Career links
+├── research.html         # Research links
+├── education.html        # Education links
+├── invest.html           # Invest links
 ├── CNAME                 # Custom domain for GitHub Pages
 ├── .nojekyll             # Disables Jekyll processing on GitHub Pages
 ├── .github/
 │   └── workflows/
 │       └── deploy-pages.yml   # GitHub Actions deploy workflow
 └── assets/
-  ├── data.js           # Link dataset
-  ├── page.js           # Rendering, search, and sorting logic
-  └── style.css         # Shared styling
+    ├── data.js           # Link dataset (the only file to edit to add a link)
+    ├── page.js           # Rendering and search
+    └── style.css         # Styling (light + dark)
 ```
 
-### Data format
+## Adding a link
 
-Each link item in `assets/data.js` includes:
+Add an entry to `assets/data.js`:
 
 ```js
 {
   title: "Climatebase",
   url: "https://climatebase.org/",
-  topic: "Career",
-  subtopic: "General",
-  date: "2024-01-03"
+  topic: "Career",            // Career | Research | Education | Invest
+  subtopic: "General",        // category shown as a group heading
+  date: "2024-01-03",
+  summary: "One-sentence description shown on the card."
 }
 ```
 
-## Pages' setup
+## Pages setup
 
 This repository is already prepared for GitHub Pages:
 
