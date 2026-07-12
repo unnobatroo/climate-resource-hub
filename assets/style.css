@@ -512,6 +512,17 @@ img, svg { max-width: 100%; }
   margin-top: 1.5rem;
   scroll-margin-top: 1rem;
 }
+.group-plateau {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  border: 2px solid var(--group-color, var(--line));
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  box-shadow: 4px 4px 0 var(--group-color, var(--border));
+}
+.group-plateau .group-head {
+  border-bottom-style: solid;
+}
 
 .group-head {
   display: flex;

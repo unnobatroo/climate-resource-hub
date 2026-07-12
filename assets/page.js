@@ -99,13 +99,14 @@
     return String(text).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
   }
 
-  /* "General" first as the entry point, then the rest alphabetically. */
+  const GENERAL_SUBTOPIC = "General";
+
+  function categoryLabel(name) {
+    return name === GENERAL_SUBTOPIC ? "Start here" : name;
+  }
+
   function sortCategories(names) {
-    return names.sort((a, b) => {
-      if (a === "General") return -1;
-      if (b === "General") return 1;
-      return a.localeCompare(b);
-    });
+    return names.sort((a, b) => a.localeCompare(b));
   }
 
   function hostOf(url) {
@@ -144,12 +145,13 @@
       </a>`;
   }
 
-  function group(title, links, colorClass, href) {
+  function group(title, links, colorClass, href, options) {
+    const opts = options || {};
     const heading = href
       ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>`
       : escapeHtml(title);
     return `
-      <section class="group group-${colorClass}" id="${slugify(title)}">
+      <section class="group group-${colorClass}${opts.className ? ` ${opts.className}` : ""}" id="${escapeHtml(opts.id || slugify(title))}">
         <div class="group-head">
           <h2>${heading}</h2>
           <span class="group-count">${links.length} ${links.length === 1 ? "link" : "links"}</span>
@@ -166,7 +168,7 @@
       const links = ALL_LINKS.filter((l) => l.topic === topic);
       const categories = sortCategories([...new Set(links.map((l) => l.subtopic))]);
       const chips = categories.map((c) =>
-        `<li><a href="${cfg.page}#${slugify(c)}">${escapeHtml(c)}</a></li>`
+        `<li><a href="${cfg.page}#${slugify(c)}">${escapeHtml(categoryLabel(c))}</a></li>`
       ).join("");
       return `
         <article class="topic-card topic-${cfg.colorClass}">
@@ -189,7 +191,8 @@
     });
     return {
       bySubtopic,
-      subtopics: sortCategories(Object.keys(bySubtopic)),
+      subtopics: sortCategories(Object.keys(bySubtopic).filter((st) => st !== GENERAL_SUBTOPIC)),
+      generalLinks: bySubtopic[GENERAL_SUBTOPIC] || [],
       colorClass: TOPICS[topic].colorClass,
       total: links.length
     };
@@ -278,10 +281,11 @@
     }
 
     function filterBar(data) {
+      if (!data.subtopics.length) return "";
       const chips = data.subtopics.map((st) => `
         <button type="button" class="filter-chip" data-cat="${escapeHtml(st)}"
           aria-pressed="${selected.includes(st)}">
-          ${escapeHtml(st)}<span class="chip-count">${data.bySubtopic[st].length}</span>
+          ${escapeHtml(categoryLabel(st))}<span class="chip-count">${data.bySubtopic[st].length}</span>
         </button>`).join("");
       const clear = selected.length
         ? `<button type="button" class="filter-clear">${CLEAR_ICON}Show all</button>`
@@ -294,17 +298,27 @@
 
     function renderTopicPage() {
       const data = topicData(currentTopic);
+      const hasGeneral = data.generalLinks.length > 0;
+      const pinnedGeneral = data.generalLinks.length
+        ? group("Start here", data.generalLinks, data.colorClass, null, { id: "general", className: "group-plateau" })
+        : "";
       // Toggled-on categories show alone, in the order they were picked.
       const shown = selected.length ? selected : data.subtopics;
-      const shownCount = shown.reduce((n, st) => n + data.bySubtopic[st].length, 0);
+      const shownCount = shown.reduce((n, st) => n + data.bySubtopic[st].length, 0) + data.generalLinks.length;
 
-      content.innerHTML = filterBar(data) +
+      content.innerHTML = filterBar(data) + pinnedGeneral +
         shown.map((st) => group(st, data.bySubtopic[st], data.colorClass)).join("");
 
       const catWord = data.subtopics.length === 1 ? "category" : "categories";
-      status.textContent = selected.length
-        ? `Showing ${shownCount} links in ${selected.length} of ${data.subtopics.length} ${catWord}.`
-        : `${data.total} links in ${data.subtopics.length} ${catWord}.`;
+      if (selected.length) {
+       status.textContent = hasGeneral
+         ? `Showing ${shownCount} links in Start here plus ${selected.length} of ${data.subtopics.length} ${catWord}.`
+         : `Showing ${shownCount} links in ${selected.length} of ${data.subtopics.length} ${catWord}.`;
+      } else {
+       status.textContent = hasGeneral
+         ? `${data.total} links in Start here plus ${data.subtopics.length} ${catWord}.`
+         : `${data.total} links in ${data.subtopics.length} ${catWord}.`;
+      }
     }
 
     function renderDefault() {
