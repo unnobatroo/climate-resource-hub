@@ -638,8 +638,8 @@ img, svg { max-width: 100%; }
    Footer
    ============================================================ */
 .site-footer {
-  margin-top: 3.5rem;
-  padding-block: 1.75rem 2.25rem;
+  margin-top: 2rem;
+  padding-block: 1.25rem 1.5rem;
   border-top: 2px solid var(--line);
   background: var(--surface);
 }
