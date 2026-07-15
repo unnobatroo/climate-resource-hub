@@ -1,112 +1,61 @@
-/* Climate Resource Hub — rendering and search.
-   Reads window.CLIMATE_LINKS (assets/data.js) and renders either:
-   - home: one overview card per section, or
-   - a section page: links grouped by category,
-   plus a global search (all sections) available everywhere. */
+/* Climate Resource Hub — shared rendering, search, filters, and theme controls. */
 (function () {
   "use strict";
 
-  /* Each section has its own personality: colour, voice, emoji,
-     and a pixel-art mascot drawn from the `art` string map. */
   const TOPICS = {
     Career: {
       page: "career.html",
-      colorClass: "career",
-      blurb: "Clock in for the planet — job boards, hiring climate-tech companies, and career pathways.",
-      icon: '<rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>',
-      art: [
-        "...DDDDDD...",
-        "...D....D...",
-        "DDDDDDDDDDDD",
-        "DAAAAAAAAAAD",
-        "DAAAADDAAAAD",
-        "DAAAAAAAAAAD",
-        "DAAAAAAAAAAD",
-        "DDDDDDDDDDDD"
-      ],
-      palette: { D: "#92400e", A: "#f59e0b" }
+      className: "career",
+      number: "01",
+      eyebrow: "Work on the transition",
+      blurb: "Job boards, teams, and practical entry points into climate work.",
+      icon: '<rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M9 12v2h6v-2"/>'
     },
     Research: {
       page: "research.html",
-      colorClass: "research",
-      blurb: "Bring receipts — datasets, models, policy tools, and open-source climate science.",
-      icon: '<line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>',
-      art: [
-        ".........CC..",
-        ".........CC..",
-        "....MM...CC..",
-        "....MM...CC..",
-        "LL..MM...CC..",
-        "LL..MM...CC..",
-        "LL..MM...CC..",
-        "DDDDDDDDDDDDD"
-      ],
-      palette: { L: "#67e8f9", M: "#22d3ee", C: "#0891b2", D: "#155e75" }
+      className: "research",
+      number: "02",
+      eyebrow: "Work from evidence",
+      blurb: "Datasets, models, policy tools, and open climate science.",
+      icon: '<path d="M4 19V9M10 19V5M16 19v-7M22 19V3"/><path d="M2 19h22"/>'
     },
     Education: {
       page: "education.html",
-      colorClass: "education",
-      blurb: "Zero to climate-literate — explainers, courses, and communities for learning the science.",
-      icon: '<path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>',
-      art: [
-        ".DDDDD.DDDDD.",
-        "DPPPPPDPPPPPD",
-        "DPPPPPDPPPPPD",
-        "DPLLLPDPLLLPD",
-        "DPPPPPDPPPPPD",
-        "DPLLLPDPLLLPD",
-        "DPPPPPDPPPPPD",
-        ".DDDDDDDDDDD."
-      ],
-      palette: { D: "#15803d", P: "#ecfdf5", L: "#4ade80" }
+      className: "education",
+      number: "03",
+      eyebrow: "Build climate literacy",
+      blurb: "Courses, explainers, teaching material, and learning communities.",
+      icon: '<path d="M3 5h6a4 4 0 0 1 4 4v12a3 3 0 0 0-3-3H3z"/><path d="M21 5h-4a4 4 0 0 0-4 4v12a3 3 0 0 1 3-3h5z"/>'
     },
     Invest: {
       page: "invest.html",
-      colorClass: "invest",
-      blurb: "Plant money, grow futures — funds and organizations financing climate solutions.",
-      icon: '<polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/>',
-      art: [
-        "..LL.....LL..",
-        ".LLLL...LLLL.",
-        ".LLLLL.LLLLL.",
-        "...LL.S.LL...",
-        "......S......",
-        "......S......",
-        "....GGGGG....",
-        "...GGYYYGG...",
-        "...GGYYYGG...",
-        "....GGGGG...."
-      ],
-      palette: { L: "#22c55e", S: "#22c55e", G: "#d97706", Y: "#fbbf24" }
+      className: "invest",
+      number: "04",
+      eyebrow: "Fund climate solutions",
+      blurb: "Funds and organizations moving capital into climate action.",
+      icon: '<path d="m3 17 6-6 4 4 8-9"/><path d="M15 6h6v6"/>'
     }
   };
-  const TOPIC_ORDER = ["Career", "Research", "Education", "Invest"];
 
-  const ALL_LINKS = (window.CLIMATE_LINKS || []).slice()
+  const TOPIC_ORDER = Object.keys(TOPICS);
+  const GENERAL = "General";
+  const ALL_LINKS = (window.CLIMATE_LINKS || [])
+    .slice()
     .sort((a, b) => a.title.localeCompare(b.title));
 
-  /* ---------------- helpers ---------------- */
-
-  function escapeHtml(text) {
-    return String(text)
+  function escapeHtml(value) {
+    return String(value)
       .replace(/&/g, "&amp;")
       .replace(/</g, "&lt;")
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   }
 
-  function slugify(text) {
-    return String(text).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "");
-  }
-
-  const GENERAL_SUBTOPIC = "General";
-
-  function categoryLabel(name) {
-    return name === GENERAL_SUBTOPIC ? "Start here" : name;
-  }
-
-  function sortCategories(names) {
-    return names.sort((a, b) => a.localeCompare(b));
+  function slugify(value) {
+    return String(value)
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, "-")
+      .replace(/^-+|-+$/g, "");
   }
 
   function hostOf(url) {
@@ -122,262 +71,378 @@
     return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(host)}&sz=64`;
   }
 
-  function svgIcon(paths, className) {
-    return `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
+  function icon(paths, className) {
+    return `<svg class="${className}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
   }
 
-  const EXTERNAL_ICON = svgIcon('<line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/>', "external-icon");
-  const CLEAR_ICON = svgIcon('<line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>', "clear-icon");
-
-  /* ---------------- card + group markup ---------------- */
-
-  function linkCard(link) {
-    const host = hostOf(link.url);
-    return `
-      <a class="link-card" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
-        <span class="link-card-head">
-          <img class="favicon" src="${escapeHtml(faviconOf(link.url))}" alt="" loading="lazy" width="20" height="20">
-          <h3>${escapeHtml(link.title)}<span class="visually-hidden"> (opens in a new tab)</span></h3>
-          ${EXTERNAL_ICON}
-        </span>
-        <p class="link-summary">${escapeHtml(link.summary || "")}</p>
-        <span class="link-host">${escapeHtml(host)}</span>
-      </a>`;
+  function categoryLabel(category) {
+    return category === GENERAL ? "Start here" : category;
   }
 
-  function group(title, links, colorClass, href, options) {
-    const opts = options || {};
-    const heading = href
-      ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>`
-      : escapeHtml(title);
-    return `
-      <section class="group group-${colorClass}${opts.className ? ` ${opts.className}` : ""}" id="${escapeHtml(opts.id || slugify(title))}">
-        <div class="group-head">
-          <h2>${heading}</h2>
-          <span class="group-count">${links.length} ${links.length === 1 ? "link" : "links"}</span>
-        </div>
-        <div class="card-grid">${links.map(linkCard).join("")}</div>
-      </section>`;
-  }
-
-  /* ---------------- views ---------------- */
-
-  function homeOverview() {
-    const cards = TOPIC_ORDER.map((topic) => {
-      const cfg = TOPICS[topic];
-      const links = ALL_LINKS.filter((l) => l.topic === topic);
-      const categories = sortCategories([...new Set(links.map((l) => l.subtopic))]);
-      const chips = categories.map((c) =>
-        `<li><a href="${cfg.page}#${slugify(c)}">${escapeHtml(categoryLabel(c))}</a></li>`
-      ).join("");
-      return `
-        <article class="topic-card topic-${cfg.colorClass}">
-          ${svgIcon(cfg.icon, "topic-icon")}
-          <h2><a class="topic-link" href="${cfg.page}">${topic}</a></h2>
-          <p>${cfg.blurb}</p>
-          <ul class="topic-cats" aria-label="${topic} categories">${chips}</ul>
-          <span class="topic-count">${links.length} links →</span>
-        </article>`;
-    }).join("");
-
-    return `<div class="topic-grid">${cards}</div>`;
+  function categoriesFor(topic) {
+    return [...new Set(ALL_LINKS.filter((link) => link.topic === topic).map((link) => link.subtopic))]
+      .sort((a, b) => {
+        if (a === GENERAL) return -1;
+        if (b === GENERAL) return 1;
+        return a.localeCompare(b);
+      });
   }
 
   function topicData(topic) {
-    const links = ALL_LINKS.filter((l) => l.topic === topic);
-    const bySubtopic = {};
-    links.forEach((l) => {
-      (bySubtopic[l.subtopic] = bySubtopic[l.subtopic] || []).push(l);
+    const links = ALL_LINKS.filter((link) => link.topic === topic);
+    const groups = {};
+    links.forEach((link) => {
+      (groups[link.subtopic] = groups[link.subtopic] || []).push(link);
     });
+    const categories = categoriesFor(topic);
     return {
-      bySubtopic,
-      subtopics: sortCategories(Object.keys(bySubtopic).filter((st) => st !== GENERAL_SUBTOPIC)),
-      generalLinks: bySubtopic[GENERAL_SUBTOPIC] || [],
-      colorClass: TOPICS[topic].colorClass,
-      total: links.length
+      links,
+      groups,
+      categories,
+      filterable: categories.filter((category) => category !== GENERAL),
+      general: groups[GENERAL] || []
     };
   }
 
-  function searchView(query) {
-    const matches = ALL_LINKS.filter((l) => {
-      const text = `${l.title} ${l.topic} ${l.subtopic} ${l.summary || ""} ${hostOf(l.url)}`.toLowerCase();
-      return text.includes(query);
-    });
+  function resourceCard(link, index) {
+    const config = TOPICS[link.topic];
+    const host = hostOf(link.url);
+    return `
+      <a class="resource-card resource-${config.className}" href="${escapeHtml(link.url)}" target="_blank" rel="noopener noreferrer">
+        <span class="resource-card-top">
+          <span class="resource-category">${escapeHtml(categoryLabel(link.subtopic))}</span>
+          <span class="resource-number">${String(index + 1).padStart(2, "0")}</span>
+        </span>
+        <h3>${escapeHtml(link.title)}<span class="visually-hidden"> (opens in a new tab)</span></h3>
+        <p>${escapeHtml(link.summary || "")}</p>
+        <span class="resource-source">
+          <img class="resource-favicon" src="${escapeHtml(faviconOf(link.url))}" alt="" loading="lazy" width="24" height="24">
+          <span>${escapeHtml(host)}</span>
+          <span class="resource-arrow" aria-hidden="true">↗</span>
+        </span>
+      </a>`;
+  }
 
-    const byTopic = {};
-    matches.forEach((l) => {
-      (byTopic[l.topic] = byTopic[l.topic] || []).push(l);
-    });
+  function resourceGroup(title, links, topic, options) {
+    const config = TOPICS[topic];
+    const opts = options || {};
+    const linkedTitle = opts.href
+      ? `<a href="${escapeHtml(opts.href)}">${escapeHtml(title)}</a>`
+      : escapeHtml(title);
+    return `
+      <section class="resource-group group-${config.className}${opts.featured ? " resource-group-featured" : ""}" id="${escapeHtml(opts.id || slugify(title))}">
+        <div class="resource-group-heading">
+          <div>
+            <span class="group-kicker">${escapeHtml(config.eyebrow)}</span>
+            <h2>${linkedTitle}</h2>
+          </div>
+          <span class="group-count">${links.length} ${links.length === 1 ? "resource" : "resources"}</span>
+        </div>
+        <div class="resource-grid">${links.map((link, index) => resourceCard(link, index)).join("")}</div>
+      </section>`;
+  }
 
+  function homeOverview() {
+    return `<div class="topic-grid">${TOPIC_ORDER.map((topic) => {
+      const config = TOPICS[topic];
+      const data = topicData(topic);
+      const categoryLinks = data.categories.slice(0, 5).map((category) =>
+        `<li><a href="${config.page}#${slugify(category)}">${escapeHtml(categoryLabel(category))}</a></li>`
+      ).join("");
+      return `
+        <article class="topic-card topic-${config.className}">
+          <div class="topic-card-top">
+            <span class="topic-number">${config.number}</span>
+            ${icon(config.icon, "topic-icon")}
+          </div>
+          <p class="topic-eyebrow">${escapeHtml(config.eyebrow)}</p>
+          <h2><a class="topic-link" href="${config.page}">${escapeHtml(topic)}</a></h2>
+          <p class="topic-description">${escapeHtml(config.blurb)}</p>
+          <ul class="topic-categories" aria-label="${escapeHtml(topic)} categories">${categoryLinks}</ul>
+          <div class="topic-card-footer">
+            <span>${data.links.length} resources</span>
+            <span aria-hidden="true">→</span>
+          </div>
+        </article>`;
+    }).join("")}</div>`;
+  }
+
+  function searchResults(query) {
+    const words = query.toLowerCase().split(/\s+/).filter(Boolean);
+    const matches = ALL_LINKS.filter((link) => {
+      const haystack = `${link.title} ${link.topic} ${link.subtopic} ${link.summary || ""} ${hostOf(link.url)}`.toLowerCase();
+      return words.every((word) => haystack.includes(word));
+    });
+    const groups = {};
+    matches.forEach((link) => {
+      (groups[link.topic] = groups[link.topic] || []).push(link);
+    });
     const html = TOPIC_ORDER
-      .filter((t) => byTopic[t])
-      .map((t) => group(t, byTopic[t], TOPICS[t].colorClass, TOPICS[t].page))
+      .filter((topic) => groups[topic])
+      .map((topic) => resourceGroup(topic, groups[topic], topic, { href: TOPICS[topic].page }))
       .join("");
-
-    return { html, count: matches.length };
+    return { matches, html };
   }
 
-  /* ---------------- decorative pixel art (hero mascots) ---------------- */
+  function setupTheme() {
+    const masthead = document.querySelector(".masthead");
+    if (!masthead) return;
 
-  const EARTH = [
-    "....WWWWW....",
-    "...WLLWWWW...",
-    "..WLLLLWWWW..",
-    ".WLLLLWWWWLW.",
-    ".WWLLLWWLLLW.",
-    "WWWWLLWWWLLWW",
-    "WWWWWLWWWLLLW",
-    "WWWWWWWWLLLWW",
-    ".WWWLLWWWLWW.",
-    ".WWWWLLLWWWW.",
-    "..WWWWLLWWW..",
-    "...WWWWWWW...",
-    "....WWWWW...."
-  ];
-  const EARTH_PALETTE = { W: "var(--pixel-water)", L: "var(--pixel-land)" };
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "theme-toggle";
+    button.innerHTML = '<span class="theme-icon" aria-hidden="true">◐</span><span class="theme-label">Theme</span>';
+    masthead.appendChild(button);
 
-  /* Draws string-map pixel art as a single box-shadow — one element,
-     no images, scales crisply. */
-  function renderPixelArt(el, art, palette, P) {
-    P = P || 8;
-    const shadows = [];
-    art.forEach((row, y) => {
-      row.split("").forEach((ch, x) => {
-        if (palette[ch]) shadows.push(`${x * P}px ${y * P}px 0 0 ${palette[ch]}`);
-      });
-    });
-    el.style.width = el.style.height = `${P}px`;
-    el.style.boxShadow = shadows.join(",");
-  }
+    const saved = localStorage.getItem("climate-hub-theme");
+    if (saved === "dark" || saved === "light") document.documentElement.dataset.theme = saved;
 
-  function setupHeroArt(currentTopic) {
-    const el = document.getElementById("pixelArt");
-    if (!el) return;
-    if (currentTopic && TOPICS[currentTopic]) {
-      renderPixelArt(el, TOPICS[currentTopic].art, TOPICS[currentTopic].palette);
-    } else {
-      renderPixelArt(el, EARTH, EARTH_PALETTE);
+    function currentTheme() {
+      if (document.documentElement.dataset.theme) return document.documentElement.dataset.theme;
+      return matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
     }
+
+    function updateLabel() {
+      const theme = currentTheme();
+      button.setAttribute("aria-label", `Switch to ${theme === "dark" ? "light" : "dark"} theme`);
+      button.setAttribute("aria-pressed", String(theme === "dark"));
+      button.querySelector(".theme-icon").textContent = theme === "dark" ? "☀" : "◐";
+    }
+
+    button.addEventListener("click", () => {
+      const next = currentTheme() === "dark" ? "light" : "dark";
+      document.documentElement.dataset.theme = next;
+      localStorage.setItem("climate-hub-theme", next);
+      updateLabel();
+    });
+    updateLabel();
   }
 
-  /* ---------------- page controller ---------------- */
+  function setupHero(currentTopic) {
+    const hero = document.querySelector(".hero");
+    const text = document.querySelector(".hero-text");
+    const title = text && text.querySelector("h1");
+    const art = document.querySelector(".hero-art");
+    if (!hero || !text || !title || !art) return;
+
+    const eyebrow = document.createElement("p");
+    eyebrow.className = "hero-eyebrow";
+    eyebrow.textContent = currentTopic ? TOPICS[currentTopic].eyebrow : "Independent climate field guide";
+    text.insertBefore(eyebrow, title);
+
+    const topicLinks = currentTopic ? ALL_LINKS.filter((link) => link.topic === currentTopic) : ALL_LINKS;
+    const categoryCount = currentTopic ? categoriesFor(currentTopic).length : TOPIC_ORDER.length;
+    const config = currentTopic ? TOPICS[currentTopic] : null;
+    art.innerHTML = `
+      <div class="signal-panel${config ? ` signal-${config.className}` : ""}">
+        <div class="signal-orbit" aria-hidden="true"><span></span><span></span><span></span></div>
+        <p>${currentTopic ? escapeHtml(currentTopic) : "Climate Resource Hub"}</p>
+        <strong>${topicLinks.length}</strong>
+        <span>${currentTopic ? "curated resources" : "links across four routes"}</span>
+        <div class="signal-meta">
+          <span>${categoryCount} ${currentTopic ? "categories" : "paths"}</span>
+          <span>Open access</span>
+        </div>
+      </div>`;
+  }
+
+  function setupSearch(searchInput, render) {
+    const form = searchInput && searchInput.closest("form");
+    if (!form) return;
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      render();
+    });
+
+    const clear = document.createElement("button");
+    clear.type = "button";
+    clear.className = "search-clear";
+    clear.setAttribute("aria-label", "Clear search");
+    clear.textContent = "Clear";
+    form.appendChild(clear);
+
+    const shortcut = document.createElement("kbd");
+    shortcut.className = "search-shortcut";
+    shortcut.textContent = "/";
+    form.appendChild(shortcut);
+
+    const suggestions = document.createElement("div");
+    suggestions.className = "quick-searches";
+    suggestions.setAttribute("aria-label", "Quick searches");
+    suggestions.innerHTML = '<span>Try:</span><button type="button" data-search="jobs">jobs</button><button type="button" data-search="datasets">datasets</button><button type="button" data-search="courses">courses</button><button type="button" data-search="energy">energy</button>';
+    form.insertAdjacentElement("afterend", suggestions);
+
+    function updateControls() {
+      const hasValue = Boolean(searchInput.value.trim());
+      clear.hidden = !hasValue;
+      shortcut.hidden = hasValue;
+    }
+
+    clear.addEventListener("click", () => {
+      searchInput.value = "";
+      searchInput.focus();
+      updateControls();
+      render();
+    });
+
+    suggestions.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-search]");
+      if (!button) return;
+      searchInput.value = button.dataset.search;
+      searchInput.focus();
+      updateControls();
+      render();
+    });
+
+    searchInput.addEventListener("input", () => {
+      updateControls();
+      render();
+    });
+
+    document.addEventListener("keydown", (event) => {
+      const target = event.target;
+      const typing = target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target.isContentEditable;
+      if (event.key === "/" && !typing) {
+        event.preventDefault();
+        searchInput.focus();
+      }
+      if (event.key === "Escape" && document.activeElement === searchInput && searchInput.value) {
+        searchInput.value = "";
+        updateControls();
+        render();
+      }
+    });
+
+    const initialQuery = new URLSearchParams(location.search).get("q");
+    if (initialQuery) searchInput.value = initialQuery;
+    updateControls();
+  }
+
+  function setupFooter() {
+    const footer = document.querySelector(".site-footer .container");
+    if (!footer) return;
+    footer.innerHTML = `
+      <div class="footer-primary">
+        <p class="footer-label">Climate Resource Hub</p>
+        <p>Curated by <a href="https://jalols.page">Jaloliddin Ismailov</a> with the YOUNGO Science Working Group.</p>
+      </div>
+      <div class="footer-links" aria-label="Project links">
+        <a href="https://github.com/unnobatroo/climate-resource-hub">Source code</a>
+        <a href="https://github.com/unnobatroo/climate-resource-hub/issues/new">Suggest a resource</a>
+        <a href="https://github.com/unnobatroo/climate-resource-hub/compare">Contribute</a>
+      </div>`;
+  }
 
   function init() {
     const content = document.getElementById("content");
     const status = document.getElementById("resultStatus");
     const searchInput = document.getElementById("searchInput");
-    if (!content || !ALL_LINKS.length) return;
+    if (!content || !status || !searchInput || !ALL_LINKS.length) return;
 
     const currentTopic = document.body.dataset.topic || null;
-
-    /* Category filters (section pages): ordered list of toggled-on
-       categories. Empty = show everything. Arriving with a #hash
-       (e.g. from a home-page chip) pre-selects that category. */
     let selected = [];
     if (currentTopic && location.hash) {
       const hash = decodeURIComponent(location.hash.slice(1));
-      const match = topicData(currentTopic).subtopics.find((st) => slugify(st) === hash);
-      if (match) selected = [match];
+      const match = categoriesFor(currentTopic).find((category) => slugify(category) === hash);
+      if (match && match !== GENERAL) selected = [match];
     }
+
+    setupTheme();
+    setupHero(currentTopic);
+    setupFooter();
 
     function filterBar(data) {
-      if (!data.subtopics.length) return "";
-      const chips = data.subtopics.map((st) => `
-        <button type="button" class="filter-chip" data-cat="${escapeHtml(st)}"
-          aria-pressed="${selected.includes(st)}">
-          ${escapeHtml(categoryLabel(st))}<span class="chip-count">${data.bySubtopic[st].length}</span>
-        </button>`).join("");
-      const clear = selected.length
-        ? `<button type="button" class="filter-clear">${CLEAR_ICON}Show all</button>`
-        : "";
+      if (!data.filterable.length) return "";
+      const chips = data.filterable.map((category) => {
+        const active = selected.includes(category);
+        return `<button type="button" class="filter-chip" data-category="${escapeHtml(category)}" aria-pressed="${active}"><span>${escapeHtml(category)}</span><span class="filter-count">${data.groups[category].length}</span></button>`;
+      }).join("");
       return `
-        <div class="filter-bar" role="group" aria-label="Filter ${currentTopic} categories">
-          ${chips}${clear}
-        </div>`;
+        <section class="filter-panel" aria-labelledby="filter-title">
+          <div class="filter-copy">
+            <p class="filter-kicker">Narrow the field</p>
+            <h2 id="filter-title">Choose one or more categories</h2>
+          </div>
+          <div class="filter-actions" role="group" aria-label="Filter ${escapeHtml(currentTopic)} resources">
+            ${chips}
+            <button type="button" class="filter-clear"${selected.length ? "" : " hidden"}>Show all</button>
+          </div>
+        </section>`;
     }
 
-    function renderTopicPage() {
+    function renderTopic() {
       const data = topicData(currentTopic);
-      const hasGeneral = data.generalLinks.length > 0;
-      const pinnedGeneral = data.generalLinks.length
-        ? group("Start here", data.generalLinks, data.colorClass, null, { id: "general", className: "group-plateau" })
+      const visible = selected.length ? selected : data.filterable;
+      const general = data.general.length
+        ? resourceGroup("Start here", data.general, currentTopic, { id: "general", featured: true })
         : "";
-      // Toggled-on categories show alone, in the order they were picked.
-      const shown = selected.length ? selected : data.subtopics;
-      const shownCount = shown.reduce((n, st) => n + data.bySubtopic[st].length, 0) + data.generalLinks.length;
+      const groups = visible.map((category) =>
+        resourceGroup(category, data.groups[category], currentTopic)
+      ).join("");
+      content.innerHTML = filterBar(data) + general + groups;
 
-      content.innerHTML = filterBar(data) + pinnedGeneral +
-        shown.map((st) => group(st, data.bySubtopic[st], data.colorClass)).join("");
-
-      const catWord = data.subtopics.length === 1 ? "category" : "categories";
-      if (selected.length) {
-       status.textContent = hasGeneral
-         ? `Showing ${shownCount} links in Start here plus ${selected.length} of ${data.subtopics.length} ${catWord}.`
-         : `Showing ${shownCount} links in ${selected.length} of ${data.subtopics.length} ${catWord}.`;
-      } else {
-       status.textContent = hasGeneral
-         ? `${data.total} links in Start here plus ${data.subtopics.length} ${catWord}.`
-         : `${data.total} links in ${data.subtopics.length} ${catWord}.`;
-      }
+      const visibleCount = data.general.length + visible.reduce((sum, category) => sum + data.groups[category].length, 0);
+      status.textContent = selected.length
+        ? `${visibleCount} resources shown in Start here and ${selected.length} selected ${selected.length === 1 ? "category" : "categories"}.`
+        : `${data.links.length} resources across ${data.categories.length} categories.`;
     }
 
     function renderDefault() {
       if (currentTopic) {
-        renderTopicPage();
+        renderTopic();
       } else {
         content.innerHTML = homeOverview();
-        status.textContent = "";
+        status.textContent = `${ALL_LINKS.length} independently curated resources. Choose a route or search the full directory.`;
       }
     }
 
     function render() {
-      const query = (searchInput ? searchInput.value : "").trim().toLowerCase();
+      const query = searchInput.value.trim();
+      const url = new URL(location.href);
+      if (query) url.searchParams.set("q", query);
+      else url.searchParams.delete("q");
+      history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
+
       if (!query) {
         renderDefault();
         return;
       }
-      const view = searchView(query);
-      if (view.count === 0) {
-        content.innerHTML = `
-          <div class="empty-state">
-            <p><strong>No links match “${escapeHtml(query)}”.</strong></p>
-            <p>Try a broader word like “energy”, “data”, or “course”.</p>
-          </div>`;
+
+      const results = searchResults(query);
+      if (results.matches.length) {
+        content.innerHTML = `<div class="search-heading"><p>Searching all four routes</p><h2>Results for “${escapeHtml(query)}”</h2></div>${results.html}`;
       } else {
-        content.innerHTML = view.html;
+        content.innerHTML = `<div class="empty-state"><span aria-hidden="true">0</span><h2>No match for “${escapeHtml(query)}”</h2><p>Try a shorter phrase or one of the suggested searches above.</p></div>`;
       }
-      status.textContent = `${view.count} ${view.count === 1 ? "link" : "links"} found across all sections.`;
+      status.textContent = `${results.matches.length} ${results.matches.length === 1 ? "resource" : "resources"} found across the full directory.`;
     }
 
-    /* Filter chip toggling (event delegation survives re-renders). */
-    if (currentTopic) {
-      content.addEventListener("click", (e) => {
-        const chip = e.target.closest(".filter-chip");
-        if (chip) {
-          const cat = chip.dataset.cat;
-          selected = selected.includes(cat)
-            ? selected.filter((c) => c !== cat)
-            : [...selected, cat];
-          renderTopicPage();
-          const again = content.querySelector(`.filter-chip[data-cat="${CSS.escape(cat)}"]`);
-          if (again) again.focus();
-          return;
-        }
-        if (e.target.closest(".filter-clear")) {
-          selected = [];
-          renderTopicPage();
-          const first = content.querySelector(".filter-chip");
-          if (first) first.focus();
-        }
-      });
-    }
+    content.addEventListener("click", (event) => {
+      const chip = event.target.closest(".filter-chip");
+      if (chip) {
+        const category = chip.dataset.category;
+        selected = selected.includes(category)
+          ? selected.filter((item) => item !== category)
+          : [...selected, category];
+        renderTopic();
+        const replacement = [...content.querySelectorAll(".filter-chip")]
+          .find((button) => button.dataset.category === category);
+        if (replacement) replacement.focus();
+        return;
+      }
 
-    /* Live total in the home hero badge, if present. */
-    const totalEl = document.getElementById("linkTotal");
-    if (totalEl) totalEl.textContent = String(ALL_LINKS.length);
+      if (event.target.closest(".filter-clear")) {
+        selected = [];
+        renderTopic();
+        const first = content.querySelector(".filter-chip");
+        if (first) first.focus();
+      }
+    });
 
-    setupHeroArt(currentTopic);
-    if (searchInput) searchInput.addEventListener("input", render);
+    const total = document.getElementById("linkTotal");
+    if (total) total.textContent = String(ALL_LINKS.length);
+    setupSearch(searchInput, render);
     render();
   }
 
