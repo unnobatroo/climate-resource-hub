@@ -1,4 +1,6 @@
-window.CLIMATE_LINKS = [
+import type { Resource } from "./types";
+
+export const resources: Resource[] = [
   { title: "Climate Change Jobs", url: "https://climatechangejobs.com/", topic: "Career", subtopic: "General", date: "2026-04-19", summary: "A global job board dedicated exclusively to roles in climate change, sustainability, and clean energy." },
   { title: "Cassandra Xia's list", url: "https://cassandraxia.com/climate-map/", topic: "Career", subtopic: "General", date: "2026-04-19", summary: "A curated visual map of climate career pathways, organisations, and entry points for newcomers to the field." },
   { title: "Climatebase", url: "https://climatebase.org/", topic: "Career", subtopic: "General", date: "2026-04-19", summary: "A leading platform connecting climate-focused talent with jobs, events, and organisations driving the energy transition." },

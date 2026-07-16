@@ -1,4 +1,4 @@
-name: Deploy static site to GitHub Pages
+name: Build and deploy site to GitHub Pages
 
 on:
   push:
@@ -25,11 +25,20 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
       - name: Validate site and resource data
-        run: |
-          node --check assets/data.js
-          node --check assets/page.js
-          node scripts/check-site.mjs
+        run: npm run check
+
+      - name: Build site
+        run: npm run build
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -37,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: dist
 
       - name: Deploy to GitHub Pages
         id: deployment
