@@ -65,6 +65,9 @@ export function App() {
 
   const trimmedQuery = query.trim();
   const matches = searchResources(resources, trimmedQuery);
+  const panelResourceCount = currentTopic
+    ? resources.filter((resource) => resource.topic === currentTopic).length
+    : resources.length;
 
   let content;
   let status: string;
@@ -150,6 +153,7 @@ export function App() {
           query={query}
           onQueryChange={setQuery}
           resourceCount={resources.length}
+          panelResourceCount={panelResourceCount}
         />
         <p className="result-status" role="status" aria-live="polite">{status}</p>
         <div className="directory-content">{content}</div>

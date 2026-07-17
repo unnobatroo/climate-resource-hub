@@ -21,10 +21,6 @@ export function faviconOf(url: string): string {
   return `https://www.google.com/s2/favicons?domain=${encodeURIComponent(hostOf(url))}&sz=64`;
 }
 
-export function categoryLabel(category: string): string {
-  return category === GENERAL_CATEGORY ? "Start here" : category;
-}
-
 export function topicFromPath(pathname: string): Topic | null {
   const page = pathname.split("/").pop() || "index.html";
   return topicOrder.find((topic) => topicConfig[topic].page === page) ?? null;

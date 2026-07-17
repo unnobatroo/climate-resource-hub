@@ -17,6 +17,8 @@ export interface TopicConfig {
   title: string;
   description: string;
   shortDescription: string;
+  panelLabel: string;
+  panelDescription: string;
 }
 
 export type Theme = "light" | "dark";
