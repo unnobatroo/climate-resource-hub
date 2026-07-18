@@ -1,6 +1,7 @@
 import type { Topic } from "../types";
 import { topicConfig } from "../config";
 import { SearchBar } from "./SearchBar";
+import { ThematicIllustration } from "./ThematicIllustration";
 
 interface HeroProps {
   currentTopic: Topic | null;
@@ -45,12 +46,7 @@ export function Hero({
           <strong>{panelResourceCount}</strong>
           <p>{panelDescription}</p>
         </div>
-        <div className="landscape" aria-hidden="true">
-          <span className="sun" />
-          <span className="hill hill-back" />
-          <span className="hill hill-front" />
-          <span className="river" />
-        </div>
+        <ThematicIllustration topic={currentTopic} />
       </aside>
     </section>
   );

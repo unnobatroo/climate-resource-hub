@@ -427,6 +427,7 @@ svg {
 .landscape,
 .landscape span {
   position: absolute;
+  display: block;
 }
 
 .landscape {
@@ -472,6 +473,156 @@ svg {
   border-radius: 50%;
   transform: rotate(27deg);
   opacity: .85;
+}
+
+.career-path {
+  right: 34px;
+  bottom: -70px;
+  width: 82px;
+  height: 250px;
+  background: var(--topic-water);
+  border-radius: 50%;
+  transform: rotate(28deg);
+  opacity: .88;
+}
+
+.career-marker {
+  right: 56px;
+  bottom: 108px;
+  width: 18px;
+  height: 18px;
+  background: var(--topic-sun);
+  border: 5px solid color-mix(in srgb, var(--topic-deep) 70%, transparent);
+  border-radius: 50%;
+}
+
+.research-globe {
+  right: -54px;
+  bottom: -108px;
+  width: 260px;
+  height: 260px;
+  background: var(--topic-mid);
+  border-radius: 50%;
+}
+
+.research-ring {
+  right: -52px;
+  bottom: 10px;
+  width: 280px;
+  height: 112px;
+  border: 18px solid var(--topic-water);
+  border-radius: 50%;
+  transform: rotate(-18deg);
+  opacity: .85;
+}
+
+.research-node {
+  width: 16px;
+  height: 16px;
+  background: var(--topic-sun);
+  border-radius: 50%;
+}
+
+.research-node-one {
+  top: 38px;
+  right: 42px;
+}
+
+.research-node-two {
+  right: 142px;
+  bottom: 74px;
+  width: 11px;
+  height: 11px;
+}
+
+.research-node-three {
+  right: 65px;
+  bottom: 38px;
+  width: 8px;
+  height: 8px;
+}
+
+.education-sun {
+  top: 36px;
+  right: 38px;
+  width: 46px;
+  height: 46px;
+  background: var(--topic-sun);
+  border-radius: 50%;
+}
+
+.book-page {
+  bottom: 0;
+  width: 164px;
+  height: 124px;
+  transform-origin: bottom center;
+}
+
+.book-page-left {
+  left: 14px;
+  background: var(--topic-low);
+  clip-path: polygon(0 16%, 88% 0, 100% 14%, 100% 100%, 8% 84%);
+}
+
+.book-page-right {
+  right: 14px;
+  background: var(--topic-mid);
+  clip-path: polygon(12% 0, 100% 16%, 92% 84%, 0 100%, 0 14%);
+}
+
+.book-spine {
+  left: 50%;
+  bottom: 0;
+  width: 12px;
+  height: 122px;
+  background: var(--topic-water);
+  clip-path: polygon(50% 0, 100% 14%, 70% 100%, 30% 100%, 0 14%);
+  transform: translateX(-50%);
+  opacity: .82;
+}
+
+.invest-sun {
+  top: 34px;
+  right: 34px;
+  width: 44px;
+  height: 44px;
+  background: var(--topic-sun);
+  border-radius: 50%;
+}
+
+.invest-bar {
+  bottom: 0;
+  width: 68px;
+  border-radius: 18px 18px 0 0;
+}
+
+.invest-bar-one {
+  right: 184px;
+  height: 84px;
+  background: var(--topic-low);
+}
+
+.invest-bar-two {
+  right: 106px;
+  height: 132px;
+  background: var(--topic-mid);
+}
+
+.invest-bar-three {
+  right: 28px;
+  height: 190px;
+  background: var(--topic-water);
+}
+
+.invest-trend {
+  right: 46px;
+  bottom: 112px;
+  width: 220px;
+  height: 18px;
+  background: var(--topic-sun);
+  border-radius: 999px;
+  transform: rotate(-31deg);
+  transform-origin: right center;
 }
 
 .result-status {
@@ -626,7 +777,7 @@ svg {
   margin-bottom: 12px;
   padding-bottom: 10px;
   display: flex;
-  align-items: flex-end;
+  align-items: baseline;
   justify-content: space-between;
   gap: 18px;
   border-bottom: 1px solid var(--line);
@@ -654,12 +805,14 @@ svg {
 .resource-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-auto-rows: 1fr;
+  gap: 14px;
 }
 
 .resource-card {
-  min-height: 160px;
-  padding: 15px;
+  min-width: 0;
+  min-height: 184px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   color: var(--ink);
@@ -678,29 +831,55 @@ svg {
 .resource-card h3 {
   min-width: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: 20px minmax(0, 1fr);
-  align-items: start;
-  gap: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
   font-size: var(--text-lg);
-  line-height: 1.15;
+  line-height: 1.2;
   letter-spacing: -.03em;
-  overflow-wrap: anywhere;
+  overflow-wrap: break-word;
 }
 
-.resource-card h3 img {
-  width: 20px;
-  height: 20px;
+.resource-card h3 > span:last-child {
+  min-width: 0;
+}
+
+.resource-icon {
+  position: relative;
+  width: 22px;
+  height: 22px;
+  flex: 0 0 22px;
   margin-top: 1px;
+  display: grid;
+  place-items: center;
+  color: var(--topic);
+}
+
+.resource-icon svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.resource-icon img {
+  position: absolute;
+  inset: 0;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   border-radius: 4px;
 }
 
 .resource-card p {
-  margin: 9px 0 0;
+  margin: 12px 0 0;
   color: var(--muted);
   font-size: var(--text-base);
   line-height: 1.42;
+  overflow-wrap: break-word;
 }
 
 .search-results {
@@ -894,6 +1073,10 @@ svg {
 
   .resource-card {
     min-height: 0;
+  }
+
+  .resource-grid {
+    grid-auto-rows: auto;
   }
 
   .group-heading {
